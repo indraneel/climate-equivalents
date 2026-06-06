@@ -43,6 +43,15 @@ $methodologyPopover.innerHTML = METHODOLOGY_HTML;
 const coarsePointer = window.matchMedia('(pointer: coarse)').matches;
 const mqMobile = window.matchMedia('(max-width: 719px)');
 
+// --- Analytics -------------------------------------------------------------
+// Umami custom events (script loaded `defer` in index.html). No-op until the
+// global is present, so early interactions just don't record rather than throw.
+function track(event, data) {
+  try {
+    window.umami?.track(event, data);
+  } catch { /* never let analytics break the UI */ }
+}
+
 // --- Map setup -------------------------------------------------------------
 
 const map = new maplibregl.Map({
@@ -217,17 +226,23 @@ dataReady.then(({ byIsoBreakdown, byIso }) => {
   lastDataByIso = byIso;
 });
 
-$overlayShuffle.addEventListener('click', shuffleAll);
-$overlayClose.addEventListener('click', clearSelection);
+$overlayShuffle.addEventListener('click', () => {
+  track('shuffle-all', selected ? { iso: selected.iso } : undefined);
+  shuffleAll();
+});
+$overlayClose.addEventListener('click', () => {
+  track('clear-selection', selected ? { iso: selected.iso } : undefined);
+  clearSelection();
+});
 $overlaySelect.addEventListener('change', (e) => {
   const iso = e.target.value;
-  if (iso) selectCountry(iso);
+  if (iso) selectCountry(iso, 'dropdown');
 });
 $overlayRandom.addEventListener('click', async () => {
   const { byIso } = await dataReady;
   const candidates = [...byIso.keys()].filter((iso) => iso !== selected?.iso);
   if (!candidates.length) return;
-  selectCountry(candidates[Math.floor(Math.random() * candidates.length)]);
+  selectCountry(candidates[Math.floor(Math.random() * candidates.length)], 'random');
 });
 
 $widgetHeader.addEventListener('click', () => {
@@ -305,10 +320,10 @@ map.on('click', 'zones-fill', async (e) => {
   // (sheet on mobile/coarse, detail view on desktop) instead of switching.
   if (selected && iso === selected.iso) {
     if (isMobileSheet()) {
-      openSheetForClass(klass, e.lngLat);
+      openSheetForClass(klass, e.lngLat, 'map');
     } else {
       setHoveredKlass(klass);
-      showDetail(klass);
+      showDetail(klass, 'map');
     }
     return;
   }
@@ -405,10 +420,11 @@ function countryTipHtml(iso, brk) {
   `;
 }
 
-async function selectCountry(iso) {
+async function selectCountry(iso, source = 'map') {
   const { byIso, exemplars } = await dataReady;
   const country = byIso.get(iso);
   if (!country) return;
+  track('select-country', { iso, name: country.name, source });
   cancelHover();
   hasEverSelected = true;
 
@@ -661,6 +677,7 @@ function shuffleOne(klass) {
   if (!selected) return;
   const entry = selected.classes.get(klass);
   if (!entry || entry.exemplars.length <= 1) return;
+  track('shuffle-region', { iso: selected.iso, koppen: KOPPEN_CLASSES[klass]?.symbol });
   entry.index = (entry.index + 1) % entry.exemplars.length;
   refreshLabels();
   if (detailKlass === klass) showDetail(klass); // refresh detail view text
@@ -802,7 +819,7 @@ function createLabelMarker({ klass, partArea, prio, anchor }) {
     el.addEventListener('click', (e) => {
       // Don't fire if the refresh button was the target.
       if (e.target.closest('.region-label__refresh')) return;
-      openSheetForClass(klass);
+      openSheetForClass(klass, undefined, 'label');
     });
   } else {
     el.addEventListener('mouseenter', showTip);
@@ -814,7 +831,7 @@ function createLabelMarker({ klass, partArea, prio, anchor }) {
     el.addEventListener('click', (e) => {
       if (e.target.closest('.region-label__refresh')) return;
       setHoveredKlass(klass);
-      showDetail(klass);
+      showDetail(klass, 'label');
     });
   }
 
@@ -992,7 +1009,7 @@ function renderGrid() {
     });
     cell.addEventListener('click', () => {
       setHoveredKlass(node.klass);
-      showDetail(node.klass);
+      showDetail(node.klass, 'grid');
     });
     gridRef.appendChild(cell);
   }
@@ -1006,11 +1023,13 @@ function syncGridHover() {
   }
 }
 
-function showDetail(klass) {
+function showDetail(klass, source) {
   if (!selected) return;
   detailKlass = klass;
   const ctx = selected.context.get(klass);
   if (!ctx) return;
+  // `source` set only on user-initiated opens; shuffle refreshes pass nothing.
+  if (source) track('view-region', { iso: selected.iso, koppen: KOPPEN_CLASSES[klass]?.symbol, source });
   const cls = KOPPEN_CLASSES[klass];
   const area = [...selected.features]
     .filter((f) => f.properties.koppen_class === klass)
@@ -1149,10 +1168,11 @@ function isMobileSheet() {
   return coarsePointer || mqMobile.matches;
 }
 
-function openSheetForClass(klass, lngLat) {
+function openSheetForClass(klass, lngLat, source) {
   if (!selected) return;
   const ctx = selected.context.get(klass);
   if (!ctx) return;
+  if (source) track('view-region', { iso: selected.iso, koppen: KOPPEN_CLASSES[klass]?.symbol, source });
   setHoveredKlass(klass);
   $sheetContent.innerHTML = regionInfoHtml(klass, ctx.exemplar, ctx.fraction, ctx.runnersUp);
   $sheet.classList.add('open');
