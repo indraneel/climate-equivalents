@@ -9,7 +9,7 @@
 # ]
 # ///
 """
-Phase 1 prep — per-subunit Köppen zone polygons + per-class exemplar ranking.
+Phase 1 prep — per-map-unit Köppen zone polygons + per-class exemplar ranking.
 
 Reads:
   koppen_geiger_tif/1991_2020/koppen_geiger_0p1.tif  (Beck et al. 2023, ~10 km)
@@ -20,14 +20,23 @@ Writes:
   data/country-zones.geojson  — features: { iso3, name, koppen_class, area_km2 }
   data/class-exemplars.json   — { "<class_id>": [{iso3, name, area_km2}, ...] }
 
-We key on Natural Earth's SU_A3 (map subunit) rather than the sovereign
-admin-0 code. This splits France into metropolitan France / French Guiana /
-Réunion / Mayotte / …; USA into Continental US / Alaska / Hawaii / Puerto
-Rico / …; Norway into Norway / Svalbard / Jan Mayen / Bouvet — each as its
-own clickable entity. The plain admin-0 codes collapsed all of these into
-one mega-polygon per sovereign country, which made the climate story
-nonsensical (clicking "France" highlighted Norway, Svalbard, Kosovo, … all
-of which share the "-99" placeholder iso3).
+We key on Natural Earth's GU_A3 (map unit), not SU_A3 (map subunit) and not
+the sovereign admin-0 code. The GU level is the cartographic sweet spot:
+
+  - USA's Continental + Alaska + Hawaii all share GU_A3=USA, so they roll
+    up into one clickable "United States of America".
+  - Australia's mainland + Tasmania + Macquarie all share GU_A3=AUS.
+  - Russia's mainland + Kaliningrad + Crimea all share GU_A3=RUS.
+  - France's metropolitan + Corsica share GU_A3=FXX, but French Guiana
+    (GUF), Réunion (REU), Mayotte (MYT), Guadeloupe (GLP), Martinique
+    (MTQ) each have their own GU_A3 — so they stay separately clickable.
+  - Same split-out for Norway/Svalbard/Jan Mayen, Netherlands/Caribbean
+    Netherlands, Portugal/Madeira/Azores.
+
+Using SU_A3 instead would split Alaska/Hawaii out of USA (the user wants
+them together); using ADM0_A3 would re-collapse French Guiana into France
+(the user wants them apart). GU_A3 is Natural Earth's deliberate design
+intent for this kind of "geographic but politically grouped" rollup.
 
 Run:
   uv run scripts/prep_country_zones.py
@@ -81,12 +90,12 @@ def main():
 
     print(f"Reading {SUBUNITS.name}...")
     countries = gpd.read_file(SUBUNITS)
-    countries = countries[["su_a3", "subunit", "geometry"]].rename(
-        columns={"su_a3": "iso3", "subunit": "name"}
+    countries = countries[["gu_a3", "geounit", "geometry"]].rename(
+        columns={"gu_a3": "iso3", "geounit": "name"}
     )
     # Repair any invalid subunit geometries
     countries["geometry"] = countries.geometry.buffer(0)
-    print(f"  {len(countries)} subunits")
+    print(f"  {len(countries)} subunit rows (will dissolve to map-unit level)")
 
     # Per-country × per-class fragments.
     print("Overlaying countries × zones...")
