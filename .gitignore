@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# Editor / agent state
+.claude/
+skills/
+
+# Raster source — 213 MB extracted / 125 MB zipped. Re-download from
+# Beck et al. 2023 if you need to re-run the prep script.
+koppen_geiger_tif/
+koppen_geiger_tif.zip
