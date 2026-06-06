@@ -1,0 +1,1092 @@
+{
+  "1": [
+    {
+      "iso3": "IDN",
+      "name": "Indonesia",
+      "area_km2": 1600303.0
+    },
+    {
+      "iso3": "BRA",
+      "name": "Brazil",
+      "area_km2": 1516218.8
+    },
+    {
+      "iso3": "COL",
+      "name": "Colombia",
+      "area_km2": 602403.0
+    },
+    {
+      "iso3": "COD",
+      "name": "Democratic Republic of the Congo",
+      "area_km2": 558658.7
+    },
+    {
+      "iso3": "PER",
+      "name": "Peru",
+      "area_km2": 524435.6
+    },
+    {
+      "iso3": "PNX",
+      "name": "Papua New Guinea",
+      "area_km2": 359124.1
+    },
+    {
+      "iso3": "MYS",
+      "name": "Malaysia",
+      "area_km2": 323179.4
+    },
+    {
+      "iso3": "VEN",
+      "name": "Venezuela",
+      "area_km2": 241362.7
+    }
+  ],
+  "2": [
+    {
+      "iso3": "BRA",
+      "name": "Brazil",
+      "area_km2": 1666686.6
+    },
+    {
+      "iso3": "COD",
+      "name": "Democratic Republic of the Congo",
+      "area_km2": 395977.7
+    },
+    {
+      "iso3": "COL",
+      "name": "Colombia",
+      "area_km2": 299246.1
+    },
+    {
+      "iso3": "VEN",
+      "name": "Venezuela",
+      "area_km2": 187498.5
+    },
+    {
+      "iso3": "BOL",
+      "name": "Bolivia",
+      "area_km2": 160042.9
+    },
+    {
+      "iso3": "MMR",
+      "name": "Myanmar",
+      "area_km2": 155884.5
+    },
+    {
+      "iso3": "PER",
+      "name": "Peru",
+      "area_km2": 136925.8
+    },
+    {
+      "iso3": "IDN",
+      "name": "Indonesia",
+      "area_km2": 129756.2
+    }
+  ],
+  "3": [
+    {
+      "iso3": "BRA",
+      "name": "Brazil",
+      "area_km2": 4097153.4
+    },
+    {
+      "iso3": "COD",
+      "name": "Democratic Republic of the Congo",
+      "area_km2": 1296494.0
+    },
+    {
+      "iso3": "INX",
+      "name": "India",
+      "area_km2": 1072676.4
+    },
+    {
+      "iso3": "AUZ",
+      "name": "Australia",
+      "area_km2": 793229.7
+    },
+    {
+      "iso3": "TZA",
+      "name": "Tanzania",
+      "area_km2": 711839.4
+    },
+    {
+      "iso3": "AGO",
+      "name": "Angola",
+      "area_km2": 658808.7
+    },
+    {
+      "iso3": "NGA",
+      "name": "Nigeria",
+      "area_km2": 639093.8
+    },
+    {
+      "iso3": "CAF",
+      "name": "Central African Republic",
+      "area_km2": 601872.5
+    }
+  ],
+  "4": [
+    {
+      "iso3": "AUZ",
+      "name": "Australia",
+      "area_km2": 3461475.0
+    },
+    {
+      "iso3": "DZA",
+      "name": "Algeria",
+      "area_km2": 2054199.8
+    },
+    {
+      "iso3": "SAU",
+      "name": "Saudi Arabia",
+      "area_km2": 1918470.5
+    },
+    {
+      "iso3": "LBY",
+      "name": "Libya",
+      "area_km2": 1588911.9
+    },
+    {
+      "iso3": "SDN",
+      "name": "Sudan",
+      "area_km2": 1383613.0
+    },
+    {
+      "iso3": "NER",
+      "name": "Niger",
+      "area_km2": 1101433.1
+    },
+    {
+      "iso3": "MRT",
+      "name": "Mauritania",
+      "area_km2": 1028237.1
+    },
+    {
+      "iso3": "EGY",
+      "name": "Egypt",
+      "area_km2": 996857.2
+    }
+  ],
+  "5": [
+    {
+      "iso3": "CHI",
+      "name": "China",
+      "area_km2": 1744863.2
+    },
+    {
+      "iso3": "MNG",
+      "name": "Mongolia",
+      "area_km2": 649438.2
+    },
+    {
+      "iso3": "KAZ",
+      "name": "Kazakhstan",
+      "area_km2": 608633.1
+    },
+    {
+      "iso3": "ARG",
+      "name": "Argentina",
+      "area_km2": 387288.3
+    },
+    {
+      "iso3": "UZB",
+      "name": "Uzbekistan",
+      "area_km2": 316068.7
+    },
+    {
+      "iso3": "TKM",
+      "name": "Turkmenistan",
+      "area_km2": 303861.9
+    },
+    {
+      "iso3": "CHX",
+      "name": "Chile",
+      "area_km2": 233733.6
+    },
+    {
+      "iso3": "USB",
+      "name": "United States",
+      "area_km2": 190575.3
+    }
+  ],
+  "6": [
+    {
+      "iso3": "AUZ",
+      "name": "Australia",
+      "area_km2": 2025894.9
+    },
+    {
+      "iso3": "INX",
+      "name": "India",
+      "area_km2": 625072.3
+    },
+    {
+      "iso3": "BWA",
+      "name": "Botswana",
+      "area_km2": 424385.7
+    },
+    {
+      "iso3": "BRA",
+      "name": "Brazil",
+      "area_km2": 422325.1
+    },
+    {
+      "iso3": "MEX",
+      "name": "Mexico",
+      "area_km2": 397046.0
+    },
+    {
+      "iso3": "SDN",
+      "name": "Sudan",
+      "area_km2": 359167.0
+    },
+    {
+      "iso3": "NAM",
+      "name": "Namibia",
+      "area_km2": 310790.2
+    },
+    {
+      "iso3": "ARG",
+      "name": "Argentina",
+      "area_km2": 269489.9
+    }
+  ],
+  "7": [
+    {
+      "iso3": "USB",
+      "name": "United States",
+      "area_km2": 1642724.4
+    },
+    {
+      "iso3": "CHI",
+      "name": "China",
+      "area_km2": 1031086.6
+    },
+    {
+      "iso3": "KAZ",
+      "name": "Kazakhstan",
+      "area_km2": 959277.5
+    },
+    {
+      "iso3": "ARG",
+      "name": "Argentina",
+      "area_km2": 660841.4
+    },
+    {
+      "iso3": "MNG",
+      "name": "Mongolia",
+      "area_km2": 536166.2
+    },
+    {
+      "iso3": "AUZ",
+      "name": "Australia",
+      "area_km2": 485623.7
+    },
+    {
+      "iso3": "IRN",
+      "name": "Iran",
+      "area_km2": 329922.1
+    },
+    {
+      "iso3": "ZAX",
+      "name": "South Africa",
+      "area_km2": 268841.3
+    }
+  ],
+  "8": [
+    {
+      "iso3": "TUR",
+      "name": "Turkey",
+      "area_km2": 318429.9
+    },
+    {
+      "iso3": "ESX",
+      "name": "Spain",
+      "area_km2": 192920.7
+    },
+    {
+      "iso3": "USB",
+      "name": "United States",
+      "area_km2": 140553.9
+    },
+    {
+      "iso3": "MAR",
+      "name": "Morocco",
+      "area_km2": 100987.8
+    },
+    {
+      "iso3": "IRN",
+      "name": "Iran",
+      "area_km2": 98298.4
+    },
+    {
+      "iso3": "GRC",
+      "name": "Greece",
+      "area_km2": 92285.0
+    },
+    {
+      "iso3": "ITX",
+      "name": "Italy",
+      "area_km2": 84902.8
+    },
+    {
+      "iso3": "DZA",
+      "name": "Algeria",
+      "area_km2": 78281.4
+    }
+  ],
+  "9": [
+    {
+      "iso3": "USB",
+      "name": "United States",
+      "area_km2": 216774.8
+    },
+    {
+      "iso3": "ETH",
+      "name": "Ethiopia",
+      "area_km2": 116798.4
+    },
+    {
+      "iso3": "AUZ",
+      "name": "Australia",
+      "area_km2": 114077.9
+    },
+    {
+      "iso3": "CHX",
+      "name": "Chile",
+      "area_km2": 110674.3
+    },
+    {
+      "iso3": "ESX",
+      "name": "Spain",
+      "area_km2": 102809.9
+    },
+    {
+      "iso3": "ARG",
+      "name": "Argentina",
+      "area_km2": 88318.5
+    },
+    {
+      "iso3": "PRX",
+      "name": "Portugal",
+      "area_km2": 33420.3
+    },
+    {
+      "iso3": "KEN",
+      "name": "Kenya",
+      "area_km2": 28572.2
+    }
+  ],
+  "10": [
+    {
+      "iso3": "ARG",
+      "name": "Argentina",
+      "area_km2": 1286.0
+    },
+    {
+      "iso3": "CHX",
+      "name": "Chile",
+      "area_km2": 306.2
+    }
+  ],
+  "11": [
+    {
+      "iso3": "INX",
+      "name": "India",
+      "area_km2": 922536.5
+    },
+    {
+      "iso3": "CHI",
+      "name": "China",
+      "area_km2": 823633.2
+    },
+    {
+      "iso3": "ZMB",
+      "name": "Zambia",
+      "area_km2": 418717.9
+    },
+    {
+      "iso3": "AGO",
+      "name": "Angola",
+      "area_km2": 259174.8
+    },
+    {
+      "iso3": "MMR",
+      "name": "Myanmar",
+      "area_km2": 253477.4
+    },
+    {
+      "iso3": "ARG",
+      "name": "Argentina",
+      "area_km2": 250461.0
+    },
+    {
+      "iso3": "VNM",
+      "name": "Vietnam",
+      "area_km2": 138912.4
+    },
+    {
+      "iso3": "MEX",
+      "name": "Mexico",
+      "area_km2": 123390.6
+    }
+  ],
+  "12": [
+    {
+      "iso3": "CHI",
+      "name": "China",
+      "area_km2": 313990.5
+    },
+    {
+      "iso3": "MEX",
+      "name": "Mexico",
+      "area_km2": 226387.5
+    },
+    {
+      "iso3": "ZAX",
+      "name": "South Africa",
+      "area_km2": 165770.3
+    },
+    {
+      "iso3": "ETH",
+      "name": "Ethiopia",
+      "area_km2": 88960.0
+    },
+    {
+      "iso3": "BOL",
+      "name": "Bolivia",
+      "area_km2": 87663.1
+    },
+    {
+      "iso3": "MDG",
+      "name": "Madagascar",
+      "area_km2": 80399.1
+    },
+    {
+      "iso3": "TZA",
+      "name": "Tanzania",
+      "area_km2": 71924.3
+    },
+    {
+      "iso3": "ARG",
+      "name": "Argentina",
+      "area_km2": 65672.5
+    }
+  ],
+  "13": [
+    {
+      "iso3": "BOL",
+      "name": "Bolivia",
+      "area_km2": 2237.0
+    }
+  ],
+  "14": [
+    {
+      "iso3": "USB",
+      "name": "United States",
+      "area_km2": 2160671.9
+    },
+    {
+      "iso3": "CHI",
+      "name": "China",
+      "area_km2": 1352173.1
+    },
+    {
+      "iso3": "ARG",
+      "name": "Argentina",
+      "area_km2": 724542.1
+    },
+    {
+      "iso3": "BRA",
+      "name": "Brazil",
+      "area_km2": 493454.1
+    },
+    {
+      "iso3": "AUZ",
+      "name": "Australia",
+      "area_km2": 338436.2
+    },
+    {
+      "iso3": "URY",
+      "name": "Uruguay",
+      "area_km2": 173563.0
+    },
+    {
+      "iso3": "JPH",
+      "name": "Honshu",
+      "area_km2": 146599.6
+    },
+    {
+      "iso3": "PRY",
+      "name": "Paraguay",
+      "area_km2": 129834.2
+    }
+  ],
+  "15": [
+    {
+      "iso3": "FXX",
+      "name": "France",
+      "area_km2": 450412.8
+    },
+    {
+      "iso3": "DEU",
+      "name": "Germany",
+      "area_km2": 286624.9
+    },
+    {
+      "iso3": "AUZ",
+      "name": "Australia",
+      "area_km2": 251739.9
+    },
+    {
+      "iso3": "BRA",
+      "name": "Brazil",
+      "area_km2": 144925.4
+    },
+    {
+      "iso3": "ENG",
+      "name": "England",
+      "area_km2": 130431.3
+    },
+    {
+      "iso3": "NZS",
+      "name": "South Island",
+      "area_km2": 123085.0
+    },
+    {
+      "iso3": "NZN",
+      "name": "North Island",
+      "area_km2": 114065.7
+    },
+    {
+      "iso3": "ARG",
+      "name": "Argentina",
+      "area_km2": 107974.4
+    }
+  ],
+  "16": [
+    {
+      "iso3": "CHX",
+      "name": "Chile",
+      "area_km2": 36483.5
+    },
+    {
+      "iso3": "ARG",
+      "name": "Argentina",
+      "area_km2": 11049.2
+    },
+    {
+      "iso3": "FLK",
+      "name": "Falkland Islands",
+      "area_km2": 8843.3
+    },
+    {
+      "iso3": "ISL",
+      "name": "Iceland",
+      "area_km2": 7430.4
+    },
+    {
+      "iso3": "SCT",
+      "name": "Scotland",
+      "area_km2": 5042.5
+    },
+    {
+      "iso3": "USK",
+      "name": "Alaska",
+      "area_km2": 4152.6
+    },
+    {
+      "iso3": "AUA",
+      "name": "Tasmania",
+      "area_km2": 2858.0
+    },
+    {
+      "iso3": "NZS",
+      "name": "South Island",
+      "area_km2": 2059.7
+    }
+  ],
+  "17": [
+    {
+      "iso3": "IRN",
+      "name": "Iran",
+      "area_km2": 124272.1
+    },
+    {
+      "iso3": "TUR",
+      "name": "Turkey",
+      "area_km2": 86323.8
+    },
+    {
+      "iso3": "AFG",
+      "name": "Afghanistan",
+      "area_km2": 53159.1
+    },
+    {
+      "iso3": "KAZ",
+      "name": "Kazakhstan",
+      "area_km2": 44764.2
+    },
+    {
+      "iso3": "USB",
+      "name": "United States",
+      "area_km2": 23629.5
+    },
+    {
+      "iso3": "KGZ",
+      "name": "Kyrgyzstan",
+      "area_km2": 9344.3
+    },
+    {
+      "iso3": "UZB",
+      "name": "Uzbekistan",
+      "area_km2": 5515.6
+    },
+    {
+      "iso3": "IRK",
+      "name": "Iraqi Kurdistan",
+      "area_km2": 3307.0
+    }
+  ],
+  "18": [
+    {
+      "iso3": "USB",
+      "name": "United States",
+      "area_km2": 294415.5
+    },
+    {
+      "iso3": "TUR",
+      "name": "Turkey",
+      "area_km2": 185640.0
+    },
+    {
+      "iso3": "AFG",
+      "name": "Afghanistan",
+      "area_km2": 146353.2
+    },
+    {
+      "iso3": "IRN",
+      "name": "Iran",
+      "area_km2": 77363.6
+    },
+    {
+      "iso3": "KGZ",
+      "name": "Kyrgyzstan",
+      "area_km2": 26117.6
+    },
+    {
+      "iso3": "TJK",
+      "name": "Tajikistan",
+      "area_km2": 19969.9
+    },
+    {
+      "iso3": "CAN",
+      "name": "Canada",
+      "area_km2": 19779.5
+    },
+    {
+      "iso3": "UZB",
+      "name": "Uzbekistan",
+      "area_km2": 15229.7
+    }
+  ],
+  "19": [
+    {
+      "iso3": "RUA",
+      "name": "Russia",
+      "area_km2": 644001.2
+    },
+    {
+      "iso3": "CAN",
+      "name": "Canada",
+      "area_km2": 558790.7
+    },
+    {
+      "iso3": "USK",
+      "name": "Alaska",
+      "area_km2": 197271.9
+    },
+    {
+      "iso3": "AFG",
+      "name": "Afghanistan",
+      "area_km2": 46961.9
+    },
+    {
+      "iso3": "USB",
+      "name": "United States",
+      "area_km2": 38449.2
+    },
+    {
+      "iso3": "ARG",
+      "name": "Argentina",
+      "area_km2": 25885.5
+    },
+    {
+      "iso3": "TJK",
+      "name": "Tajikistan",
+      "area_km2": 14843.3
+    },
+    {
+      "iso3": "KGZ",
+      "name": "Kyrgyzstan",
+      "area_km2": 11801.5
+    }
+  ],
+  "20": [
+    {
+      "iso3": "RUA",
+      "name": "Russia",
+      "area_km2": 10158.6
+    }
+  ],
+  "21": [
+    {
+      "iso3": "CHI",
+      "name": "China",
+      "area_km2": 888566.0
+    },
+    {
+      "iso3": "PRK",
+      "name": "North Korea",
+      "area_km2": 61538.7
+    },
+    {
+      "iso3": "KOX",
+      "name": "South Korea",
+      "area_km2": 56875.2
+    },
+    {
+      "iso3": "USB",
+      "name": "United States",
+      "area_km2": 36774.0
+    },
+    {
+      "iso3": "RUA",
+      "name": "Russia",
+      "area_km2": 23582.7
+    },
+    {
+      "iso3": "KNX",
+      "name": "Korean Demilitarized Zone (south)",
+      "area_km2": 943.8
+    },
+    {
+      "iso3": "KNZ",
+      "name": "Korean Demilitarized Zone (north)",
+      "area_km2": 922.2
+    },
+    {
+      "iso3": "KXI",
+      "name": "South Korea",
+      "area_km2": 533.5
+    }
+  ],
+  "22": [
+    {
+      "iso3": "CHI",
+      "name": "China",
+      "area_km2": 894260.1
+    },
+    {
+      "iso3": "RUA",
+      "name": "Russia",
+      "area_km2": 623956.7
+    },
+    {
+      "iso3": "MNG",
+      "name": "Mongolia",
+      "area_km2": 78274.7
+    },
+    {
+      "iso3": "PRK",
+      "name": "North Korea",
+      "area_km2": 51567.8
+    },
+    {
+      "iso3": "INX",
+      "name": "India",
+      "area_km2": 21142.3
+    },
+    {
+      "iso3": "USB",
+      "name": "United States",
+      "area_km2": 20274.1
+    },
+    {
+      "iso3": "NPL",
+      "name": "Nepal",
+      "area_km2": 11747.6
+    },
+    {
+      "iso3": "BTN",
+      "name": "Bhutan",
+      "area_km2": 5003.6
+    }
+  ],
+  "23": [
+    {
+      "iso3": "RUA",
+      "name": "Russia",
+      "area_km2": 1912895.7
+    },
+    {
+      "iso3": "CHI",
+      "name": "China",
+      "area_km2": 473013.9
+    },
+    {
+      "iso3": "MNG",
+      "name": "Mongolia",
+      "area_km2": 270029.4
+    },
+    {
+      "iso3": "USK",
+      "name": "Alaska",
+      "area_km2": 35389.9
+    },
+    {
+      "iso3": "CAN",
+      "name": "Canada",
+      "area_km2": 13646.1
+    },
+    {
+      "iso3": "PRK",
+      "name": "North Korea",
+      "area_km2": 6084.1
+    },
+    {
+      "iso3": "INX",
+      "name": "India",
+      "area_km2": 2708.0
+    },
+    {
+      "iso3": "KGZ",
+      "name": "Kyrgyzstan",
+      "area_km2": 2030.5
+    }
+  ],
+  "24": [
+    {
+      "iso3": "RUA",
+      "name": "Russia",
+      "area_km2": 247736.2
+    }
+  ],
+  "25": [
+    {
+      "iso3": "USB",
+      "name": "United States",
+      "area_km2": 1271048.3
+    },
+    {
+      "iso3": "RUE",
+      "name": "Russia",
+      "area_km2": 420337.1
+    },
+    {
+      "iso3": "UKR",
+      "name": "Ukraine",
+      "area_km2": 215336.7
+    },
+    {
+      "iso3": "KAZ",
+      "name": "Kazakhstan",
+      "area_km2": 186505.2
+    },
+    {
+      "iso3": "ROU",
+      "name": "Romania",
+      "area_km2": 69703.0
+    },
+    {
+      "iso3": "JPH",
+      "name": "Honshu",
+      "area_km2": 47376.7
+    },
+    {
+      "iso3": "HUN",
+      "name": "Hungary",
+      "area_km2": 29768.0
+    },
+    {
+      "iso3": "RUA",
+      "name": "Russia",
+      "area_km2": 27994.3
+    }
+  ],
+  "26": [
+    {
+      "iso3": "CAN",
+      "name": "Canada",
+      "area_km2": 2631273.1
+    },
+    {
+      "iso3": "RUE",
+      "name": "Russia",
+      "area_km2": 1887670.4
+    },
+    {
+      "iso3": "RUA",
+      "name": "Russia",
+      "area_km2": 1314574.7
+    },
+    {
+      "iso3": "USB",
+      "name": "United States",
+      "area_km2": 1289679.7
+    },
+    {
+      "iso3": "KAZ",
+      "name": "Kazakhstan",
+      "area_km2": 829964.9
+    },
+    {
+      "iso3": "UKR",
+      "name": "Ukraine",
+      "area_km2": 349910.3
+    },
+    {
+      "iso3": "POL",
+      "name": "Poland",
+      "area_km2": 282011.6
+    },
+    {
+      "iso3": "BLR",
+      "name": "Belarus",
+      "area_km2": 207499.4
+    }
+  ],
+  "27": [
+    {
+      "iso3": "RUA",
+      "name": "Russia",
+      "area_km2": 7006935.7
+    },
+    {
+      "iso3": "CAN",
+      "name": "Canada",
+      "area_km2": 4659429.0
+    },
+    {
+      "iso3": "RUE",
+      "name": "Russia",
+      "area_km2": 1287442.5
+    },
+    {
+      "iso3": "USK",
+      "name": "Alaska",
+      "area_km2": 948362.0
+    },
+    {
+      "iso3": "SWE",
+      "name": "Sweden",
+      "area_km2": 257812.7
+    },
+    {
+      "iso3": "FIN",
+      "name": "Finland",
+      "area_km2": 243463.7
+    },
+    {
+      "iso3": "NOW",
+      "name": "Norway",
+      "area_km2": 225297.0
+    },
+    {
+      "iso3": "USB",
+      "name": "United States",
+      "area_km2": 150405.1
+    }
+  ],
+  "28": [
+    {
+      "iso3": "RUA",
+      "name": "Russia",
+      "area_km2": 122800.0
+    }
+  ],
+  "29": [
+    {
+      "iso3": "CAN",
+      "name": "Canada",
+      "area_km2": 1784678.3
+    },
+    {
+      "iso3": "CHI",
+      "name": "China",
+      "area_km2": 1741672.6
+    },
+    {
+      "iso3": "RUA",
+      "name": "Russia",
+      "area_km2": 1031308.1
+    },
+    {
+      "iso3": "GRL",
+      "name": "Greenland",
+      "area_km2": 544918.7
+    },
+    {
+      "iso3": "USK",
+      "name": "Alaska",
+      "area_km2": 262091.0
+    },
+    {
+      "iso3": "PER",
+      "name": "Peru",
+      "area_km2": 247057.9
+    },
+    {
+      "iso3": "CHX",
+      "name": "Chile",
+      "area_km2": 182728.0
+    },
+    {
+      "iso3": "ARG",
+      "name": "Argentina",
+      "area_km2": 117074.6
+    }
+  ],
+  "30": [
+    {
+      "iso3": "ATB",
+      "name": "Antarctica",
+      "area_km2": 12320757.3
+    },
+    {
+      "iso3": "GRL",
+      "name": "Greenland",
+      "area_km2": 1592221.9
+    },
+    {
+      "iso3": "CAN",
+      "name": "Canada",
+      "area_km2": 82671.6
+    },
+    {
+      "iso3": "RUE",
+      "name": "Russia",
+      "area_km2": 16352.5
+    },
+    {
+      "iso3": "RUA",
+      "name": "Russia",
+      "area_km2": 15404.4
+    },
+    {
+      "iso3": "CHI",
+      "name": "China",
+      "area_km2": 15120.4
+    },
+    {
+      "iso3": "USK",
+      "name": "Alaska",
+      "area_km2": 3666.8
+    },
+    {
+      "iso3": "NSV",
+      "name": "Svalbard",
+      "area_km2": 2326.9
+    }
+  ]
+}
