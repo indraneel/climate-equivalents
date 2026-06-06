@@ -1,0 +1,5260 @@
+{
+  "CHN": {
+    "14": [
+      {
+        "label": "Shanghai",
+        "lng": 121.4581,
+        "lat": 31.2222,
+        "pop": 24874500
+      },
+      {
+        "label": "Guangzhou",
+        "lng": 113.25,
+        "lat": 23.1167,
+        "pop": 16096724
+      },
+      {
+        "label": "Wuhan",
+        "lng": 114.2667,
+        "lat": 30.5833,
+        "pop": 10392693
+      },
+      {
+        "label": "Nanjing",
+        "lng": 118.7778,
+        "lat": 32.0617,
+        "pop": 9314685
+      },
+      {
+        "label": "Hangzhou",
+        "lng": 120.1614,
+        "lat": 30.2936,
+        "pop": 9236032
+      },
+      {
+        "label": "Foshan",
+        "lng": 113.1315,
+        "lat": 23.0268,
+        "pop": 9042509
+      },
+      {
+        "label": "Chongqing",
+        "lng": 106.5577,
+        "lat": 29.5603,
+        "pop": 7457599
+      },
+      {
+        "label": "Suzhou",
+        "lng": 120.5954,
+        "lat": 31.3041,
+        "pop": 6715559
+      },
+      {
+        "label": "Pudong",
+        "lng": 121.5009,
+        "lat": 31.24,
+        "pop": 5681512
+      },
+      {
+        "label": "Hefei",
+        "lng": 117.2808,
+        "lat": 31.8639,
+        "pop": 5050000
+      },
+      {
+        "label": "Xiamen",
+        "lng": 118.0819,
+        "lat": 24.4798,
+        "pop": 4617251
+      },
+      {
+        "label": "Wuxi",
+        "lng": 120.2886,
+        "lat": 31.5689,
+        "pop": 4396835
+      },
+      {
+        "label": "Nanning",
+        "lng": 108.3167,
+        "lat": 22.8167,
+        "pop": 3839800
+      },
+      {
+        "label": "Shantou",
+        "lng": 116.6788,
+        "lat": 23.3549,
+        "pop": 3838900
+      },
+      {
+        "label": "Fuzhou",
+        "lng": 119.3061,
+        "lat": 26.0614,
+        "pop": 3740000
+      },
+      {
+        "label": "Ningbo",
+        "lng": 121.5494,
+        "lat": 29.8782,
+        "pop": 3731203
+      },
+      {
+        "label": "Puyang",
+        "lng": 119.8887,
+        "lat": 29.4568,
+        "pop": 3590000
+      },
+      {
+        "label": "Changzhou",
+        "lng": 119.954,
+        "lat": 31.7736,
+        "pop": 3290918
+      },
+      {
+        "label": "Changsha",
+        "lng": 112.9709,
+        "lat": 28.1987,
+        "pop": 3093980
+      },
+      {
+        "label": "Minhang",
+        "lng": 121.3747,
+        "lat": 31.1088,
+        "pop": 2716600
+      },
+      {
+        "label": "Wenzhou",
+        "lng": 120.6668,
+        "lat": 27.9994,
+        "pop": 2650000
+      },
+      {
+        "label": "Yunfu",
+        "lng": 112.0381,
+        "lat": 22.9279,
+        "pop": 2612800
+      },
+      {
+        "label": "Huai'an",
+        "lng": 119.0192,
+        "lat": 33.5886,
+        "pop": 2494013
+      },
+      {
+        "label": "Nanchang",
+        "lng": 115.8531,
+        "lat": 28.684,
+        "pop": 2357839
+      },
+      {
+        "label": "Shaoxing",
+        "lng": 120.5786,
+        "lat": 30.0024,
+        "pop": 2300000
+      },
+      {
+        "label": "Nantong",
+        "lng": 120.8747,
+        "lat": 32.0303,
+        "pop": 2273326
+      },
+      {
+        "label": "Baoshan",
+        "lng": 121.4896,
+        "lat": 31.4084,
+        "pop": 2265900
+      },
+      {
+        "label": "Kunshan",
+        "lng": 120.9543,
+        "lat": 31.3776,
+        "pop": 2092496
+      },
+      {
+        "label": "Zunyi",
+        "lng": 106.9072,
+        "lat": 27.6867,
+        "pop": 2037775
+      },
+      {
+        "label": "Ganzhou",
+        "lng": 114.9326,
+        "lat": 25.8466,
+        "pop": 1977253
+      },
+      {
+        "label": "Songjiang",
+        "lng": 121.2233,
+        "lat": 31.0344,
+        "pop": 1973500
+      },
+      {
+        "label": "Jieyang",
+        "lng": 116.3658,
+        "lat": 23.5418,
+        "pop": 1899394
+      },
+      {
+        "label": "Jiading",
+        "lng": 121.2446,
+        "lat": 31.3858,
+        "pop": 1886100
+      },
+      {
+        "label": "Jiangyin",
+        "lng": 120.263,
+        "lat": 31.911,
+        "pop": 1779515
+      },
+      {
+        "label": "Chaozhou",
+        "lng": 116.6226,
+        "lat": 23.654,
+        "pop": 1750945
+      },
+      {
+        "label": "Qingyuan",
+        "lng": 113.0333,
+        "lat": 23.7,
+        "pop": 1738424
+      },
+      {
+        "label": "Changshu",
+        "lng": 120.7422,
+        "lat": 31.6461,
+        "pop": 1677050
+      },
+      {
+        "label": "Huainan",
+        "lng": 116.9969,
+        "lat": 32.6264,
+        "pop": 1666826
+      },
+      {
+        "label": "Lu\u2019an",
+        "lng": 116.5169,
+        "lat": 31.7356,
+        "pop": 1644344
+      },
+      {
+        "label": "Yancheng",
+        "lng": 120.1573,
+        "lat": 33.3575,
+        "pop": 1615717
+      },
+      {
+        "label": "Taizhou",
+        "lng": 119.9081,
+        "lat": 32.4907,
+        "pop": 1607108
+      },
+      {
+        "label": "Wuhu",
+        "lng": 118.4295,
+        "lat": 31.3526,
+        "pop": 1598165
+      },
+      {
+        "label": "Yangzhou",
+        "lng": 119.4358,
+        "lat": 32.3972,
+        "pop": 1584237
+      },
+      {
+        "label": "Guilin",
+        "lng": 110.2964,
+        "lat": 25.2802,
+        "pop": 1572300
+      },
+      {
+        "label": "Zhaoqing",
+        "lng": 112.4609,
+        "lat": 23.0489,
+        "pop": 1553109
+      },
+      {
+        "label": "Putian",
+        "lng": 119.0103,
+        "lat": 25.4394,
+        "pop": 1539389
+      },
+      {
+        "label": "Taizhou",
+        "lng": 121.4331,
+        "lat": 28.6627,
+        "pop": 1485502
+      },
+      {
+        "label": "Yiwu",
+        "lng": 120.0768,
+        "lat": 29.3151,
+        "pop": 1481384
+      },
+      {
+        "label": "Quanzhou",
+        "lng": 118.5858,
+        "lat": 24.9139,
+        "pop": 1469157
+      },
+      {
+        "label": "Jinhua",
+        "lng": 119.6442,
+        "lat": 29.1068,
+        "pop": 1463990
+      },
+      {
+        "label": "Cixi",
+        "lng": 121.2457,
+        "lat": 30.1764,
+        "pop": 1457510
+      },
+      {
+        "label": "Changde",
+        "lng": 111.6984,
+        "lat": 29.0321,
+        "pop": 1457419
+      },
+      {
+        "label": "Liuzhou",
+        "lng": 109.407,
+        "lat": 24.324,
+        "pop": 1436599
+      },
+      {
+        "label": "Zhangjiagang",
+        "lng": 120.5389,
+        "lat": 31.865,
+        "pop": 1432044
+      },
+      {
+        "label": "Jinjiang",
+        "lng": 118.5742,
+        "lat": 24.8198,
+        "pop": 1416151
+      },
+      {
+        "label": "Guankou",
+        "lng": 113.6271,
+        "lat": 28.1586,
+        "pop": 1380000
+      },
+      {
+        "label": "Xiangyang",
+        "lng": 112.1448,
+        "lat": 32.0422,
+        "pop": 1294733
+      },
+      {
+        "label": "Yixing",
+        "lng": 119.8202,
+        "lat": 31.3606,
+        "pop": 1285785
+      },
+      {
+        "label": "Qingpu",
+        "lng": 121.1141,
+        "lat": 31.1539,
+        "pop": 1271424
+      },
+      {
+        "label": "Heshan",
+        "lng": 112.3473,
+        "lat": 28.5694,
+        "pop": 1249807
+      },
+      {
+        "label": "Putuo",
+        "lng": 121.3897,
+        "lat": 31.251,
+        "pop": 1239100
+      },
+      {
+        "label": "Xinyang",
+        "lng": 114.0656,
+        "lat": 32.1228,
+        "pop": 1230042
+      },
+      {
+        "label": "Yangpu",
+        "lng": 121.519,
+        "lat": 31.2619,
+        "pop": 1210800
+      },
+      {
+        "label": "Jiaxing",
+        "lng": 120.75,
+        "lat": 30.7522,
+        "pop": 1180000
+      },
+      {
+        "label": "Jiujiang",
+        "lng": 116.0021,
+        "lat": 29.7048,
+        "pop": 1164268
+      },
+      {
+        "label": "Fengxiang",
+        "lng": 121.4678,
+        "lat": 30.8584,
+        "pop": 1140872
+      },
+      {
+        "label": "Zhuzhou",
+        "lng": 113.15,
+        "lat": 27.8333,
+        "pop": 1129687
+      },
+      {
+        "label": "Shangrao",
+        "lng": 117.9429,
+        "lat": 28.4518,
+        "pop": 1116486
+      },
+      {
+        "label": "Xuhui",
+        "lng": 121.4471,
+        "lat": 31.1959,
+        "pop": 1109800
+      },
+      {
+        "label": "Fuzhou",
+        "lng": 116.3333,
+        "lat": 27.96,
+        "pop": 1089888
+      },
+      {
+        "label": "Guigang",
+        "lng": 109.5947,
+        "lat": 23.116,
+        "pop": 1086327
+      },
+      {
+        "label": "Hengyang",
+        "lng": 112.6189,
+        "lat": 26.8895,
+        "pop": 1075516
+      },
+      {
+        "label": "Yulin",
+        "lng": 110.1469,
+        "lat": 22.6305,
+        "pop": 1056743
+      },
+      {
+        "label": "Jingzhou",
+        "lng": 112.1903,
+        "lat": 30.3503,
+        "pop": 1052282
+      },
+      {
+        "label": "Yichun",
+        "lng": 114.4,
+        "lat": 27.8333,
+        "pop": 1045952
+      },
+      {
+        "label": "Shaoguan",
+        "lng": 113.5833,
+        "lat": 24.8,
+        "pop": 1028460
+      },
+      {
+        "label": "Longyan",
+        "lng": 117.0178,
+        "lat": 25.0749,
+        "pop": 1025087
+      },
+      {
+        "label": "Yongzhou",
+        "lng": 111.6131,
+        "lat": 26.4239,
+        "pop": 1020715
+      },
+      {
+        "label": "Huzhou",
+        "lng": 120.0933,
+        "lat": 30.8703,
+        "pop": 1015937
+      },
+      {
+        "label": "Hezhou",
+        "lng": 111.5667,
+        "lat": 24.4036,
+        "pop": 1005490
+      }
+    ],
+    "7": [
+      {
+        "label": "Beijing",
+        "lng": 116.3972,
+        "lat": 39.9075,
+        "pop": 18960744
+      },
+      {
+        "label": "Tianjin",
+        "lng": 117.1767,
+        "lat": 39.1422,
+        "pop": 11090314
+      },
+      {
+        "label": "Xi\u2019an",
+        "lng": 108.9286,
+        "lat": 34.2583,
+        "pop": 9600000
+      },
+      {
+        "label": "Taiyuan",
+        "lng": 112.5603,
+        "lat": 37.8694,
+        "pop": 4303673
+      },
+      {
+        "label": "Shijiazhuang",
+        "lng": 114.4786,
+        "lat": 38.0414,
+        "pop": 3938513
+      },
+      {
+        "label": "\u00dcr\u00fcmqi",
+        "lng": 87.6005,
+        "lat": 43.801,
+        "pop": 3029372
+      },
+      {
+        "label": "Lanzhou",
+        "lng": 103.8399,
+        "lat": 36.057,
+        "pop": 3000000
+      },
+      {
+        "label": "Baoding",
+        "lng": 115.4625,
+        "lat": 38.8729,
+        "pop": 2739887
+      },
+      {
+        "label": "Hohhot",
+        "lng": 111.6522,
+        "lat": 40.8106,
+        "pop": 2350000
+      },
+      {
+        "label": "Baotou",
+        "lng": 109.8439,
+        "lat": 40.6516,
+        "pop": 2150000
+      },
+      {
+        "label": "Ordos",
+        "lng": 109.7816,
+        "lat": 39.6086,
+        "pop": 1940653
+      },
+      {
+        "label": "Datong",
+        "lng": 113.2914,
+        "lat": 40.0936,
+        "pop": 1850000
+      },
+      {
+        "label": "Xining",
+        "lng": 101.7574,
+        "lat": 36.6255,
+        "pop": 1677177
+      },
+      {
+        "label": "Handan",
+        "lng": 114.4876,
+        "lat": 36.61,
+        "pop": 1358318
+      },
+      {
+        "label": "Jinzhong",
+        "lng": 112.7547,
+        "lat": 37.684,
+        "pop": 1226617
+      },
+      {
+        "label": "Weinan",
+        "lng": 109.5089,
+        "lat": 34.5035,
+        "pop": 1199290
+      },
+      {
+        "label": "Xianyang",
+        "lng": 108.7026,
+        "lat": 34.3378,
+        "pop": 1034081
+      }
+    ],
+    "11": [
+      {
+        "label": "Shenzhen",
+        "lng": 114.0683,
+        "lat": 22.5455,
+        "pop": 17494398
+      },
+      {
+        "label": "Chengdu",
+        "lng": 104.0667,
+        "lat": 30.6667,
+        "pop": 13568357
+      },
+      {
+        "label": "Dongguan",
+        "lng": 113.7487,
+        "lat": 23.018,
+        "pop": 9644871
+      },
+      {
+        "label": "Qingdao",
+        "lng": 120.3804,
+        "lat": 36.0649,
+        "pop": 7172451
+      },
+      {
+        "label": "Bao'an",
+        "lng": 113.8829,
+        "lat": 22.5521,
+        "pop": 4476554
+      },
+      {
+        "label": "Zhengzhou",
+        "lng": 113.6486,
+        "lat": 34.7578,
+        "pop": 4253913
+      },
+      {
+        "label": "Zhongshan",
+        "lng": 113.3791,
+        "lat": 22.5231,
+        "pop": 3841873
+      },
+      {
+        "label": "Shiyan",
+        "lng": 110.7781,
+        "lat": 32.6475,
+        "pop": 3460000
+      },
+      {
+        "label": "Guiyang",
+        "lng": 106.7167,
+        "lat": 26.5833,
+        "pop": 3037159
+      },
+      {
+        "label": "Huizhou",
+        "lng": 114.4152,
+        "lat": 23.1115,
+        "pop": 2900113
+      },
+      {
+        "label": "Bazhong",
+        "lng": 106.7443,
+        "lat": 31.8694,
+        "pop": 2712894
+      },
+      {
+        "label": "Zhuhai",
+        "lng": 113.5678,
+        "lat": 22.2769,
+        "pop": 2207090
+      },
+      {
+        "label": "Lianyungang",
+        "lng": 119.2156,
+        "lat": 34.5984,
+        "pop": 2001009
+      },
+      {
+        "label": "Shangqiu",
+        "lng": 115.6561,
+        "lat": 34.4143,
+        "pop": 1859723
+      },
+      {
+        "label": "Nanchong",
+        "lng": 106.0847,
+        "lat": 30.7951,
+        "pop": 1858875
+      },
+      {
+        "label": "Nanyang",
+        "lng": 112.5466,
+        "lat": 33.0052,
+        "pop": 1811812
+      },
+      {
+        "label": "Jiangmen",
+        "lng": 113.0833,
+        "lat": 22.5833,
+        "pop": 1795459
+      },
+      {
+        "label": "Fuyang",
+        "lng": 115.8167,
+        "lat": 32.9,
+        "pop": 1768947
+      },
+      {
+        "label": "Suzhou",
+        "lng": 116.9789,
+        "lat": 33.6361,
+        "pop": 1647642
+      },
+      {
+        "label": "Dazhou",
+        "lng": 107.4631,
+        "lat": 31.2106,
+        "pop": 1589435
+      },
+      {
+        "label": "Mianyang",
+        "lng": 104.6817,
+        "lat": 31.4678,
+        "pop": 1550000
+      },
+      {
+        "label": "Wanzhou",
+        "lng": 108.3959,
+        "lat": 30.7645,
+        "pop": 1545900
+      },
+      {
+        "label": "Kaifeng",
+        "lng": 114.3074,
+        "lat": 34.7986,
+        "pop": 1451741
+      },
+      {
+        "label": "Baoji",
+        "lng": 107.237,
+        "lat": 34.3678,
+        "pop": 1437802
+      },
+      {
+        "label": "Suqian",
+        "lng": 118.2958,
+        "lat": 33.9492,
+        "pop": 1437685
+      },
+      {
+        "label": "Bozhou",
+        "lng": 115.7703,
+        "lat": 33.8772,
+        "pop": 1409436
+      },
+      {
+        "label": "Zhanjiang",
+        "lng": 110.3875,
+        "lat": 21.2339,
+        "pop": 1400709
+      },
+      {
+        "label": "Luoyang",
+        "lng": 112.4368,
+        "lat": 34.6735,
+        "pop": 1390581
+      },
+      {
+        "label": "Yichang",
+        "lng": 111.2847,
+        "lat": 30.7144,
+        "pop": 1350150
+      },
+      {
+        "label": "Heze",
+        "lng": 115.4736,
+        "lat": 35.2393,
+        "pop": 1346717
+      },
+      {
+        "label": "Maoming",
+        "lng": 110.9136,
+        "lat": 21.6663,
+        "pop": 1307802
+      },
+      {
+        "label": "Qinzhou",
+        "lng": 108.6506,
+        "lat": 21.9825,
+        "pop": 1296300
+      },
+      {
+        "label": "Luohe",
+        "lng": 114.0326,
+        "lat": 33.5742,
+        "pop": 1294974
+      },
+      {
+        "label": "Yangjiang",
+        "lng": 111.9627,
+        "lat": 21.8556,
+        "pop": 1292987
+      },
+      {
+        "label": "Xuchang",
+        "lng": 113.863,
+        "lat": 34.0319,
+        "pop": 1265536
+      },
+      {
+        "label": "Zigong",
+        "lng": 104.7769,
+        "lat": 29.3416,
+        "pop": 1262064
+      },
+      {
+        "label": "Xuzhou",
+        "lng": 117.2839,
+        "lat": 34.2044,
+        "pop": 1253991
+      },
+      {
+        "label": "Neijiang",
+        "lng": 105.0622,
+        "lat": 29.5835,
+        "pop": 1251095
+      },
+      {
+        "label": "Huaibei",
+        "lng": 116.7917,
+        "lat": 33.9744,
+        "pop": 1113321
+      },
+      {
+        "label": "Meishan",
+        "lng": 103.837,
+        "lat": 30.0439,
+        "pop": 1107742
+      },
+      {
+        "label": "Xinxiang",
+        "lng": 113.8015,
+        "lat": 35.1903,
+        "pop": 1047088
+      },
+      {
+        "label": "Hanzhong",
+        "lng": 107.0221,
+        "lat": 33.0751,
+        "pop": 1006557
+      },
+      {
+        "label": "Macau",
+        "lng": 113.5461,
+        "lat": 22.2006,
+        "pop": 649335
+      }
+    ],
+    "5": [
+      {
+        "label": "Wuzhong",
+        "lng": 106.201,
+        "lat": 37.9867,
+        "pop": 7202654
+      },
+      {
+        "label": "Bayan Nur",
+        "lng": 107.386,
+        "lat": 40.7414,
+        "pop": 1760000
+      },
+      {
+        "label": "Yinchuan",
+        "lng": 106.2731,
+        "lat": 38.4681,
+        "pop": 1487579
+      },
+      {
+        "label": "Zhongwei",
+        "lng": 105.1907,
+        "lat": 37.5113,
+        "pop": 1174600
+      },
+      {
+        "label": "Wuwei",
+        "lng": 102.632,
+        "lat": 37.9267,
+        "pop": 1010295
+      }
+    ],
+    "21": [
+      {
+        "label": "Shenyang",
+        "lng": 123.4328,
+        "lat": 41.7922,
+        "pop": 7050000
+      },
+      {
+        "label": "Harbin",
+        "lng": 126.65,
+        "lat": 45.75,
+        "pop": 5242897
+      },
+      {
+        "label": "Dalian",
+        "lng": 121.6022,
+        "lat": 38.9122,
+        "pop": 4913879
+      },
+      {
+        "label": "Changchun",
+        "lng": 125.3228,
+        "lat": 43.88,
+        "pop": 4714996
+      },
+      {
+        "label": "Jinan",
+        "lng": 116.9972,
+        "lat": 36.6683,
+        "pop": 4335989
+      },
+      {
+        "label": "Tangshan",
+        "lng": 118.1832,
+        "lat": 39.6438,
+        "pop": 3372102
+      },
+      {
+        "label": "L\u00fcliang",
+        "lng": 111.1444,
+        "lat": 37.5192,
+        "pop": 3346500
+      },
+      {
+        "label": "Zibo",
+        "lng": 118.0633,
+        "lat": 36.7906,
+        "pop": 3129228
+      },
+      {
+        "label": "Linyi",
+        "lng": 118.3428,
+        "lat": 35.0631,
+        "pop": 2743843
+      },
+      {
+        "label": "Yantai",
+        "lng": 121.4408,
+        "lat": 37.4765,
+        "pop": 2227733
+      },
+      {
+        "label": "Qingyang",
+        "lng": 107.6445,
+        "lat": 35.7098,
+        "pop": 2125400
+      },
+      {
+        "label": "Weifang",
+        "lng": 119.1019,
+        "lat": 36.71,
+        "pop": 2044028
+      },
+      {
+        "label": "Jilin",
+        "lng": 126.5608,
+        "lat": 43.8465,
+        "pop": 1895865
+      },
+      {
+        "label": "Tai\u2019an",
+        "lng": 117.12,
+        "lat": 36.1853,
+        "pop": 1735425
+      },
+      {
+        "label": "Daqing",
+        "lng": 125.0,
+        "lat": 46.5833,
+        "pop": 1604027
+      },
+      {
+        "label": "Anshan",
+        "lng": 122.99,
+        "lat": 41.1236,
+        "pop": 1450000
+      },
+      {
+        "label": "Fushun",
+        "lng": 123.9436,
+        "lat": 41.8867,
+        "pop": 1400646
+      },
+      {
+        "label": "Jining",
+        "lng": 116.5814,
+        "lat": 35.405,
+        "pop": 1241012
+      },
+      {
+        "label": "Liaocheng",
+        "lng": 116.0025,
+        "lat": 36.4506,
+        "pop": 1229768
+      },
+      {
+        "label": "Changzhi",
+        "lng": 113.1053,
+        "lat": 36.1839,
+        "pop": 1214940
+      },
+      {
+        "label": "Tianshui",
+        "lng": 105.7424,
+        "lat": 34.5795,
+        "pop": 1212791
+      },
+      {
+        "label": "Panjin",
+        "lng": 122.0739,
+        "lat": 41.121,
+        "pop": 1166481
+      },
+      {
+        "label": "Anyang",
+        "lng": 114.3828,
+        "lat": 36.096,
+        "pop": 1146839
+      },
+      {
+        "label": "Zhu Cheng City",
+        "lng": 119.4026,
+        "lat": 35.995,
+        "pop": 1000000
+      }
+    ],
+    "12": [
+      {
+        "label": "Kunming",
+        "lng": 102.7183,
+        "lat": 25.0389,
+        "pop": 3855346
+      },
+      {
+        "label": "Qujing",
+        "lng": 103.7833,
+        "lat": 25.4833,
+        "pop": 1408500
+      },
+      {
+        "label": "Liupanshui",
+        "lng": 104.8333,
+        "lat": 26.5944,
+        "pop": 1320825
+      },
+      {
+        "label": "Bijie",
+        "lng": 105.2863,
+        "lat": 27.3019,
+        "pop": 1137383
+      }
+    ],
+    "3": [
+      {
+        "label": "Haikou",
+        "lng": 110.3465,
+        "lat": 20.0342,
+        "pop": 2873358
+      },
+      {
+        "label": "Sanya",
+        "lng": 109.5095,
+        "lat": 18.2543,
+        "pop": 1031396
+      }
+    ]
+  },
+  "COD": {
+    "3": [
+      {
+        "label": "Kinshasa",
+        "lng": 15.3136,
+        "lat": -4.3276,
+        "pop": 16000000
+      },
+      {
+        "label": "Mbuji-Mayi",
+        "lng": 23.5898,
+        "lat": -6.136,
+        "pop": 2101332
+      },
+      {
+        "label": "Kananga",
+        "lng": 22.4166,
+        "lat": -5.8962,
+        "pop": 1247168
+      }
+    ],
+    "11": [
+      {
+        "label": "Lubumbashi",
+        "lng": 27.4794,
+        "lat": -11.6609,
+        "pop": 2221925
+      }
+    ],
+    "1": [
+      {
+        "label": "Kisangani",
+        "lng": 25.191,
+        "lat": 0.5153,
+        "pop": 1181788
+      }
+    ]
+  },
+  "TUR": {
+    "8": [
+      {
+        "label": "Istanbul",
+        "lng": 28.9497,
+        "lat": 41.0138,
+        "pop": 15701602
+      },
+      {
+        "label": "Ankara",
+        "lng": 32.8543,
+        "lat": 39.9199,
+        "pop": 3517182
+      },
+      {
+        "label": "\u0130zmir",
+        "lng": 27.1384,
+        "lat": 38.4127,
+        "pop": 2938292
+      },
+      {
+        "label": "Gaziantep",
+        "lng": 37.3825,
+        "lat": 37.0594,
+        "pop": 2222415
+      },
+      {
+        "label": "Diyarbak\u0131r",
+        "lng": 40.2172,
+        "lat": 37.9136,
+        "pop": 1833684
+      },
+      {
+        "label": "Adana",
+        "lng": 35.3253,
+        "lat": 36.9862,
+        "pop": 1816750
+      },
+      {
+        "label": "Antalya",
+        "lng": 30.6956,
+        "lat": 36.9081,
+        "pop": 1335002
+      }
+    ],
+    "9": [
+      {
+        "label": "Bursa",
+        "lng": 29.0601,
+        "lat": 40.1956,
+        "pop": 3101833
+      }
+    ],
+    "7": [
+      {
+        "label": "Kayseri",
+        "lng": 35.4853,
+        "lat": 38.7322,
+        "pop": 1452458
+      },
+      {
+        "label": "Konya",
+        "lng": 32.4846,
+        "lat": 37.8713,
+        "pop": 1433861
+      }
+    ]
+  },
+  "NGA": {
+    "3": [
+      {
+        "label": "Lagos",
+        "lng": 3.3947,
+        "lat": 6.4541,
+        "pop": 15388000
+      },
+      {
+        "label": "Kano",
+        "lng": 8.5167,
+        "lat": 12.0001,
+        "pop": 4910000
+      },
+      {
+        "label": "Ibadan",
+        "lng": 3.9059,
+        "lat": 7.3776,
+        "pop": 3649000
+      },
+      {
+        "label": "Abuja",
+        "lng": 7.4951,
+        "lat": 9.0579,
+        "pop": 2690000
+      },
+      {
+        "label": "Kaduna",
+        "lng": 7.4388,
+        "lat": 10.5264,
+        "pop": 1850000
+      },
+      {
+        "label": "Onitsha",
+        "lng": 6.7857,
+        "lat": 6.1498,
+        "pop": 1553000
+      },
+      {
+        "label": "Ilorin",
+        "lng": 4.5421,
+        "lat": 8.4966,
+        "pop": 1080000
+      },
+      {
+        "label": "Jos",
+        "lng": 8.8921,
+        "lat": 9.9285,
+        "pop": 1040000
+      }
+    ],
+    "2": [
+      {
+        "label": "Port Harcourt",
+        "lng": 7.0134,
+        "lat": 4.7774,
+        "pop": 2120000
+      },
+      {
+        "label": "Benin City",
+        "lng": 5.6258,
+        "lat": 6.3381,
+        "pop": 1782000
+      },
+      {
+        "label": "Aba",
+        "lng": 7.3667,
+        "lat": 5.1066,
+        "pop": 1160000
+      }
+    ],
+    "6": [
+      {
+        "label": "Maiduguri",
+        "lng": 13.1571,
+        "lat": 11.8469,
+        "pop": 1110000
+      },
+      {
+        "label": "Sokoto",
+        "lng": 5.2432,
+        "lat": 13.0627,
+        "pop": 1040000
+      }
+    ]
+  },
+  "VNM": {
+    "3": [
+      {
+        "label": "Ho Chi Minh City",
+        "lng": 106.6296,
+        "lat": 10.823,
+        "pop": 14002598
+      },
+      {
+        "label": "C\u1ea7n Th\u01a1",
+        "lng": 105.7883,
+        "lat": 10.0371,
+        "pop": 1507187
+      },
+      {
+        "label": "Bi\u00ean H\u00f2a",
+        "lng": 106.8243,
+        "lat": 10.9447,
+        "pop": 1272235
+      }
+    ],
+    "11": [
+      {
+        "label": "Hanoi",
+        "lng": 105.8412,
+        "lat": 21.0245,
+        "pop": 8053663
+      },
+      {
+        "label": "Haiphong",
+        "lng": 106.6834,
+        "lat": 20.8648,
+        "pop": 2625200
+      }
+    ],
+    "1": [
+      {
+        "label": "Hu\u1ebf",
+        "lng": 107.5955,
+        "lat": 16.4619,
+        "pop": 1380000
+      }
+    ],
+    "2": [
+      {
+        "label": "Da Nang",
+        "lng": 108.2208,
+        "lat": 16.0678,
+        "pop": 1276000
+      }
+    ]
+  },
+  "PAK": {
+    "6": [
+      {
+        "label": "Lahore",
+        "lng": 74.3507,
+        "lat": 31.558,
+        "pop": 13004135
+      },
+      {
+        "label": "Peshawar",
+        "lng": 71.5785,
+        "lat": 34.008,
+        "pop": 4758762
+      },
+      {
+        "label": "Faisalabad",
+        "lng": 73.0897,
+        "lat": 31.4155,
+        "pop": 3800193
+      },
+      {
+        "label": "Gujranwala",
+        "lng": 74.187,
+        "lat": 32.1557,
+        "pop": 2511118
+      },
+      {
+        "label": "Bannu",
+        "lng": 70.604,
+        "lat": 32.9853,
+        "pop": 1357890
+      }
+    ],
+    "4": [
+      {
+        "label": "Karachi",
+        "lng": 67.0104,
+        "lat": 24.8608,
+        "pop": 11624219
+      },
+      {
+        "label": "Multan",
+        "lng": 71.4782,
+        "lat": 30.1968,
+        "pop": 2169915
+      },
+      {
+        "label": "Hyderabad",
+        "lng": 68.3772,
+        "lat": 25.3969,
+        "pop": 1921275
+      }
+    ],
+    "11": [
+      {
+        "label": "Rawalpindi",
+        "lng": 73.0479,
+        "lat": 33.5973,
+        "pop": 3357612
+      },
+      {
+        "label": "Islamabad",
+        "lng": 73.0433,
+        "lat": 33.7215,
+        "pop": 601600
+      }
+    ],
+    "7": [
+      {
+        "label": "Quetta",
+        "lng": 67.0014,
+        "lat": 30.1841,
+        "pop": 1565546
+      }
+    ]
+  },
+  "IND": {
+    "2": [
+      {
+        "label": "Mumbai",
+        "lng": 72.8826,
+        "lat": 19.0728,
+        "pop": 12691836
+      },
+      {
+        "label": "Navi Mumbai",
+        "lng": 73.0158,
+        "lat": 19.0368,
+        "pop": 2600000
+      },
+      {
+        "label": "Th\u0101ne",
+        "lng": 72.9635,
+        "lat": 19.197,
+        "pop": 1841488
+      },
+      {
+        "label": "Kaly\u0101n",
+        "lng": 73.1355,
+        "lat": 19.2437,
+        "pop": 1262255
+      },
+      {
+        "label": "Dombivali",
+        "lng": 73.0833,
+        "lat": 19.2167,
+        "pop": 1247327
+      }
+    ],
+    "6": [
+      {
+        "label": "Delhi",
+        "lng": 77.2315,
+        "lat": 28.6519,
+        "pop": 11034555
+      },
+      {
+        "label": "Ahmedabad",
+        "lng": 72.5873,
+        "lat": 23.0258,
+        "pop": 6357693
+      },
+      {
+        "label": "Jaipur",
+        "lng": 75.7878,
+        "lat": 26.9196,
+        "pop": 3046163
+      },
+      {
+        "label": "Kanpur",
+        "lng": 80.3498,
+        "lat": 26.4652,
+        "pop": 2823249
+      },
+      {
+        "label": "Ludhiana",
+        "lng": 75.8538,
+        "lat": 30.912,
+        "pop": 1618879
+      },
+      {
+        "label": "Agra",
+        "lng": 78.0167,
+        "lat": 27.1833,
+        "pop": 1430055
+      },
+      {
+        "label": "Faridabad",
+        "lng": 77.3132,
+        "lat": 28.4112,
+        "pop": 1414050
+      },
+      {
+        "label": "R\u0101jkot",
+        "lng": 70.7932,
+        "lat": 22.2916,
+        "pop": 1390640
+      },
+      {
+        "label": "Najafgarh",
+        "lng": 76.9798,
+        "lat": 28.6092,
+        "pop": 1365000
+      },
+      {
+        "label": "Gorakhpur",
+        "lng": 75.6721,
+        "lat": 29.4477,
+        "pop": 1324570
+      },
+      {
+        "label": "Gh\u0101zi\u0101b\u0101d",
+        "lng": 77.4391,
+        "lat": 28.6654,
+        "pop": 1199191
+      },
+      {
+        "label": "Amritsar",
+        "lng": 74.8753,
+        "lat": 31.6223,
+        "pop": 1159227
+      },
+      {
+        "label": "Kota",
+        "lng": 75.8391,
+        "lat": 25.1825,
+        "pop": 1001694
+      },
+      {
+        "label": "New Delhi",
+        "lng": 77.2148,
+        "lat": 28.6214,
+        "pop": 317797
+      }
+    ],
+    "3": [
+      {
+        "label": "Bengaluru",
+        "lng": 77.5937,
+        "lat": 12.9719,
+        "pop": 8495492
+      },
+      {
+        "label": "Hyderabad",
+        "lng": 78.4564,
+        "lat": 17.384,
+        "pop": 6993262
+      },
+      {
+        "label": "Chennai",
+        "lng": 80.2785,
+        "lat": 13.0878,
+        "pop": 4681087
+      },
+      {
+        "label": "Kolkata",
+        "lng": 88.363,
+        "lat": 22.5626,
+        "pop": 4631392
+      },
+      {
+        "label": "Surat",
+        "lng": 72.8302,
+        "lat": 21.1959,
+        "pop": 4591246
+      },
+      {
+        "label": "Pune",
+        "lng": 73.8554,
+        "lat": 18.5196,
+        "pop": 3124458
+      },
+      {
+        "label": "Nagpur",
+        "lng": 79.0849,
+        "lat": 21.1463,
+        "pop": 2405665
+      },
+      {
+        "label": "Coimbatore",
+        "lng": 76.9661,
+        "lat": 11.0055,
+        "pop": 2136916
+      },
+      {
+        "label": "Indore",
+        "lng": 75.8333,
+        "lat": 22.7179,
+        "pop": 1994397
+      },
+      {
+        "label": "Vadodara",
+        "lng": 73.2081,
+        "lat": 22.2994,
+        "pop": 1822221
+      },
+      {
+        "label": "Rasap\u016bdipalem",
+        "lng": 83.3162,
+        "lat": 17.7331,
+        "pop": 1728128
+      },
+      {
+        "label": "Pimpri-Chinchwad",
+        "lng": 73.8037,
+        "lat": 18.6187,
+        "pop": 1727692
+      },
+      {
+        "label": "Kallakurichi",
+        "lng": 78.9592,
+        "lat": 11.7338,
+        "pop": 1682687
+      },
+      {
+        "label": "Nashik",
+        "lng": 73.791,
+        "lat": 19.9973,
+        "pop": 1486053
+      },
+      {
+        "label": "Madurai",
+        "lng": 78.1195,
+        "lat": 9.919,
+        "pop": 1465625
+      },
+      {
+        "label": "Tirunelveli",
+        "lng": 77.6838,
+        "lat": 8.7274,
+        "pop": 1435844
+      },
+      {
+        "label": "Jamshedpur",
+        "lng": 86.1855,
+        "lat": 22.8028,
+        "pop": 1339438
+      },
+      {
+        "label": "Pimpri",
+        "lng": 73.807,
+        "lat": 18.6229,
+        "pop": 1284606
+      },
+      {
+        "label": "Vir\u0101r",
+        "lng": 72.8114,
+        "lat": 19.4559,
+        "pop": 1222390
+      },
+      {
+        "label": "Nowrangapur",
+        "lng": 82.5483,
+        "lat": 19.2311,
+        "pop": 1220946
+      },
+      {
+        "label": "Aurangabad",
+        "lng": 75.3423,
+        "lat": 19.8776,
+        "pop": 1175116
+      },
+      {
+        "label": "Vijayawada",
+        "lng": 80.6466,
+        "lat": 16.5074,
+        "pop": 1143232
+      },
+      {
+        "label": "Visakhapatnam",
+        "lng": 83.2016,
+        "lat": 17.6801,
+        "pop": 1063178
+      },
+      {
+        "label": "Teni",
+        "lng": 77.4777,
+        "lat": 10.0112,
+        "pop": 1034724
+      },
+      {
+        "label": "Howrah",
+        "lng": 88.3186,
+        "lat": 22.5769,
+        "pop": 1027672
+      },
+      {
+        "label": "Raipur",
+        "lng": 81.6333,
+        "lat": 21.2333,
+        "pop": 1027264
+      },
+      {
+        "label": "Tiruchirappalli",
+        "lng": 78.6965,
+        "lat": 10.8155,
+        "pop": 1022518
+      },
+      {
+        "label": "Shivaji Nagar",
+        "lng": 73.8526,
+        "lat": 18.5302,
+        "pop": 1000000
+      },
+      {
+        "label": "Male",
+        "lng": 73.5092,
+        "lat": 4.1752,
+        "pop": 103693
+      }
+    ],
+    "11": [
+      {
+        "label": "Lucknow",
+        "lng": 80.9231,
+        "lat": 26.8393,
+        "pop": 2472011
+      },
+      {
+        "label": "Bhopal",
+        "lng": 77.4029,
+        "lat": 23.2547,
+        "pop": 1798218
+      },
+      {
+        "label": "Patna",
+        "lng": 85.1356,
+        "lat": 25.5941,
+        "pop": 1684297
+      },
+      {
+        "label": "Meerut",
+        "lng": 77.7064,
+        "lat": 28.98,
+        "pop": 1223184
+      },
+      {
+        "label": "Dhanbad",
+        "lng": 86.4299,
+        "lat": 23.7976,
+        "pop": 1196214
+      },
+      {
+        "label": "Varanasi",
+        "lng": 83.0104,
+        "lat": 25.3167,
+        "pop": 1164404
+      },
+      {
+        "label": "Ranchi",
+        "lng": 85.3094,
+        "lat": 23.3432,
+        "pop": 1120374
+      },
+      {
+        "label": "Jabalpur",
+        "lng": 79.9501,
+        "lat": 23.167,
+        "pop": 1081677
+      },
+      {
+        "label": "Prayagraj",
+        "lng": 81.8432,
+        "lat": 25.4448,
+        "pop": 1073438
+      },
+      {
+        "label": "Gwalior",
+        "lng": 78.1734,
+        "lat": 26.2298,
+        "pop": 1054420
+      }
+    ],
+    "14": [
+      {
+        "label": "Srinagar",
+        "lng": 74.8055,
+        "lat": 34.0857,
+        "pop": 1206419
+      }
+    ],
+    "4": [
+      {
+        "label": "Jodhpur",
+        "lng": 73.0059,
+        "lat": 26.2684,
+        "pop": 1056191
+      }
+    ]
+  },
+  "BRA": {
+    "14": [
+      {
+        "label": "S\u00e3o Paulo",
+        "lng": -46.6361,
+        "lat": -23.5475,
+        "pop": 12400232
+      },
+      {
+        "label": "Porto Alegre",
+        "lng": -51.2302,
+        "lat": -30.0328,
+        "pop": 1488252
+      },
+      {
+        "label": "Guarulhos",
+        "lng": -46.5333,
+        "lat": -23.4628,
+        "pop": 1169577
+      },
+      {
+        "label": "Campinas",
+        "lng": -47.0608,
+        "lat": -22.9056,
+        "pop": 1031554
+      }
+    ],
+    "3": [
+      {
+        "label": "Rio de Janeiro",
+        "lng": -43.1822,
+        "lat": -22.9064,
+        "pop": 6747815
+      },
+      {
+        "label": "Fortaleza",
+        "lng": -38.5431,
+        "lat": -3.7172,
+        "pop": 2400000
+      },
+      {
+        "label": "Bras\u00edlia",
+        "lng": -47.9297,
+        "lat": -15.7797,
+        "pop": 2207718
+      },
+      {
+        "label": "Goi\u00e2nia",
+        "lng": -49.2539,
+        "lat": -16.6786,
+        "pop": 1536097
+      },
+      {
+        "label": "Macei\u00f3",
+        "lng": -35.7353,
+        "lat": -9.6658,
+        "pop": 1031597
+      }
+    ],
+    "11": [
+      {
+        "label": "Belo Horizonte",
+        "lng": -43.9378,
+        "lat": -19.9208,
+        "pop": 2721564
+      }
+    ],
+    "1": [
+      {
+        "label": "Salvador",
+        "lng": -38.491,
+        "lat": -12.9756,
+        "pop": 2711840
+      },
+      {
+        "label": "Manaus",
+        "lng": -60.025,
+        "lat": -3.1019,
+        "pop": 2219580
+      },
+      {
+        "label": "Bel\u00e9m",
+        "lng": -48.5044,
+        "lat": -1.4558,
+        "pop": 1499641
+      }
+    ],
+    "15": [
+      {
+        "label": "Curitiba",
+        "lng": -49.2731,
+        "lat": -25.4278,
+        "pop": 1948626
+      }
+    ],
+    "2": [
+      {
+        "label": "Recife",
+        "lng": -34.8811,
+        "lat": -8.0539,
+        "pop": 1653461
+      }
+    ]
+  },
+  "MEX": {
+    "12": [
+      {
+        "label": "Mexico City",
+        "lng": -99.1277,
+        "lat": 19.4285,
+        "pop": 12294193
+      },
+      {
+        "label": "Iztapalapa",
+        "lng": -99.0622,
+        "lat": 19.3553,
+        "pop": 1835486
+      },
+      {
+        "label": "Puebla",
+        "lng": -98.2072,
+        "lat": 19.0478,
+        "pop": 1692181
+      },
+      {
+        "label": "Gustavo Adolfo Madero",
+        "lng": -99.1107,
+        "lat": 19.4939,
+        "pop": 1185772
+      },
+      {
+        "label": "Ciudad Nezahualcoyotl",
+        "lng": -99.0148,
+        "lat": 19.4006,
+        "pop": 1077208
+      }
+    ],
+    "6": [
+      {
+        "label": "Tijuana",
+        "lng": -117.0037,
+        "lat": 32.5027,
+        "pop": 1922523
+      },
+      {
+        "label": "Le\u00f3n de los Aldama",
+        "lng": -101.6825,
+        "lat": 21.1218,
+        "pop": 1579803
+      },
+      {
+        "label": "Monterrey",
+        "lng": -100.3172,
+        "lat": 25.6843,
+        "pop": 1135512
+      }
+    ],
+    "7": [
+      {
+        "label": "Ecatepec de Morelos",
+        "lng": -99.0606,
+        "lat": 19.6049,
+        "pop": 1645352
+      },
+      {
+        "label": "Santiago de Quer\u00e9taro",
+        "lng": -100.3881,
+        "lat": 20.5881,
+        "pop": 1594212
+      }
+    ],
+    "4": [
+      {
+        "label": "Ciudad Ju\u00e1rez",
+        "lng": -106.4608,
+        "lat": 31.7202,
+        "pop": 1512450
+      },
+      {
+        "label": "Mexicali",
+        "lng": -115.4545,
+        "lat": 32.6278,
+        "pop": 1032686
+      }
+    ],
+    "11": [
+      {
+        "label": "Zapopan",
+        "lng": -103.3874,
+        "lat": 20.7211,
+        "pop": 1476491
+      },
+      {
+        "label": "Guadalajara",
+        "lng": -103.3475,
+        "lat": 20.6774,
+        "pop": 1385629
+      }
+    ],
+    "3": [
+      {
+        "label": "M\u00e9rida",
+        "lng": -89.6232,
+        "lat": 20.967,
+        "pop": 1201000
+      }
+    ]
+  },
+  "RUS": {
+    "26": [
+      {
+        "label": "Moscow",
+        "lng": 37.6178,
+        "lat": 55.752,
+        "pop": 10381222
+      },
+      {
+        "label": "Saint Petersburg",
+        "lng": 30.3141,
+        "lat": 59.9386,
+        "pop": 5351935
+      },
+      {
+        "label": "Novosibirsk",
+        "lng": 82.9317,
+        "lat": 55.0226,
+        "pop": 1612833
+      },
+      {
+        "label": "Yekaterinburg",
+        "lng": 60.6153,
+        "lat": 56.8573,
+        "pop": 1495066
+      },
+      {
+        "label": "Nizhniy Novgorod",
+        "lng": 44.002,
+        "lat": 56.3287,
+        "pop": 1259013
+      },
+      {
+        "label": "Kazan",
+        "lng": 49.1221,
+        "lat": 55.7887,
+        "pop": 1243500
+      },
+      {
+        "label": "Chelyabinsk",
+        "lng": 61.4288,
+        "lat": 55.1611,
+        "pop": 1202371
+      },
+      {
+        "label": "Omsk",
+        "lng": 73.3686,
+        "lat": 54.9924,
+        "pop": 1172070
+      },
+      {
+        "label": "Samara",
+        "lng": 50.1355,
+        "lat": 53.2077,
+        "pop": 1163399
+      },
+      {
+        "label": "Ufa",
+        "lng": 55.9678,
+        "lat": 54.7431,
+        "pop": 1120547
+      },
+      {
+        "label": "Krasnoyarsk",
+        "lng": 92.9314,
+        "lat": 56.0374,
+        "pop": 1090811
+      },
+      {
+        "label": "Voronezh",
+        "lng": 39.192,
+        "lat": 51.6683,
+        "pop": 1047549
+      }
+    ],
+    "25": [
+      {
+        "label": "Rostov-on-Don",
+        "lng": 39.7077,
+        "lat": 47.22,
+        "pop": 1130305
+      },
+      {
+        "label": "Volgograd",
+        "lng": 44.4976,
+        "lat": 48.7138,
+        "pop": 1013533
+      }
+    ]
+  },
+  "BGD": {
+    "11": [
+      {
+        "label": "Dhaka",
+        "lng": 90.4074,
+        "lat": 23.7104,
+        "pop": 10356500
+      },
+      {
+        "label": "Gazipur",
+        "lng": 90.4223,
+        "lat": 23.9984,
+        "pop": 2674697
+      },
+      {
+        "label": "Rangpur",
+        "lng": 89.2517,
+        "lat": 25.7466,
+        "pop": 1031388
+      }
+    ],
+    "2": [
+      {
+        "label": "Chattogram",
+        "lng": 91.8317,
+        "lat": 22.3384,
+        "pop": 3920222
+      }
+    ],
+    "3": [
+      {
+        "label": "Khulna",
+        "lng": 89.5644,
+        "lat": 22.8098,
+        "pop": 1500689
+      },
+      {
+        "label": "Comilla",
+        "lng": 91.185,
+        "lat": 23.4619,
+        "pop": 1030000
+      }
+    ]
+  },
+  "KOR": {
+    "21": [
+      {
+        "label": "Seoul",
+        "lng": 126.9784,
+        "lat": 37.566,
+        "pop": 10349312
+      },
+      {
+        "label": "Incheon",
+        "lng": 126.7052,
+        "lat": 37.4565,
+        "pop": 3015482
+      },
+      {
+        "label": "Daejeon",
+        "lng": 127.3849,
+        "lat": 36.3491,
+        "pop": 1441203
+      },
+      {
+        "label": "Suwon",
+        "lng": 127.0089,
+        "lat": 37.2911,
+        "pop": 1234582
+      },
+      {
+        "label": "Goyang-si",
+        "lng": 126.835,
+        "lat": 37.6564,
+        "pop": 1061752
+      }
+    ],
+    "11": [
+      {
+        "label": "Busan",
+        "lng": 129.03,
+        "lat": 35.1017,
+        "pop": 3285147
+      },
+      {
+        "label": "Daegu",
+        "lng": 128.5911,
+        "lat": 35.8703,
+        "pop": 2365523
+      },
+      {
+        "label": "Changwon",
+        "lng": 128.6811,
+        "lat": 35.2281,
+        "pop": 1025702
+      }
+    ],
+    "14": [
+      {
+        "label": "Gwangju",
+        "lng": 126.9156,
+        "lat": 35.1547,
+        "pop": 1401235
+      },
+      {
+        "label": "Ulsan",
+        "lng": 129.3167,
+        "lat": 35.5372,
+        "pop": 1098421
+      }
+    ]
+  },
+  "JPN": {
+    "14": [
+      {
+        "label": "Tokyo",
+        "lng": 139.6917,
+        "lat": 35.6895,
+        "pop": 9733276
+      },
+      {
+        "label": "Yokohama",
+        "lng": 139.65,
+        "lat": 35.4333,
+        "pop": 3777491
+      },
+      {
+        "label": "Osaka",
+        "lng": 135.5011,
+        "lat": 34.6938,
+        "pop": 2753862
+      },
+      {
+        "label": "Nagoya",
+        "lng": 136.9064,
+        "lat": 35.1815,
+        "pop": 2332176
+      },
+      {
+        "label": "Fukuoka",
+        "lng": 130.4167,
+        "lat": 33.6,
+        "pop": 1612392
+      },
+      {
+        "label": "Kawasaki",
+        "lng": 139.7172,
+        "lat": 35.5206,
+        "pop": 1538262
+      },
+      {
+        "label": "Kobe",
+        "lng": 135.183,
+        "lat": 34.6913,
+        "pop": 1525152
+      },
+      {
+        "label": "Kyoto",
+        "lng": 135.7538,
+        "lat": 35.0211,
+        "pop": 1463723
+      },
+      {
+        "label": "Saitama",
+        "lng": 139.6566,
+        "lat": 35.9081,
+        "pop": 1324854
+      },
+      {
+        "label": "Hiroshima",
+        "lng": 132.45,
+        "lat": 34.4,
+        "pop": 1200754
+      },
+      {
+        "label": "Sendai",
+        "lng": 140.8667,
+        "lat": 38.2667,
+        "pop": 1096704
+      }
+    ],
+    "26": [
+      {
+        "label": "Sapporo",
+        "lng": 141.35,
+        "lat": 43.0667,
+        "pop": 1973832
+      }
+    ]
+  },
+  "EGY": {
+    "4": [
+      {
+        "label": "Cairo",
+        "lng": 31.2497,
+        "lat": 30.0626,
+        "pop": 9606916
+      },
+      {
+        "label": "Alexandria",
+        "lng": 29.9158,
+        "lat": 31.2018,
+        "pop": 5263542
+      },
+      {
+        "label": "Giza",
+        "lng": 31.2086,
+        "lat": 30.0094,
+        "pop": 4367343
+      },
+      {
+        "label": "Shubr\u0101 al Khaymah",
+        "lng": 31.2505,
+        "lat": 30.1251,
+        "pop": 1240289
+      }
+    ]
+  },
+  "ZAF": {
+    "12": [
+      {
+        "label": "Johannesburg",
+        "lng": 28.0436,
+        "lat": -26.2023,
+        "pop": 9418183
+      },
+      {
+        "label": "Soweto",
+        "lng": 27.8585,
+        "lat": -26.2678,
+        "pop": 1695047
+      }
+    ],
+    "9": [
+      {
+        "label": "Cape Town",
+        "lng": 18.4232,
+        "lat": -33.9258,
+        "pop": 4772846
+      }
+    ],
+    "14": [
+      {
+        "label": "Durban",
+        "lng": 31.0292,
+        "lat": -29.8579,
+        "pop": 3338026
+      },
+      {
+        "label": "Gqeberha",
+        "lng": 25.6149,
+        "lat": -33.9611,
+        "pop": 1050078
+      }
+    ],
+    "11": [
+      {
+        "label": "Pretoria",
+        "lng": 28.1878,
+        "lat": -25.7449,
+        "pop": 2112693
+      }
+    ]
+  },
+  "ENG": {
+    "15": [
+      {
+        "label": "London",
+        "lng": -0.1257,
+        "lat": 51.5085,
+        "pop": 8961989
+      },
+      {
+        "label": "Birmingham",
+        "lng": -1.8998,
+        "lat": 52.4814,
+        "pop": 1157603
+      }
+    ]
+  },
+  "USA": {
+    "14": [
+      {
+        "label": "New York City",
+        "lng": -74.006,
+        "lat": 40.7143,
+        "pop": 8804190
+      },
+      {
+        "label": "Brooklyn",
+        "lng": -73.9496,
+        "lat": 40.6501,
+        "pop": 2736074
+      },
+      {
+        "label": "Queens",
+        "lng": -73.8365,
+        "lat": 40.6815,
+        "pop": 2316841
+      },
+      {
+        "label": "Houston",
+        "lng": -95.3633,
+        "lat": 29.7633,
+        "pop": 2314157
+      },
+      {
+        "label": "Philadelphia",
+        "lng": -75.1636,
+        "lat": 39.9524,
+        "pop": 1573916
+      },
+      {
+        "label": "San Antonio",
+        "lng": -98.4936,
+        "lat": 29.4241,
+        "pop": 1526656
+      },
+      {
+        "label": "Manhattan",
+        "lng": -73.9663,
+        "lat": 40.7834,
+        "pop": 1487536
+      },
+      {
+        "label": "The Bronx",
+        "lng": -73.8664,
+        "lat": 40.8499,
+        "pop": 1385108
+      },
+      {
+        "label": "Dallas",
+        "lng": -96.8067,
+        "lat": 32.7831,
+        "pop": 1326087
+      },
+      {
+        "label": "Jacksonville",
+        "lng": -81.6556,
+        "lat": 30.3322,
+        "pop": 1009833
+      },
+      {
+        "label": "Fort Worth",
+        "lng": -97.3208,
+        "lat": 32.7254,
+        "pop": 1008106
+      },
+      {
+        "label": "Washington",
+        "lng": -77.0364,
+        "lat": 38.8951,
+        "pop": 689545
+      }
+    ],
+    "8": [
+      {
+        "label": "Los Angeles",
+        "lng": -118.2437,
+        "lat": 34.0522,
+        "pop": 3820914
+      }
+    ],
+    "25": [
+      {
+        "label": "Chicago",
+        "lng": -87.65,
+        "lat": 41.85,
+        "pop": 2664452
+      }
+    ],
+    "4": [
+      {
+        "label": "Phoenix",
+        "lng": -112.074,
+        "lat": 33.4484,
+        "pop": 1650070
+      }
+    ],
+    "6": [
+      {
+        "label": "San Diego",
+        "lng": -117.1647,
+        "lat": 32.7157,
+        "pop": 1404452
+      }
+    ],
+    "15": [
+      {
+        "label": "Hamilton",
+        "lng": -64.783,
+        "lat": 32.2949,
+        "pop": 902
+      }
+    ]
+  },
+  "IDN": {
+    "1": [
+      {
+        "label": "Jakarta",
+        "lng": 106.8451,
+        "lat": -6.2146,
+        "pop": 8540121
+      },
+      {
+        "label": "Bekasi",
+        "lng": 106.9896,
+        "lat": -6.2349,
+        "pop": 2564940
+      },
+      {
+        "label": "Medan",
+        "lng": 98.6667,
+        "lat": 3.5833,
+        "pop": 2435252
+      },
+      {
+        "label": "Depok",
+        "lng": 106.8186,
+        "lat": -6.4,
+        "pop": 2145400
+      },
+      {
+        "label": "Tangerang",
+        "lng": 106.63,
+        "lat": -6.1781,
+        "pop": 1912679
+      },
+      {
+        "label": "Palembang",
+        "lng": 104.7458,
+        "lat": -2.9167,
+        "pop": 1668848
+      },
+      {
+        "label": "South Tangerang",
+        "lng": 106.7179,
+        "lat": -6.2886,
+        "pop": 1404785
+      },
+      {
+        "label": "Bandar Lampung",
+        "lng": 105.2611,
+        "lat": -5.4292,
+        "pop": 1166066
+      },
+      {
+        "label": "Batam",
+        "lng": 104.0249,
+        "lat": 1.1494,
+        "pop": 1164352
+      },
+      {
+        "label": "Bogor",
+        "lng": 106.7892,
+        "lat": -6.5944,
+        "pop": 1127408
+      },
+      {
+        "label": "Pekanbaru",
+        "lng": 101.4417,
+        "lat": 0.5167,
+        "pop": 1085000
+      },
+      {
+        "label": "Flying Fish Cove",
+        "lng": 105.6791,
+        "lat": -10.4217,
+        "pop": 500
+      },
+      {
+        "label": "West Island",
+        "lng": 96.8225,
+        "lat": -12.1568,
+        "pop": 120
+      }
+    ],
+    "3": [
+      {
+        "label": "Surabaya",
+        "lng": 112.7508,
+        "lat": -7.2492,
+        "pop": 2874314
+      }
+    ],
+    "2": [
+      {
+        "label": "Bandung",
+        "lng": 107.6069,
+        "lat": -6.9222,
+        "pop": 2444160
+      },
+      {
+        "label": "Semarang",
+        "lng": 110.4208,
+        "lat": -6.9931,
+        "pop": 1653524
+      },
+      {
+        "label": "Makassar",
+        "lng": 119.4319,
+        "lat": -5.1486,
+        "pop": 1423877
+      },
+      {
+        "label": "Jepara",
+        "lng": 110.671,
+        "lat": -6.5924,
+        "pop": 1257912
+      }
+    ]
+  },
+  "TWN": {
+    "14": [
+      {
+        "label": "Taipei",
+        "lng": 121.5264,
+        "lat": 25.0531,
+        "pop": 7871900
+      },
+      {
+        "label": "New Taipei City",
+        "lng": 121.457,
+        "lat": 25.062,
+        "pop": 4004367
+      }
+    ],
+    "11": [
+      {
+        "label": "Taichung",
+        "lng": 120.6839,
+        "lat": 24.1469,
+        "pop": 2850285
+      }
+    ],
+    "3": [
+      {
+        "label": "Kaohsiung",
+        "lng": 120.3133,
+        "lat": 22.6163,
+        "pop": 2737660
+      },
+      {
+        "label": "Tainan",
+        "lng": 120.2133,
+        "lat": 22.9908,
+        "pop": 1856642
+      }
+    ]
+  },
+  "PER": {
+    "4": [
+      {
+        "label": "Lima",
+        "lng": -77.0282,
+        "lat": -12.0432,
+        "pop": 7737002
+      },
+      {
+        "label": "Callao",
+        "lng": -77.1345,
+        "lat": -12.0516,
+        "pop": 1300000
+      }
+    ],
+    "5": [
+      {
+        "label": "Arequipa",
+        "lng": -71.5375,
+        "lat": -16.399,
+        "pop": 1008290
+      }
+    ]
+  },
+  "COL": {
+    "15": [
+      {
+        "label": "Bogot\u00e1",
+        "lng": -74.0817,
+        "lat": 4.6097,
+        "pop": 7674366
+      }
+    ],
+    "1": [
+      {
+        "label": "Cali",
+        "lng": -76.5199,
+        "lat": 3.4305,
+        "pop": 2392877
+      },
+      {
+        "label": "Medell\u00edn",
+        "lng": -75.5715,
+        "lat": 6.245,
+        "pop": 1999979
+      }
+    ],
+    "3": [
+      {
+        "label": "Barranquilla",
+        "lng": -74.7813,
+        "lat": 10.9685,
+        "pop": 1206319
+      }
+    ]
+  },
+  "HKG": {
+    "11": [
+      {
+        "label": "Hong Kong",
+        "lng": 114.1747,
+        "lat": 22.2783,
+        "pop": 7396076
+      },
+      {
+        "label": "New Territories",
+        "lng": 114.111,
+        "lat": 22.4244,
+        "pop": 3984077
+      },
+      {
+        "label": "Kowloon",
+        "lng": 114.1833,
+        "lat": 22.3167,
+        "pop": 2232339
+      },
+      {
+        "label": "Hong Kong Island",
+        "lng": 114.1842,
+        "lat": 22.263,
+        "pop": 1195529
+      },
+      {
+        "label": "Luohu District",
+        "lng": 114.1315,
+        "lat": 22.5472,
+        "pop": 1143801
+      }
+    ]
+  },
+  "IRR": {
+    "4": [
+      {
+        "label": "Baghdad",
+        "lng": 44.4009,
+        "lat": 33.3406,
+        "pop": 7216000
+      },
+      {
+        "label": "Al Ba\u015frah al Qad\u012bmah",
+        "lng": 47.8151,
+        "lat": 30.5032,
+        "pop": 2015483
+      },
+      {
+        "label": "Basrah",
+        "lng": 47.7804,
+        "lat": 30.5085,
+        "pop": 1326564
+      },
+      {
+        "label": "Karbala",
+        "lng": 44.0249,
+        "lat": 32.616,
+        "pop": 1218732
+      },
+      {
+        "label": "Sadr City",
+        "lng": 44.4583,
+        "lat": 33.3889,
+        "pop": 1211849
+      }
+    ],
+    "8": [
+      {
+        "label": "Al Maw\u015fil al Jad\u012bdah",
+        "lng": 43.1056,
+        "lat": 36.3327,
+        "pop": 2065597
+      },
+      {
+        "label": "Mosul",
+        "lng": 43.1189,
+        "lat": 36.335,
+        "pop": 1683000
+      }
+    ],
+    "6": [
+      {
+        "label": "Kirkuk",
+        "lng": 44.3922,
+        "lat": 35.4681,
+        "pop": 1031000
+      }
+    ]
+  },
+  "IRN": {
+    "7": [
+      {
+        "label": "Tehran",
+        "lng": 51.4215,
+        "lat": 35.6944,
+        "pop": 7153309
+      },
+      {
+        "label": "Mashhad",
+        "lng": 59.6057,
+        "lat": 36.2981,
+        "pop": 2307177
+      },
+      {
+        "label": "Karaj",
+        "lng": 50.9915,
+        "lat": 35.8327,
+        "pop": 1448075
+      },
+      {
+        "label": "Tabriz",
+        "lng": 46.2919,
+        "lat": 38.08,
+        "pop": 1424641
+      },
+      {
+        "label": "Shiraz",
+        "lng": 52.5311,
+        "lat": 29.6103,
+        "pop": 1249942
+      }
+    ],
+    "5": [
+      {
+        "label": "Isfahan",
+        "lng": 51.6746,
+        "lat": 32.6525,
+        "pop": 1547164
+      }
+    ]
+  },
+  "CIV": {
+    "2": [
+      {
+        "label": "Abidjan",
+        "lng": -4.0017,
+        "lat": 5.3544,
+        "pop": 6321017
+      },
+      {
+        "label": "Abobo",
+        "lng": -4.0159,
+        "lat": 5.4161,
+        "pop": 1340083
+      }
+    ],
+    "3": [
+      {
+        "label": "Yamoussoukro",
+        "lng": -5.2767,
+        "lat": 6.8205,
+        "pop": 275686
+      }
+    ]
+  },
+  "SGP": {
+    "1": [
+      {
+        "label": "Singapore",
+        "lng": 103.8501,
+        "lat": 1.2897,
+        "pop": 5638700
+      }
+    ]
+  },
+  "AUS": {
+    "14": [
+      {
+        "label": "Sydney",
+        "lng": 151.2073,
+        "lat": -33.8678,
+        "pop": 5557233
+      },
+      {
+        "label": "Brisbane",
+        "lng": 153.0281,
+        "lat": -27.4679,
+        "pop": 2780063
+      }
+    ],
+    "15": [
+      {
+        "label": "Melbourne",
+        "lng": 144.9633,
+        "lat": -37.814,
+        "pop": 5350705
+      },
+      {
+        "label": "Canberra",
+        "lng": 149.1281,
+        "lat": -35.2835,
+        "pop": 367752
+      }
+    ],
+    "8": [
+      {
+        "label": "Perth",
+        "lng": 115.8614,
+        "lat": -31.9522,
+        "pop": 2309338
+      }
+    ],
+    "9": [
+      {
+        "label": "Adelaide",
+        "lng": 138.5986,
+        "lat": -34.9287,
+        "pop": 1469163
+      }
+    ]
+  },
+  "TZA": {
+    "3": [
+      {
+        "label": "Dar es Salaam",
+        "lng": 39.2695,
+        "lat": -6.8235,
+        "pop": 5383728
+      },
+      {
+        "label": "Mwanza",
+        "lng": 32.9,
+        "lat": -2.5167,
+        "pop": 1104521
+      }
+    ],
+    "6": [
+      {
+        "label": "Dodoma",
+        "lng": 35.7395,
+        "lat": -6.1722,
+        "pop": 765179
+      }
+    ]
+  },
+  "THA": {
+    "3": [
+      {
+        "label": "Bangkok",
+        "lng": 100.5014,
+        "lat": 13.754,
+        "pop": 5104476
+      }
+    ]
+  },
+  "CHL": {
+    "7": [
+      {
+        "label": "Santiago",
+        "lng": -70.6483,
+        "lat": -33.4569,
+        "pop": 4837295
+      }
+    ]
+  },
+  "SAU": {
+    "4": [
+      {
+        "label": "Jeddah",
+        "lng": 39.1862,
+        "lat": 21.4901,
+        "pop": 4697000
+      },
+      {
+        "label": "Riyadh",
+        "lng": 46.7219,
+        "lat": 24.6877,
+        "pop": 4205961
+      },
+      {
+        "label": "Makkah",
+        "lng": 39.8256,
+        "lat": 21.4266,
+        "pop": 1578722
+      },
+      {
+        "label": "Madinah",
+        "lng": 39.6142,
+        "lat": 24.4686,
+        "pop": 1300000
+      },
+      {
+        "label": "Dammam",
+        "lng": 50.1033,
+        "lat": 26.4344,
+        "pop": 1252523
+      }
+    ]
+  },
+  "MMR": {
+    "2": [
+      {
+        "label": "Yangon",
+        "lng": 96.1561,
+        "lat": 16.8053,
+        "pop": 4477638
+      }
+    ],
+    "3": [
+      {
+        "label": "Mandalay",
+        "lng": 96.0836,
+        "lat": 21.9747,
+        "pop": 1208099
+      },
+      {
+        "label": "Nay Pyi Taw",
+        "lng": 96.1297,
+        "lat": 19.745,
+        "pop": 925000
+      }
+    ]
+  },
+  "AFG": {
+    "17": [
+      {
+        "label": "Kabul",
+        "lng": 69.1723,
+        "lat": 34.5281,
+        "pop": 4434550
+      }
+    ]
+  },
+  "KEN": {
+    "3": [
+      {
+        "label": "Nairobi",
+        "lng": 36.8167,
+        "lat": -1.2833,
+        "pop": 4397073
+      },
+      {
+        "label": "Mombasa",
+        "lng": 39.6636,
+        "lat": -4.0547,
+        "pop": 1208333
+      }
+    ],
+    "1": [
+      {
+        "label": "Kakamega",
+        "lng": 34.7523,
+        "lat": 0.2842,
+        "pop": 1867579
+      }
+    ]
+  },
+  "MLI": {
+    "3": [
+      {
+        "label": "Bamako",
+        "lng": -7.9752,
+        "lat": 12.6091,
+        "pop": 4227569
+      }
+    ]
+  },
+  "ETH": {
+    "12": [
+      {
+        "label": "Addis Ababa",
+        "lng": 38.7469,
+        "lat": 9.025,
+        "pop": 3860000
+      }
+    ]
+  },
+  "ARE": {
+    "4": [
+      {
+        "label": "Dubai",
+        "lng": 55.3093,
+        "lat": 25.0772,
+        "pop": 3790000
+      },
+      {
+        "label": "Abu Dhabi",
+        "lng": 54.397,
+        "lat": 24.4512,
+        "pop": 1807000
+      },
+      {
+        "label": "Sharjah",
+        "lng": 55.4122,
+        "lat": 25.3342,
+        "pop": 1800000
+      }
+    ]
+  },
+  "MAR": {
+    "8": [
+      {
+        "label": "Casablanca",
+        "lng": -7.6114,
+        "lat": 33.5883,
+        "pop": 3665954
+      },
+      {
+        "label": "Rabat",
+        "lng": -6.8326,
+        "lat": 34.0132,
+        "pop": 1655753
+      },
+      {
+        "label": "Fes",
+        "lng": -5.0003,
+        "lat": 34.0331,
+        "pop": 1191905
+      },
+      {
+        "label": "Tangier",
+        "lng": -5.7998,
+        "lat": 35.7673,
+        "pop": 1035141
+      }
+    ]
+  },
+  "DEU": {
+    "15": [
+      {
+        "label": "Berlin",
+        "lng": 13.4105,
+        "lat": 52.5244,
+        "pop": 3426354
+      },
+      {
+        "label": "Hamburg",
+        "lng": 9.993,
+        "lat": 53.5507,
+        "pop": 1973896
+      },
+      {
+        "label": "Munich",
+        "lng": 11.5755,
+        "lat": 48.1374,
+        "pop": 1505005
+      },
+      {
+        "label": "K\u00f6ln",
+        "lng": 6.95,
+        "lat": 50.9333,
+        "pop": 1024621
+      }
+    ]
+  },
+  "ESP": {
+    "7": [
+      {
+        "label": "Madrid",
+        "lng": -3.7026,
+        "lat": 40.4165,
+        "pop": 3255944
+      }
+    ],
+    "8": [
+      {
+        "label": "Barcelona",
+        "lng": 2.159,
+        "lat": 41.3888,
+        "pop": 1686208
+      },
+      {
+        "label": "Gibraltar",
+        "lng": -5.3526,
+        "lat": 36.1447,
+        "pop": 26544
+      }
+    ]
+  },
+  "PRK": {
+    "21": [
+      {
+        "label": "Pyongyang",
+        "lng": 125.7543,
+        "lat": 39.0339,
+        "pop": 3222000
+      }
+    ]
+  },
+  "PHL": {
+    "2": [
+      {
+        "label": "Quezon City",
+        "lng": 121.0509,
+        "lat": 14.6488,
+        "pop": 3084270
+      },
+      {
+        "label": "Caloocan",
+        "lng": 120.9679,
+        "lat": 14.6495,
+        "pop": 1712945
+      },
+      {
+        "label": "Manila",
+        "lng": 120.9822,
+        "lat": 14.6042,
+        "pop": 1600000
+      },
+      {
+        "label": "Taguig",
+        "lng": 121.0792,
+        "lat": 14.5243,
+        "pop": 1308085
+      }
+    ],
+    "1": [
+      {
+        "label": "Davao",
+        "lng": 125.6128,
+        "lat": 7.0731,
+        "pop": 1848947
+      },
+      {
+        "label": "Budta",
+        "lng": 124.4397,
+        "lat": 7.2042,
+        "pop": 1273715
+      },
+      {
+        "label": "Malingao",
+        "lng": 124.475,
+        "lat": 7.1608,
+        "pop": 1121974
+      },
+      {
+        "label": "Zamboanga",
+        "lng": 122.0739,
+        "lat": 6.9103,
+        "pop": 1018849
+      }
+    ]
+  },
+  "VEN": {
+    "3": [
+      {
+        "label": "Caracas",
+        "lng": -66.8792,
+        "lat": 10.488,
+        "pop": 3000000
+      },
+      {
+        "label": "Valencia",
+        "lng": -68.0004,
+        "lat": 10.1615,
+        "pop": 1619470
+      },
+      {
+        "label": "Barquisimeto",
+        "lng": -69.357,
+        "lat": 10.0647,
+        "pop": 1240714
+      }
+    ],
+    "6": [
+      {
+        "label": "Maracaibo",
+        "lng": -71.6109,
+        "lat": 10.6423,
+        "pop": 1752602
+      },
+      {
+        "label": "Oranjestad",
+        "lng": -70.027,
+        "lat": 12.524,
+        "pop": 29998
+      }
+    ]
+  },
+  "UKR": {
+    "26": [
+      {
+        "label": "Kyiv",
+        "lng": 30.5238,
+        "lat": 50.4547,
+        "pop": 2952301
+      }
+    ],
+    "25": [
+      {
+        "label": "Kharkiv",
+        "lng": 36.2548,
+        "lat": 49.9818,
+        "pop": 1421125
+      },
+      {
+        "label": "Odesa",
+        "lng": 30.7438,
+        "lat": 46.4857,
+        "pop": 1010537
+      }
+    ]
+  },
+  "ARG": {
+    "14": [
+      {
+        "label": "Buenos Aires",
+        "lng": -58.3772,
+        "lat": -34.6131,
+        "pop": 2891082
+      }
+    ],
+    "11": [
+      {
+        "label": "C\u00f3rdoba",
+        "lng": -64.1885,
+        "lat": -31.4065,
+        "pop": 2106734
+      }
+    ]
+  },
+  "CAN": {
+    "26": [
+      {
+        "label": "Toronto",
+        "lng": -79.3986,
+        "lat": 43.7064,
+        "pop": 2794356
+      },
+      {
+        "label": "Montr\u00e9al",
+        "lng": -73.5878,
+        "lat": 45.5088,
+        "pop": 1762949
+      },
+      {
+        "label": "Calgary",
+        "lng": -114.0853,
+        "lat": 51.0501,
+        "pop": 1306784
+      },
+      {
+        "label": "Ottawa",
+        "lng": -75.6981,
+        "lat": 45.4112,
+        "pop": 1017449
+      },
+      {
+        "label": "Edmonton",
+        "lng": -113.4687,
+        "lat": 53.5501,
+        "pop": 1010899
+      }
+    ]
+  },
+  "ECU": {
+    "9": [
+      {
+        "label": "Quito",
+        "lng": -78.525,
+        "lat": -0.2298,
+        "pop": 2781641
+      }
+    ],
+    "3": [
+      {
+        "label": "Guayaquil",
+        "lng": -79.8862,
+        "lat": -2.1962,
+        "pop": 2723665
+      }
+    ]
+  },
+  "AGO": {
+    "6": [
+      {
+        "label": "Luanda",
+        "lng": 13.2343,
+        "lat": -8.8368,
+        "pop": 2776168
+      }
+    ],
+    "4": [
+      {
+        "label": "Jamestown",
+        "lng": -5.7182,
+        "lat": -15.9249,
+        "pop": 637
+      }
+    ]
+  },
+  "SEN": {
+    "6": [
+      {
+        "label": "Dakar",
+        "lng": -17.4441,
+        "lat": 14.6937,
+        "pop": 2646503
+      },
+      {
+        "label": "Touba",
+        "lng": -15.8753,
+        "lat": 14.8623,
+        "pop": 1120824
+      }
+    ]
+  },
+  "SOX": {
+    "6": [
+      {
+        "label": "Mogadishu",
+        "lng": 45.3438,
+        "lat": 2.0371,
+        "pop": 2587183
+      }
+    ]
+  },
+  "GHA": {
+    "3": [
+      {
+        "label": "Kumasi",
+        "lng": -1.6244,
+        "lat": 6.6885,
+        "pop": 2544530
+      },
+      {
+        "label": "Accra",
+        "lng": -0.1969,
+        "lat": 5.556,
+        "pop": 1963264
+      }
+    ]
+  },
+  "BFA": {
+    "6": [
+      {
+        "label": "Ouagadougou",
+        "lng": -1.5339,
+        "lat": 12.3657,
+        "pop": 2415266
+      }
+    ]
+  },
+  "DZA": {
+    "8": [
+      {
+        "label": "Algiers",
+        "lng": 3.0875,
+        "lat": 36.7323,
+        "pop": 2364230
+      }
+    ]
+  },
+  "AZE": {
+    "7": [
+      {
+        "label": "Baku",
+        "lng": 49.892,
+        "lat": 40.3777,
+        "pop": 2351300
+      }
+    ]
+  },
+  "ITA": {
+    "8": [
+      {
+        "label": "Rome",
+        "lng": 12.5113,
+        "lat": 41.8919,
+        "pop": 2318895
+      },
+      {
+        "label": "Vatican City",
+        "lng": 12.4541,
+        "lat": 41.9027,
+        "pop": 829
+      }
+    ],
+    "14": [
+      {
+        "label": "Milan",
+        "lng": 9.1895,
+        "lat": 45.4643,
+        "pop": 1371498
+      },
+      {
+        "label": "San Marino",
+        "lng": 12.4464,
+        "lat": 43.9367,
+        "pop": 4500
+      }
+    ]
+  },
+  "ZMB": {
+    "11": [
+      {
+        "label": "Lusaka",
+        "lng": 28.2871,
+        "lat": -15.4067,
+        "pop": 2212301
+      }
+    ]
+  },
+  "DOM": {
+    "2": [
+      {
+        "label": "Santo Domingo",
+        "lng": -69.8923,
+        "lat": 18.4719,
+        "pop": 2201941
+      }
+    ],
+    "1": [
+      {
+        "label": "Santiago de los Caballeros",
+        "lng": -70.6908,
+        "lat": 19.4504,
+        "pop": 1200000
+      }
+    ]
+  },
+  "TGO": {
+    "3": [
+      {
+        "label": "Lom\u00e9",
+        "lng": 1.2215,
+        "lat": 6.1287,
+        "pop": 2188376
+      }
+    ]
+  },
+  "CUB": {
+    "3": [
+      {
+        "label": "Havana",
+        "lng": -82.383,
+        "lat": 23.133,
+        "pop": 2163824
+      }
+    ]
+  },
+  "FXX": {
+    "15": [
+      {
+        "label": "Paris",
+        "lng": 2.3488,
+        "lat": 48.8534,
+        "pop": 2138551
+      },
+      {
+        "label": "Saint Helier",
+        "lng": -2.1049,
+        "lat": 49.188,
+        "pop": 28000
+      },
+      {
+        "label": "Saint Peter Port",
+        "lng": -2.5353,
+        "lat": 49.4598,
+        "pop": 16488
+      }
+    ],
+    "8": [
+      {
+        "label": "Monaco",
+        "lng": 7.4215,
+        "lat": 43.7372,
+        "pop": 32965
+      }
+    ]
+  },
+  "SYX": {
+    "6": [
+      {
+        "label": "Aleppo",
+        "lng": 37.1612,
+        "lat": 36.2012,
+        "pop": 2098210
+      }
+    ],
+    "8": [
+      {
+        "label": "Damascus",
+        "lng": 36.2913,
+        "lat": 33.5102,
+        "pop": 1569394
+      }
+    ]
+  },
+  "BOL": {
+    "29": [
+      {
+        "label": "La Paz",
+        "lng": -68.15,
+        "lat": -16.5,
+        "pop": 2004652
+      }
+    ],
+    "3": [
+      {
+        "label": "Santa Cruz de la Sierra",
+        "lng": -63.1812,
+        "lat": -17.7863,
+        "pop": 1831434
+      }
+    ],
+    "12": [
+      {
+        "label": "Sucre",
+        "lng": -65.2627,
+        "lat": -19.0333,
+        "pop": 224838
+      }
+    ]
+  },
+  "COG": {
+    "3": [
+      {
+        "label": "Brazzaville",
+        "lng": 15.2832,
+        "lat": -4.2661,
+        "pop": 1982000
+      },
+      {
+        "label": "Pointe-Noire",
+        "lng": 11.8635,
+        "lat": -4.7761,
+        "pop": 1032000
+      }
+    ]
+  },
+  "UZB": {
+    "8": [
+      {
+        "label": "Tashkent",
+        "lng": 69.2163,
+        "lat": 41.2647,
+        "pop": 1978028
+      }
+    ]
+  },
+  "KAZ": {
+    "25": [
+      {
+        "label": "Almaty",
+        "lng": 76.9115,
+        "lat": 43.2525,
+        "pop": 1977011
+      }
+    ],
+    "17": [
+      {
+        "label": "Shymkent",
+        "lng": 69.6004,
+        "lat": 42.3099,
+        "pop": 1200000
+      }
+    ],
+    "26": [
+      {
+        "label": "Astana",
+        "lng": 71.446,
+        "lat": 51.1801,
+        "pop": 345604
+      }
+    ]
+  },
+  "SDN": {
+    "4": [
+      {
+        "label": "Khartoum",
+        "lng": 32.5324,
+        "lat": 15.5518,
+        "pop": 1974647
+      },
+      {
+        "label": "Omdurman",
+        "lng": 32.4777,
+        "lat": 15.6445,
+        "pop": 1849659
+      },
+      {
+        "label": "Khartoum North",
+        "lng": 32.5346,
+        "lat": 15.6493,
+        "pop": 1012211
+      }
+    ]
+  },
+  "YEM": {
+    "4": [
+      {
+        "label": "Sanaa",
+        "lng": 44.2065,
+        "lat": 15.3545,
+        "pop": 1937451
+      },
+      {
+        "label": "Aden",
+        "lng": 45.0385,
+        "lat": 12.7796,
+        "pop": 1079670
+      }
+    ]
+  },
+  "GIN": {
+    "2": [
+      {
+        "label": "Conakry",
+        "lng": -13.6773,
+        "lat": 9.538,
+        "pop": 1928389
+      },
+      {
+        "label": "Camayenne",
+        "lng": -13.6878,
+        "lat": 9.535,
+        "pop": 1871242
+      }
+    ]
+  },
+  "LBN": {
+    "8": [
+      {
+        "label": "Beirut",
+        "lng": 35.5016,
+        "lat": 33.8933,
+        "pop": 1916100
+      },
+      {
+        "label": "Ra\u2019s Bayr\u016bt",
+        "lng": 35.4833,
+        "lat": 33.9,
+        "pop": 1251739
+      }
+    ]
+  },
+  "ROU": {
+    "25": [
+      {
+        "label": "Bucharest",
+        "lng": 26.1063,
+        "lat": 44.4323,
+        "pop": 1877155
+      }
+    ]
+  },
+  "BLR": {
+    "26": [
+      {
+        "label": "Minsk",
+        "lng": 27.5665,
+        "lat": 53.9002,
+        "pop": 1742124
+      }
+    ]
+  },
+  "HUN": {
+    "25": [
+      {
+        "label": "Budapest",
+        "lng": 19.0404,
+        "lat": 47.4984,
+        "pop": 1741041
+      },
+      {
+        "label": "Pest",
+        "lng": 19.0833,
+        "lat": 47.5,
+        "pop": 1001748
+      }
+    ]
+  },
+  "POL": {
+    "26": [
+      {
+        "label": "Warsaw",
+        "lng": 21.0118,
+        "lat": 52.2298,
+        "pop": 1702139
+      }
+    ]
+  },
+  "AUT": {
+    "15": [
+      {
+        "label": "Vienna",
+        "lng": 16.3721,
+        "lat": 48.2085,
+        "pop": 1691468
+      }
+    ]
+  },
+  "UGA": {
+    "1": [
+      {
+        "label": "Kampala",
+        "lng": 32.5822,
+        "lat": 0.3163,
+        "pop": 1680600
+      }
+    ]
+  },
+  "IRK": {
+    "8": [
+      {
+        "label": "Erbil",
+        "lng": 44.0094,
+        "lat": 36.1912,
+        "pop": 1612700
+      }
+    ]
+  },
+  "KHM": {
+    "3": [
+      {
+        "label": "Phnom Penh",
+        "lng": 104.916,
+        "lat": 11.5625,
+        "pop": 1573544
+      }
+    ]
+  },
+  "NZL": {
+    "15": [
+      {
+        "label": "Auckland",
+        "lng": 174.7635,
+        "lat": -36.8485,
+        "pop": 1547200
+      },
+      {
+        "label": "Wellington",
+        "lng": 174.7756,
+        "lat": -41.2866,
+        "pop": 381900
+      }
+    ]
+  },
+  "ZWE": {
+    "12": [
+      {
+        "label": "Harare",
+        "lng": 31.0534,
+        "lat": -17.8277,
+        "pop": 1542813
+      }
+    ]
+  },
+  "LBR": {
+    "2": [
+      {
+        "label": "Monrovia",
+        "lng": -10.7969,
+        "lat": 6.3005,
+        "pop": 1542549
+      }
+    ]
+  },
+  "SWE": {
+    "26": [
+      {
+        "label": "Stockholm",
+        "lng": 18.0687,
+        "lat": 59.3294,
+        "pop": 1515017
+      }
+    ]
+  },
+  "PRY": {
+    "14": [
+      {
+        "label": "Asunci\u00f3n",
+        "lng": -57.647,
+        "lat": -25.2865,
+        "pop": 1482200
+      }
+    ]
+  },
+  "MYS": {
+    "1": [
+      {
+        "label": "Kuala Lumpur",
+        "lng": 101.6865,
+        "lat": 3.1412,
+        "pop": 1453975
+      }
+    ]
+  },
+  "NPL": {
+    "11": [
+      {
+        "label": "Kathmandu",
+        "lng": 85.3206,
+        "lat": 27.7017,
+        "pop": 1442271
+      }
+    ]
+  },
+  "TCD": {
+    "6": [
+      {
+        "label": "N'Djamena",
+        "lng": 15.0444,
+        "lat": 12.1067,
+        "pop": 1359526
+      }
+    ]
+  },
+  "MDG": {
+    "12": [
+      {
+        "label": "Antananarivo",
+        "lng": 47.5361,
+        "lat": -18.9137,
+        "pop": 1349501
+      }
+    ]
+  },
+  "CMR": {
+    "2": [
+      {
+        "label": "Douala",
+        "lng": 9.7043,
+        "lat": 4.0483,
+        "pop": 1338082
+      }
+    ],
+    "3": [
+      {
+        "label": "Yaound\u00e9",
+        "lng": 11.5167,
+        "lat": 3.8667,
+        "pop": 1299369
+      }
+    ]
+  },
+  "NER": {
+    "6": [
+      {
+        "label": "Niamey",
+        "lng": 2.1098,
+        "lat": 13.5137,
+        "pop": 1323691
+      }
+    ]
+  },
+  "LBY": {
+    "6": [
+      {
+        "label": "Tripoli",
+        "lng": 13.1873,
+        "lat": 32.8874,
+        "pop": 1302947
+      }
+    ]
+  },
+  "JOR": {
+    "7": [
+      {
+        "label": "Amman",
+        "lng": 35.945,
+        "lat": 31.9552,
+        "pop": 1275857
+      }
+    ]
+  },
+  "SRS": {
+    "14": [
+      {
+        "label": "Belgrade",
+        "lng": 20.4651,
+        "lat": 44.804,
+        "pop": 1273651
+      }
+    ]
+  },
+  "URY": {
+    "14": [
+      {
+        "label": "Montevideo",
+        "lng": -56.1882,
+        "lat": -34.9033,
+        "pop": 1270737
+      }
+    ]
+  },
+  "MOZ": {
+    "3": [
+      {
+        "label": "Maputo",
+        "lng": 32.5832,
+        "lat": -25.9655,
+        "pop": 1254837
+      }
+    ],
+    "6": [
+      {
+        "label": "Matola",
+        "lng": 32.4589,
+        "lat": -25.9622,
+        "pop": 1198988
+      }
+    ]
+  },
+  "HTI": {
+    "3": [
+      {
+        "label": "Port-au-Prince",
+        "lng": -72.3388,
+        "lat": 18.5435,
+        "pop": 1234742
+      }
+    ]
+  },
+  "MRT": {
+    "4": [
+      {
+        "label": "Nouakchott",
+        "lng": -15.9785,
+        "lat": 18.0858,
+        "pop": 1184530
+      }
+    ]
+  },
+  "CZE": {
+    "15": [
+      {
+        "label": "Prague",
+        "lng": 14.4208,
+        "lat": 50.088,
+        "pop": 1165581
+      }
+    ]
+  },
+  "DNK": {
+    "15": [
+      {
+        "label": "Copenhagen",
+        "lng": 12.5655,
+        "lat": 55.6759,
+        "pop": 1153615
+      }
+    ]
+  },
+  "BGR": {
+    "26": [
+      {
+        "label": "Sofia",
+        "lng": 23.3241,
+        "lat": 42.6975,
+        "pop": 1152556
+      }
+    ]
+  },
+  "ARM": {
+    "7": [
+      {
+        "label": "Yerevan",
+        "lng": 44.5126,
+        "lat": 40.1776,
+        "pop": 1144700
+      }
+    ]
+  },
+  "RWA": {
+    "3": [
+      {
+        "label": "Kigali",
+        "lng": 30.0588,
+        "lat": -1.95,
+        "pop": 1132686
+      }
+    ]
+  },
+  "MWI": {
+    "11": [
+      {
+        "label": "Lilongwe",
+        "lng": 33.7873,
+        "lat": -13.9669,
+        "pop": 1115815
+      }
+    ]
+  },
+  "NOW": {
+    "26": [
+      {
+        "label": "Oslo",
+        "lng": 10.7461,
+        "lat": 59.9127,
+        "pop": 1082575
+      }
+    ]
+  },
+  "GEG": {
+    "14": [
+      {
+        "label": "Tbilisi",
+        "lng": 44.8341,
+        "lat": 41.6914,
+        "pop": 1049498
+      }
+    ]
+  },
+  "TKM": {
+    "5": [
+      {
+        "label": "Ashgabat",
+        "lng": 58.3833,
+        "lat": 37.95,
+        "pop": 1030063
+      }
+    ]
+  },
+  "IRL": {
+    "15": [
+      {
+        "label": "Dublin",
+        "lng": -6.2489,
+        "lat": 53.3331,
+        "pop": 1024027
+      }
+    ]
+  },
+  "BFR": {
+    "15": [
+      {
+        "label": "Brussels",
+        "lng": 4.3488,
+        "lat": 50.8505,
+        "pop": 1019022
+      }
+    ]
+  },
+  "GTM": {
+    "12": [
+      {
+        "label": "Guatemala City",
+        "lng": -90.5133,
+        "lat": 14.6407,
+        "pop": 994938
+      }
+    ]
+  },
+  "NIC": {
+    "3": [
+      {
+        "label": "Managua",
+        "lng": -86.2504,
+        "lat": 12.1328,
+        "pop": 973087
+      }
+    ]
+  },
+  "JAM": {
+    "2": [
+      {
+        "label": "Kingston",
+        "lng": -76.7936,
+        "lat": 17.997,
+        "pop": 937700
+      }
+    ]
+  },
+  "KGZ": {
+    "17": [
+      {
+        "label": "Bishkek",
+        "lng": 74.59,
+        "lat": 42.87,
+        "pop": 900000
+      }
+    ]
+  },
+  "HND": {
+    "3": [
+      {
+        "label": "Tegucigalpa",
+        "lng": -87.2068,
+        "lat": 14.0818,
+        "pop": 850848
+      }
+    ]
+  },
+  "GAB": {
+    "2": [
+      {
+        "label": "Libreville",
+        "lng": 9.4536,
+        "lat": 0.3924,
+        "pop": 846090
+      }
+    ]
+  },
+  "MNG": {
+    "7": [
+      {
+        "label": "Ulan Bator",
+        "lng": 106.8832,
+        "lat": 47.9077,
+        "pop": 844818
+      }
+    ]
+  },
+  "LAO": {
+    "3": [
+      {
+        "label": "Vientiane",
+        "lng": 102.6,
+        "lat": 17.9667,
+        "pop": 840940
+      }
+    ]
+  },
+  "CAF": {
+    "3": [
+      {
+        "label": "Bangui",
+        "lng": 18.555,
+        "lat": 4.3612,
+        "pop": 812407
+      }
+    ]
+  },
+  "SLE": {
+    "2": [
+      {
+        "label": "Freetown",
+        "lng": -13.2356,
+        "lat": 8.4871,
+        "pop": 802639
+      }
+    ]
+  },
+  "OMN": {
+    "4": [
+      {
+        "label": "Muscat",
+        "lng": 58.4078,
+        "lat": 23.5841,
+        "pop": 797000
+      }
+    ]
+  },
+  "LVA": {
+    "26": [
+      {
+        "label": "Riga",
+        "lng": 24.1059,
+        "lat": 56.946,
+        "pop": 742572
+      }
+    ]
+  },
+  "NLX": {
+    "15": [
+      {
+        "label": "Amsterdam",
+        "lng": 4.8897,
+        "lat": 52.374,
+        "pop": 741636
+      }
+    ]
+  },
+  "BHF": {
+    "15": [
+      {
+        "label": "Sarajevo",
+        "lng": 18.3564,
+        "lat": 43.8486,
+        "pop": 696731
+      }
+    ]
+  },
+  "TUN": {
+    "8": [
+      {
+        "label": "Tunis",
+        "lng": 10.1658,
+        "lat": 36.819,
+        "pop": 693210
+      }
+    ]
+  },
+  "TJK": {
+    "8": [
+      {
+        "label": "Dushanbe",
+        "lng": 68.779,
+        "lat": 38.5358,
+        "pop": 679400
+      }
+    ]
+  },
+  "GRC": {
+    "8": [
+      {
+        "label": "Athens",
+        "lng": 23.7278,
+        "lat": 37.9838,
+        "pop": 664046
+      }
+    ]
+  },
+  "HRV": {
+    "14": [
+      {
+        "label": "Zagreb",
+        "lng": 15.978,
+        "lat": 45.8144,
+        "pop": 663592
+      }
+    ]
+  },
+  "FIN": {
+    "26": [
+      {
+        "label": "Helsinki",
+        "lng": 24.9354,
+        "lat": 60.1695,
+        "pop": 658864
+      }
+    ]
+  },
+  "LKA": {
+    "1": [
+      {
+        "label": "Colombo",
+        "lng": 79.8487,
+        "lat": 6.9355,
+        "pop": 648034
+      }
+    ]
+  },
+  "MDA": {
+    "25": [
+      {
+        "label": "Chisinau",
+        "lng": 28.8594,
+        "lat": 47.009,
+        "pop": 635994
+      }
+    ]
+  },
+  "DJI": {
+    "4": [
+      {
+        "label": "Djibouti",
+        "lng": 43.145,
+        "lat": 11.589,
+        "pop": 626512
+      }
+    ]
+  },
+  "ERI": {
+    "15": [
+      {
+        "label": "Asmara",
+        "lng": 38.9318,
+        "lat": 15.3381,
+        "pop": 563930
+      }
+    ]
+  },
+  "KOS": {
+    "14": [
+      {
+        "label": "Pristina",
+        "lng": 21.1669,
+        "lat": 42.6727,
+        "pop": 550000
+      }
+    ]
+  },
+  "LTU": {
+    "26": [
+      {
+        "label": "Vilnius",
+        "lng": 25.2798,
+        "lat": 54.6892,
+        "pop": 542366
+      }
+    ]
+  },
+  "SLV": {
+    "3": [
+      {
+        "label": "San Salvador",
+        "lng": -89.1872,
+        "lat": 13.6893,
+        "pop": 525990
+      }
+    ]
+  },
+  "PRX": {
+    "9": [
+      {
+        "label": "Lisbon",
+        "lng": -9.1498,
+        "lat": 38.7251,
+        "pop": 517802
+      }
+    ]
+  },
+  "MKD": {
+    "14": [
+      {
+        "label": "Skopje",
+        "lng": 21.4314,
+        "lat": 41.9965,
+        "pop": 474889
+      }
+    ]
+  },
+  "SDS": {
+    "3": [
+      {
+        "label": "Juba",
+        "lng": 31.5825,
+        "lat": 4.8517,
+        "pop": 450000
+      }
+    ]
+  },
+  "GNB": {
+    "3": [
+      {
+        "label": "Bissau",
+        "lng": -15.5977,
+        "lat": 11.8636,
+        "pop": 439704
+      }
+    ]
+  },
+  "SVK": {
+    "15": [
+      {
+        "label": "Bratislava",
+        "lng": 17.1067,
+        "lat": 48.1482,
+        "pop": 423737
+      }
+    ]
+  },
+  "ALB": {
+    "8": [
+      {
+        "label": "Tirana",
+        "lng": 19.8187,
+        "lat": 41.3274,
+        "pop": 418495
+      }
+    ]
+  },
+  "PRI": {
+    "1": [
+      {
+        "label": "San Juan",
+        "lng": -66.1057,
+        "lat": 18.4663,
+        "pop": 418140
+      }
+    ]
+  },
+  "PAN": {
+    "3": [
+      {
+        "label": "Panama City",
+        "lng": -79.5197,
+        "lat": 8.9936,
+        "pop": 408168
+      }
+    ]
+  },
+  "EST": {
+    "26": [
+      {
+        "label": "Tallinn",
+        "lng": 24.7535,
+        "lat": 59.437,
+        "pop": 394024
+      }
+    ]
+  },
+  "NAM": {
+    "6": [
+      {
+        "label": "Windhoek",
+        "lng": 17.0832,
+        "lat": -22.5594,
+        "pop": 386219
+      }
+    ]
+  },
+  "LSO": {
+    "12": [
+      {
+        "label": "Maseru",
+        "lng": 27.4833,
+        "lat": -29.3167,
+        "pop": 359753
+      }
+    ]
+  },
+  "QAT": {
+    "4": [
+      {
+        "label": "Doha",
+        "lng": 51.531,
+        "lat": 25.2855,
+        "pop": 344939
+      }
+    ]
+  },
+  "CRI": {
+    "2": [
+      {
+        "label": "San Jos\u00e9",
+        "lng": -84.0849,
+        "lat": 9.9339,
+        "pop": 335007
+      }
+    ]
+  },
+  "PNX": {
+    "3": [
+      {
+        "label": "Port Moresby",
+        "lng": 147.1509,
+        "lat": -9.4772,
+        "pop": 283733
+      }
+    ]
+  },
+  "SVN": {
+    "14": [
+      {
+        "label": "Ljubljana",
+        "lng": 14.5051,
+        "lat": 46.0511,
+        "pop": 272220
+      }
+    ]
+  },
+  "BEN": {
+    "3": [
+      {
+        "label": "Porto-Novo",
+        "lng": 2.6036,
+        "lat": 6.4965,
+        "pop": 264320
+      }
+    ]
+  },
+  "BWA": {
+    "6": [
+      {
+        "label": "Gaborone",
+        "lng": 25.9086,
+        "lat": -24.6545,
+        "pop": 246325
+      }
+    ]
+  },
+  "MNE": {
+    "14": [
+      {
+        "label": "Podgorica",
+        "lng": 19.2631,
+        "lat": 42.4412,
+        "pop": 236852
+      }
+    ]
+  },
+  "GUY": {
+    "1": [
+      {
+        "label": "Georgetown",
+        "lng": -58.1553,
+        "lat": 6.8045,
+        "pop": 235017
+      }
+    ]
+  },
+  "BHS": {
+    "3": [
+      {
+        "label": "Nassau",
+        "lng": -77.3431,
+        "lat": 25.0582,
+        "pop": 227940
+      }
+    ]
+  },
+  "SUR": {
+    "1": [
+      {
+        "label": "Paramaribo",
+        "lng": -55.1668,
+        "lat": 5.8664,
+        "pop": 223757
+      }
+    ]
+  },
+  "CYN": {
+    "6": [
+      {
+        "label": "Nicosia",
+        "lng": 33.354,
+        "lat": 35.1728,
+        "pop": 200452
+      }
+    ]
+  },
+  "MUS": {
+    "2": [
+      {
+        "label": "Port Louis",
+        "lng": 57.4989,
+        "lat": -20.1619,
+        "pop": 155226
+      }
+    ]
+  },
+  "REU": {
+    "15": [
+      {
+        "label": "Saint-Denis",
+        "lng": 55.4504,
+        "lat": -20.8823,
+        "pop": 154765
+      }
+    ]
+  },
+  "TLS": {
+    "3": [
+      {
+        "label": "Dili",
+        "lng": 125.5736,
+        "lat": -8.5586,
+        "pop": 150000
+      }
+    ]
+  },
+  "BHR": {
+    "4": [
+      {
+        "label": "Manama",
+        "lng": 50.5857,
+        "lat": 26.2279,
+        "pop": 147074
+      }
+    ]
+  },
+  "CPV": {
+    "4": [
+      {
+        "label": "Praia",
+        "lng": -23.5125,
+        "lat": 14.9315,
+        "pop": 137868
+      }
+    ]
+  },
+  "CUW": {
+    "3": [
+      {
+        "label": "Willemstad",
+        "lng": -68.8864,
+        "lat": 12.1225,
+        "pop": 125000
+      }
+    ]
+  },
+  "CHE": {
+    "15": [
+      {
+        "label": "Bern",
+        "lng": 7.4474,
+        "lat": 46.9481,
+        "pop": 121631
+      },
+      {
+        "label": "Vaduz",
+        "lng": 9.5215,
+        "lat": 47.1415,
+        "pop": 5197
+      }
+    ]
+  },
+  "ISL": {
+    "16": [
+      {
+        "label": "Reykjav\u00edk",
+        "lng": -21.8954,
+        "lat": 64.1355,
+        "pop": 118918
+      }
+    ]
+  },
+  "BTN": {
+    "12": [
+      {
+        "label": "Thimphu",
+        "lng": 89.6419,
+        "lat": 27.4661,
+        "pop": 98676
+      }
+    ]
+  },
+  "BRB": {
+    "2": [
+      {
+        "label": "Bridgetown",
+        "lng": -59.6202,
+        "lat": 13.1073,
+        "pop": 98511
+      }
+    ]
+  },
+  "NCL": {
+    "3": [
+      {
+        "label": "Noum\u00e9a",
+        "lng": 166.4488,
+        "lat": -22.2741,
+        "pop": 93060
+      }
+    ],
+    "1": [
+      {
+        "label": "Kingston",
+        "lng": 167.9663,
+        "lat": -29.0546,
+        "pop": 880
+      }
+    ]
+  },
+  "MTQ": {
+    "1": [
+      {
+        "label": "Fort-de-France",
+        "lng": -61.0742,
+        "lat": 14.6037,
+        "pop": 89995
+      }
+    ]
+  },
+  "FJI": {
+    "1": [
+      {
+        "label": "Suva",
+        "lng": 178.4253,
+        "lat": -18.1368,
+        "pop": 77366
+      },
+      {
+        "label": "Funafuti",
+        "lng": 179.1942,
+        "lat": -8.5243,
+        "pop": 6320
+      }
+    ]
+  },
+  "LUX": {
+    "15": [
+      {
+        "label": "Luxembourg",
+        "lng": 6.1327,
+        "lat": 49.6098,
+        "pop": 76684
+      }
+    ]
+  },
+  "SWZ": {
+    "12": [
+      {
+        "label": "Mbabane",
+        "lng": 31.1333,
+        "lat": -26.3167,
+        "pop": 76218
+      }
+    ]
+  },
+  "COM": {
+    "2": [
+      {
+        "label": "Moroni",
+        "lng": 43.2551,
+        "lat": -11.7022,
+        "pop": 74749
+      }
+    ]
+  },
+  "BDI": {
+    "3": [
+      {
+        "label": "Gitega",
+        "lng": 29.9246,
+        "lat": -3.4271,
+        "pop": 64904
+      }
+    ]
+  },
+  "BRN": {
+    "1": [
+      {
+        "label": "Bandar Seri Begawan",
+        "lng": 114.9401,
+        "lat": 4.8903,
+        "pop": 64409
+      }
+    ]
+  },
+  "GUF": {
+    "2": [
+      {
+        "label": "Cayenne",
+        "lng": -52.3346,
+        "lat": 4.9381,
+        "pop": 61550
+      }
+    ]
+  },
+  "KWT": {
+    "4": [
+      {
+        "label": "Kuwait City",
+        "lng": 47.9743,
+        "lat": 29.367,
+        "pop": 60064
+      }
+    ]
+  },
+  "SLB": {
+    "1": [
+      {
+        "label": "Honiara",
+        "lng": 159.95,
+        "lat": -9.4333,
+        "pop": 56298
+      }
+    ]
+  },
+  "MYT": {
+    "3": [
+      {
+        "label": "Mamoudzou",
+        "lng": 45.2288,
+        "lat": -12.7823,
+        "pop": 54831
+      }
+    ]
+  },
+  "STP": {
+    "3": [
+      {
+        "label": "S\u00e3o Tom\u00e9",
+        "lng": 6.7299,
+        "lat": 0.3376,
+        "pop": 53300
+      }
+    ]
+  },
+  "ACA": {
+    "3": [
+      {
+        "label": "Saint John\u2019s",
+        "lng": -61.8433,
+        "lat": 17.121,
+        "pop": 51737
+      },
+      {
+        "label": "Basseterre",
+        "lng": -62.725,
+        "lat": 17.2955,
+        "pop": 12920
+      },
+      {
+        "label": "Gustavia",
+        "lng": -62.8498,
+        "lat": 17.8962,
+        "pop": 5988
+      },
+      {
+        "label": "Marigot",
+        "lng": -63.083,
+        "lat": 18.0682,
+        "pop": 5700
+      },
+      {
+        "label": "The Valley",
+        "lng": -63.0578,
+        "lat": 18.217,
+        "pop": 2035
+      },
+      {
+        "label": "Philipsburg",
+        "lng": -63.0458,
+        "lat": 18.026,
+        "pop": 1400
+      },
+      {
+        "label": "Plymouth",
+        "lng": -62.2129,
+        "lat": 16.7055,
+        "pop": 0
+      }
+    ]
+  },
+  "TTO": {
+    "2": [
+      {
+        "label": "Port of Spain",
+        "lng": -61.5189,
+        "lat": 10.6667,
+        "pop": 49031
+      }
+    ]
+  },
+  "MNP": {
+    "1": [
+      {
+        "label": "Saipan",
+        "lng": 145.7545,
+        "lat": 15.2123,
+        "pop": 48220
+      }
+    ]
+  },
+  "WSM": {
+    "1": [
+      {
+        "label": "Apia",
+        "lng": -171.7667,
+        "lat": -13.8333,
+        "pop": 40407
+      },
+      {
+        "label": "Pago Pago",
+        "lng": -170.7025,
+        "lat": -14.2781,
+        "pop": 11500
+      }
+    ]
+  },
+  "KIR": {
+    "1": [
+      {
+        "label": "Tarawa",
+        "lng": 172.977,
+        "lat": 1.3278,
+        "pop": 40311
+      },
+      {
+        "label": "Majuro",
+        "lng": 171.3803,
+        "lat": 7.0897,
+        "pop": 25400
+      },
+      {
+        "label": "Yaren",
+        "lng": 166.9252,
+        "lat": -0.5508,
+        "pop": 1100
+      }
+    ]
+  },
+  "GMB": {
+    "3": [
+      {
+        "label": "Banjul",
+        "lng": -16.578,
+        "lat": 13.4527,
+        "pop": 37274
+      }
+    ]
+  },
+  "VUT": {
+    "1": [
+      {
+        "label": "Port-Vila",
+        "lng": 168.3137,
+        "lat": -17.7365,
+        "pop": 35901
+      }
+    ]
+  },
+  "CYM": {
+    "3": [
+      {
+        "label": "George Town",
+        "lng": -81.3744,
+        "lat": 19.2866,
+        "pop": 29370
+      }
+    ]
+  },
+  "PYF": {
+    "1": [
+      {
+        "label": "Papeete",
+        "lng": -149.5684,
+        "lat": -17.5347,
+        "pop": 26357
+      },
+      {
+        "label": "Avarua",
+        "lng": -159.7755,
+        "lat": -21.2075,
+        "pop": 13373
+      },
+      {
+        "label": "Adamstown",
+        "lng": -130.1015,
+        "lat": -25.066,
+        "pop": 46
+      }
+    ]
+  },
+  "IMN": {
+    "15": [
+      {
+        "label": "Douglas",
+        "lng": -4.4833,
+        "lat": 54.15,
+        "pop": 26218
+      }
+    ]
+  },
+  "VCT": {
+    "1": [
+      {
+        "label": "Kingstown",
+        "lng": -61.2274,
+        "lat": 13.1553,
+        "pop": 24518
+      }
+    ]
+  },
+  "SYC": {
+    "1": [
+      {
+        "label": "Victoria",
+        "lng": 55.455,
+        "lat": -4.62,
+        "pop": 22881
+      }
+    ]
+  },
+  "TON": {
+    "1": [
+      {
+        "label": "Nuku\u2018alofa",
+        "lng": -175.2011,
+        "lat": -21.1368,
+        "pop": 22400
+      },
+      {
+        "label": "Mata-Utu",
+        "lng": -176.1745,
+        "lat": -13.2816,
+        "pop": 1200
+      }
+    ]
+  },
+  "AND": {
+    "27": [
+      {
+        "label": "Andorra la Vella",
+        "lng": 1.5211,
+        "lat": 42.5078,
+        "pop": 20430
+      }
+    ]
+  },
+  "LCA": {
+    "1": [
+      {
+        "label": "Castries",
+        "lng": -61.0061,
+        "lat": 13.9957,
+        "pop": 20000
+      }
+    ]
+  },
+  "VIR": {
+    "3": [
+      {
+        "label": "Charlotte Amalie",
+        "lng": -64.9307,
+        "lat": 18.3419,
+        "pop": 20000
+      },
+      {
+        "label": "Road Town",
+        "lng": -64.6208,
+        "lat": 18.4269,
+        "pop": 8449
+      }
+    ]
+  },
+  "DMA": {
+    "1": [
+      {
+        "label": "Roseau",
+        "lng": -61.3881,
+        "lat": 15.3017,
+        "pop": 16571
+      }
+    ]
+  },
+  "GRL": {
+    "29": [
+      {
+        "label": "Nuuk",
+        "lng": -51.7216,
+        "lat": 64.1835,
+        "pop": 14798
+      }
+    ]
+  },
+  "BLZ": {
+    "2": [
+      {
+        "label": "Belmopan",
+        "lng": -88.764,
+        "lat": 17.2538,
+        "pop": 13381
+      }
+    ]
+  },
+  "FRO": {
+    "16": [
+      {
+        "label": "T\u00f3rshavn",
+        "lng": -6.7716,
+        "lat": 62.0097,
+        "pop": 13200
+      }
+    ]
+  },
+  "GLP": {
+    "2": [
+      {
+        "label": "Basse-Terre",
+        "lng": -61.7321,
+        "lat": 15.9971,
+        "pop": 11472
+      }
+    ]
+  },
+  "ALD": {
+    "26": [
+      {
+        "label": "Mariehamn",
+        "lng": 19.9348,
+        "lat": 60.0973,
+        "pop": 10682
+      }
+    ]
+  },
+  "NLY": {
+    "6": [
+      {
+        "label": "Kralendijk",
+        "lng": -68.2667,
+        "lat": 12.15,
+        "pop": 10620
+      }
+    ]
+  },
+  "GRD": {
+    "2": [
+      {
+        "label": "Saint George's",
+        "lng": -61.7523,
+        "lat": 12.0529,
+        "pop": 7500
+      }
+    ]
+  },
+  "FSM": {
+    "1": [
+      {
+        "label": "Palikir",
+        "lng": 158.1611,
+        "lat": 6.9248,
+        "pop": 6942
+      }
+    ]
+  },
+  "MLT": {
+    "8": [
+      {
+        "label": "Valletta",
+        "lng": 14.5148,
+        "lat": 35.8997,
+        "pop": 6794
+      }
+    ]
+  },
+  "SPM": {
+    "27": [
+      {
+        "label": "Saint-Pierre",
+        "lng": -56.1773,
+        "lat": 46.7791,
+        "pop": 6200
+      }
+    ]
+  },
+  "TCA": {
+    "3": [
+      {
+        "label": "Cockburn Town",
+        "lng": -71.1419,
+        "lat": 21.4612,
+        "pop": 3720
+      }
+    ]
+  },
+  "NSV": {
+    "29": [
+      {
+        "label": "Longyearbyen",
+        "lng": 15.6469,
+        "lat": 78.2233,
+        "pop": 2368
+      }
+    ]
+  },
+  "FLK": {
+    "29": [
+      {
+        "label": "Stanley",
+        "lng": -57.857,
+        "lat": -51.6938,
+        "pop": 2213
+      }
+    ]
+  },
+  "GNQ": {
+    "2": [
+      {
+        "label": "Ciudad de la Paz",
+        "lng": 10.8236,
+        "lat": 1.5925,
+        "pop": 2000
+      }
+    ]
+  },
+  "GUM": {
+    "1": [
+      {
+        "label": "Hag\u00e5t\u00f1a",
+        "lng": 144.7489,
+        "lat": 13.4757,
+        "pop": 1051
+      }
+    ]
+  },
+  "NIU": {
+    "1": [
+      {
+        "label": "Alofi",
+        "lng": -169.9196,
+        "lat": -19.0529,
+        "pop": 624
+      }
+    ]
+  },
+  "ATF": {
+    "29": [
+      {
+        "label": "Port-aux-Fran\u00e7ais",
+        "lng": 70.2194,
+        "lat": -49.3492,
+        "pop": 45
+      }
+    ]
+  },
+  "SGS": {
+    "29": [
+      {
+        "label": "Grytviken",
+        "lng": -36.5092,
+        "lat": -54.2811,
+        "pop": 2
+      }
+    ]
+  },
+  "PLW": {
+    "1": [
+      {
+        "label": "Ngerulmud",
+        "lng": 134.6238,
+        "lat": 7.5008,
+        "pop": 0
+      }
+    ]
+  }
+}

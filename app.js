@@ -28,6 +28,7 @@ const METHODOLOGY_HTML = `
   <p><b>Country borders.</b> Natural Earth 10 m admin boundaries.</p>
   <p><b>Polygonization.</b> The raster was vectorized class-by-class and intersected with country borders, yielding 936 (country, Köppen class) features. Polygons smaller than 200 km² were dropped; the rest were simplified at 0.02° tolerance to keep the file under 10 MB.</p>
   <p><b>Country matching.</b> For each Köppen class, every country in the world is ranked by total area of that class. The top-ranked country (excluding the country you're viewing) is the "match" — so a region labeled "Climate of China" means China is the country with the most land area in that climate worldwide.</p>
+  <p><b>City dots.</b> Each zone is dotted with up to four real cities <i>of its matched country</i> that share the climate — larger zones get more (the China-matched US Southeast fills with Shanghai, Wuhan, Hangzhou…). Each city is placed to echo where it sits in its own country: a city in eastern China lands toward the east of the zone. Only recognizable cities are used (GeoNames places with population ≥ 1M or national capitals); if the matched country has none in that climate, the zone gets no dots.</p>
   <p><b>Greedy de-duplication.</b> When several regions in the same country would all map to the same match, the largest zone keeps the top match and smaller zones step down to their next-best non-duplicate. This is why shuffling one region's match can cascade into others.</p>
   <p><b>Shuffle.</b> The ↺ buttons step through the ranking — region-level shuffles the next-best match for that zone; "Shuffle all" advances every region one step.</p>
   <p><b>What this doesn't model.</b></p>
@@ -61,7 +62,7 @@ const map = new maplibregl.Map({
   zoom: 1.4,
   attributionControl: { compact: true },
 });
-map.addControl(new maplibregl.NavigationControl(), 'top-left');
+map.addControl(new maplibregl.NavigationControl(), 'bottom-right');
 window.__map = map;
 
 function buildFillColorExpression() {
@@ -76,12 +77,17 @@ function buildFillColorExpression() {
 // --- Data load + index -----------------------------------------------------
 
 const dataReady = (async () => {
-  const [zonesRes, exemplarsRes] = await Promise.all([
+  const [zonesRes, exemplarsRes, citiesRes] = await Promise.all([
     fetch('./data/country-zones.geojson'),
     fetch('./data/class-exemplars.json'),
+    fetch('./data/cities-by-country.json').catch(() => null),
   ]);
   const zones = await zonesRes.json();
   const exemplarsRaw = await exemplarsRes.json();
+  // { iso3: { classId: [ {label, lng, lat, pop} ] } } — recognizable cities of
+  // each country, grouped by Köppen class. Used to scatter city dots across a
+  // matched zone. Tolerates a missing file (dots just won't render).
+  const cities = citiesRes && citiesRes.ok ? await citiesRes.json() : {};
 
   const exemplars = {};
   for (const [k, list] of Object.entries(exemplarsRaw)) exemplars[Number(k)] = list;
@@ -111,7 +117,7 @@ const dataReady = (async () => {
     byIsoBreakdown.set(iso, { name, total, top });
   }
 
-  return { zones, exemplars, byIso, byIsoBreakdown };
+  return { zones, exemplars, byIso, byIsoBreakdown, cities };
 })();
 
 // --- Map layers ------------------------------------------------------------
@@ -186,6 +192,9 @@ map.on('load', async () => {
     },
   });
 
+  // City dots are HTML markers (see buildCityDots) so they can use the app's
+  // serif font — MapLibre symbol glyphs from demotiles are Open Sans only.
+
   populateCountrySelect();
 
   map.on('moveend', () => {
@@ -211,6 +220,7 @@ const HOVER_DELAY_MS = 200;
 let basemapSymbolLayers = [];
 let regionMarkers = [];
 let markersByClass = new Map();
+let cityMarkers = [];
 
 let labelPopup = null;
 let regionPopup = null;
@@ -221,9 +231,11 @@ let lastEmitZoom = null;
 // Synchronous handles populated once data resolves.
 let byIsoBreakdownSync = null;
 let lastDataByIso = null;
-dataReady.then(({ byIsoBreakdown, byIso }) => {
+let citiesByCountry = null;
+dataReady.then(({ byIsoBreakdown, byIso, cities }) => {
   byIsoBreakdownSync = byIsoBreakdown;
   lastDataByIso = byIso;
+  citiesByCountry = cities;
 });
 
 $overlayShuffle.addEventListener('click', () => {
@@ -646,6 +658,7 @@ function clearSelection() {
   setHoveredKlass(null);
   setHoveredIso(null);
   clearRegionMarkers();
+  clearCityMarkers();
   if (labelPopup) labelPopup.remove();
   if (regionPopup) regionPopup.remove();
   labelTooltipOpen = false;
@@ -765,6 +778,7 @@ function refreshLabels() {
     markersByClass.get(cluster.klass).push(marker);
   }
 
+  buildCityDots();
   requestAnimationFrame(runCollisionPass);
   // Re-render grid only when it's the visible widget body — if the user is in
   // the detail view, we re-render that branch in shuffleOne / shuffleAll.
@@ -867,6 +881,167 @@ function runCollisionPass() {
       placed.push(r);
     }
   }
+}
+
+// --- City dots -------------------------------------------------------------
+//
+// For each climate zone of the selected country, the matched country's cities
+// in that same Köppen class are scattered across the zone. Placement is rough:
+// each city is mapped by its relative lng/lat into the zone, so eastern cities
+// land east, northern north — "across the entirety of the region", loosely.
+
+const MAX_CITY_DOTS_PER_ZONE = 4; // upper bound; small/compact zones get fewer
+const CITY_DOT_NUDGE_DEG = 1.2;   // soft de-overlap only — never drops a city
+
+// How many dots a zone earns, from its total area. This is decoupled from
+// placement: the count scales with region size, but every chosen city is still
+// placed at its best spot (no hard spacing rule throwing well-placed cities away).
+function cityCountForArea(km2) {
+  if (km2 < 150_000) return 1;
+  if (km2 < 600_000) return 2;
+  if (km2 < 1_500_000) return 3;
+  return MAX_CITY_DOTS_PER_ZONE;
+}
+
+function clearCityMarkers() {
+  for (const m of cityMarkers) m.remove();
+  cityMarkers = [];
+}
+
+function buildCityDots() {
+  clearCityMarkers();
+  if (!selected || !citiesByCountry) return;
+
+  // Group the selected country's polygons by class once.
+  const featsByClass = new Map();
+  for (const f of selected.features) {
+    const k = f.properties.koppen_class;
+    if (!featsByClass.has(k)) featsByClass.set(k, []);
+    featsByClass.get(k).push(f);
+  }
+
+  for (const [k, ctx] of selected.context) {
+    const iso = ctx.exemplar?.iso3;
+    const cities = iso && citiesByCountry[iso]?.[k];
+    if (!cities || !cities.length) continue; // matched country has no city here
+    const zoneFeats = featsByClass.get(k);
+    if (!zoneFeats) continue;
+
+    const polygons = [];
+    for (const f of zoneFeats) {
+      for (const sub of turf.flatten(f).features) {
+        if (sub.geometry.type === 'Polygon') polygons.push(sub.geometry.coordinates);
+      }
+    }
+    if (!polygons.length) continue;
+
+    const zoneArea = zoneFeats.reduce((s, f) => s + f.properties.area_km2, 0);
+    for (const p of scatterCities(cities, polygons, cityCountForArea(zoneArea))) {
+      cityMarkers.push(createCityMarker(p.label, [p.lng, p.lat]));
+    }
+  }
+}
+
+// A dot pin + the city name, anchored so the pin sits on the coordinate. Uses
+// the app's serif font (.city-dot in index.html), matching the country labels.
+function createCityMarker(label, lngLat) {
+  const el = document.createElement('div');
+  el.className = 'city-dot';
+  const pin = document.createElement('span');
+  pin.className = 'city-dot__pin';
+  const name = document.createElement('span');
+  name.className = 'city-dot__name';
+  name.textContent = label;
+  el.appendChild(pin);
+  el.appendChild(name);
+  return new maplibregl.Marker({ element: el, anchor: 'left' }).setLngLat(lngLat).addTo(map);
+}
+
+// Place the `n` biggest cities at interior points of the zone, each mapped to its
+// best relative position (a city in eastern China lands in the east of the zone).
+// `n` already scales with region size; here we never drop a city — we just prefer
+// a spot CITY_DOT_NUDGE_DEG away from the ones already placed to avoid overlap,
+// and fall back to the nearest spot if no clear one exists.
+function scatterCities(cities, polygons, n) {
+  if (!cities.length || n <= 0) return [];
+  let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+  for (const poly of polygons) for (const ring of poly) for (const [x, y] of ring) {
+    if (x < minX) minX = x; if (x > maxX) maxX = x;
+    if (y < minY) minY = y; if (y > maxY) maxY = y;
+  }
+
+  const candidates = sampleInterior(polygons, minX, minY, maxX, maxY);
+  if (!candidates.length) return [];
+  const spanX = (maxX - minX) || 1, spanY = (maxY - minY) || 1;
+  for (const c of candidates) { c.nx = (c.lng - minX) / spanX; c.ny = (c.lat - minY) / spanY; }
+
+  // Normalize cities within their own bbox so the arrangement maps in.
+  let cMinX = Infinity, cMinY = Infinity, cMaxX = -Infinity, cMaxY = -Infinity;
+  for (const c of cities) {
+    if (c.lng < cMinX) cMinX = c.lng; if (c.lng > cMaxX) cMaxX = c.lng;
+    if (c.lat < cMinY) cMinY = c.lat; if (c.lat > cMaxY) cMaxY = c.lat;
+  }
+  const cSpanX = (cMaxX - cMinX) || 1, cSpanY = (cMaxY - cMinY) || 1;
+
+  // Latitude-weight longitude so the overlap nudge reflects real distance.
+  const cosLat = Math.max(0.2, Math.cos(((minY + maxY) / 2) * Math.PI / 180));
+  const nudge2 = CITY_DOT_NUDGE_DEG * CITY_DOT_NUDGE_DEG;
+
+  const used = new Array(candidates.length).fill(false);
+  const placed = [];
+  const take = Math.min(n, cities.length);
+  for (let i = 0; i < take; i++) {
+    const city = cities[i]; // biggest-first
+    const nx = (city.lng - cMinX) / cSpanX, ny = (city.lat - cMinY) / cSpanY;
+    // Nearest non-overlapping candidate, with the overall nearest as a fallback
+    // so a city is never skipped (two close-but-real cities beat one lonely dot).
+    let best = -1, bestD = Infinity, fallback = -1, fbD = Infinity;
+    for (let j = 0; j < candidates.length; j++) {
+      if (used[j]) continue;
+      const cand = candidates[j];
+      const dx = cand.nx - nx, dy = cand.ny - ny;
+      const d = dx * dx + dy * dy;
+      if (d < fbD) { fbD = d; fallback = j; }
+      let overlaps = false;
+      for (const pt of placed) {
+        const ox = (pt.lng - cand.lng) * cosLat, oy = pt.lat - cand.lat;
+        if (ox * ox + oy * oy < nudge2) { overlaps = true; break; }
+      }
+      if (!overlaps && d < bestD) { bestD = d; best = j; }
+    }
+    const pick = best >= 0 ? best : fallback;
+    if (pick < 0) break;
+    used[pick] = true;
+    placed.push({ label: city.label, lng: candidates[pick].lng, lat: candidates[pick].lat });
+  }
+  return placed;
+}
+
+// Grid-sample interior points of the zone; spacing selection thins them later.
+function sampleInterior(polygons, minX, minY, maxX, maxY) {
+  const g = 16;
+  const stepX = (maxX - minX) / (g + 1), stepY = (maxY - minY) / (g + 1);
+  const pts = [];
+  for (let i = 1; i <= g; i++) for (let j = 1; j <= g; j++) {
+    const lng = minX + stepX * i, lat = minY + stepY * j;
+    if (pointInPolygons(lng, lat, polygons)) pts.push({ lng, lat });
+  }
+  return pts;
+}
+
+// Even-odd ray cast; a point inside any polygon's outer-minus-holes counts.
+function pointInPolygons(x, y, polygons) {
+  for (const poly of polygons) {
+    let inside = false;
+    for (const ring of poly) {
+      for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+        const xi = ring[i][0], yi = ring[i][1], xj = ring[j][0], yj = ring[j][1];
+        if (((yi > y) !== (yj > y)) && (x < ((xj - xi) * (y - yi)) / (yj - yi) + xi)) inside = !inside;
+      }
+    }
+    if (inside) return true;
+  }
+  return false;
 }
 
 function regionInfoHtml(klass, exemplar, fraction, runnersUp) {

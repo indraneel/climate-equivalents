@@ -31,10 +31,13 @@ app.js                  All runtime logic (mode state, layers, shuffle, fit)
 koppen-data.js          KOPPEN_CLASSES = { id → symbol, name, color } (30 classes)
 scripts/
   prep_country_zones.py Offline prep: tif → polygonize → overlay → simplify
+  prep_city_exemplars.py Offline prep: geonames cities → nearest-zone → group
 data/
   country-zones.geojson 1054 (subunit, class) MultiPolygons, ~11.5 MB
   class-exemplars.json  Per-class top-8 subunits by area
+  cities-by-country.json { iso3 → { class → [{label,lng,lat,pop}] } } city dots
 koppen_geiger_tif/      Beck et al. 2023, downloaded once. .tif source files
+cities_geonames/        GeoNames cities15000 (prep-time only, auto-downloaded)
 subunits.geojson        Natural Earth 10m Admin-0 Map Subunits (~25 MB,
                         prep-time only). Splits France→{France, Corsica,
                         French Guiana, Réunion, …}, USA→{Continental,
@@ -46,6 +49,15 @@ subunits.geojson        Natural Earth 10m Admin-0 Map Subunits (~25 MB,
 scripts/prep_country_zones.py` after editing the prep script. The current
 `country-zones.geojson` is built from the 10 km (`0p1`) Beck raster with
 0.02° simplify tolerance and a 200 km² area floor.
+
+`cities-by-country.json` is regenerated independently with `uv run
+scripts/prep_city_exemplars.py` — no raster needed. It pulls GeoNames
+`cities15000` (auto-cached to `cities_geonames/`), keeps cities with pop ≥ 1M
+or that are national capitals (~700), and assigns each its Köppen class **and
+its country `iso3`** from a nearest-polygon join against `country-zones.geojson`.
+Keying on the *zone's* iso3 (GU_A3, e.g. France = `FXX`, UK split into
+`ENG`/`SCT`/`WLS`) is deliberate: it's the same code the exemplars use, so the
+app's `citiesByCountry[matchedIso3][class]` lookups always line up.
 
 The "country" terminology in the UI and code is shorthand for "Natural
 Earth map subunit" — for most entries (Brazil, Japan, Kenya) the two are
@@ -73,6 +85,25 @@ Hard-reload Chrome (Cmd+Shift+R) when iterating on `app.js` / `index.html`.
   comparisons) and `✕` (clear) buttons; each climate region is labeled
   with the country it climate-matches. Click a label to cycle that one
   region's match.
+  - **City dots.** Additive on top of the country labels; appear as soon as a
+    country is selected (no zoom gate). Each zone gets real cities **of its
+    matched country** sharing that climate — the China-matched SE-US zone shows
+    Shanghai/Wuhan/Guangzhou. They're **HTML markers** (`.city-dot`,
+    `createCityMarker`), not a MapLibre symbol layer, so they can use the app's
+    Cormorant serif — demotiles glyphs are Open Sans only. `buildCityDots()` (end
+    of `refreshLabels`, so it tracks selection + shuffle) per zone looks up
+    `citiesByCountry[ctx.exemplar.iso3][class]`, then:
+    - **count** scales with the zone's area (`cityCountForArea`, capped at
+      `MAX_CITY_DOTS_PER_ZONE` = 4) — small/compact zones get 1–2, big ones up to 4;
+    - **placement** (`scatterCities`) maps each city's relative lng/lat in its own
+      country onto the same relative spot in the zone (eastern-China cities land
+      east), with a soft `CITY_DOT_NUDGE_DEG` de-overlap that **never drops a
+      city** (two close real cities beat one lonely dot). Count and placement are
+      deliberately decoupled — no hard spacing rule throwing well-placed cities away.
+    Relative placement is *not* hemisphere-flipped, and needn't be: every dot is
+    already a city of the zone's Köppen class, so position is purely cosmetic
+    spread. A matched country with no qualifying city in that class (deserts,
+    polar, many 2nd-choice shuffle matches) simply gets no dots.
 - **Draw mode.** Click vertices to build a polygon, double-click or hit
   "Finish drawing" to close → side panel shows a per-class breakdown with
   the top exemplar per class. Uses Turf intersect against the country-zones

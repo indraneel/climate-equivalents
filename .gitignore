@@ -9,3 +9,7 @@ skills/
 # Beck et al. 2023 if you need to re-run the prep script.
 koppen_geiger_tif/
 koppen_geiger_tif.zip
+
+# GeoNames cities15000 — re-downloaded automatically by
+# scripts/prep_city_exemplars.py when missing.
+cities_geonames/
