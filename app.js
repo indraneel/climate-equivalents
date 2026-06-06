@@ -8,6 +8,7 @@ import polylabel from 'https://esm.sh/polylabel@1.1.0';
 
 const $overlay = document.getElementById('map-overlay');
 const $overlaySelect = document.getElementById('overlay-select');
+const $overlayRandom = document.getElementById('overlay-random');
 const $overlayShuffle = document.getElementById('overlay-shuffle');
 const $overlayClose = document.getElementById('overlay-close');
 const $widget = document.getElementById('climate-widget');
@@ -221,6 +222,12 @@ $overlayClose.addEventListener('click', clearSelection);
 $overlaySelect.addEventListener('change', (e) => {
   const iso = e.target.value;
   if (iso) selectCountry(iso);
+});
+$overlayRandom.addEventListener('click', async () => {
+  const { byIso } = await dataReady;
+  const candidates = [...byIso.keys()].filter((iso) => iso !== selected?.iso);
+  if (!candidates.length) return;
+  selectCountry(candidates[Math.floor(Math.random() * candidates.length)]);
 });
 
 $widgetHeader.addEventListener('click', () => {

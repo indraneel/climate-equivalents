@@ -42,13 +42,13 @@
       max-width: calc(100% - 32px);
     }
     #overlay-select {
-      font: 600 17px/1.2 system-ui, -apple-system, "Segoe UI", sans-serif;
+      font: 600 34px/1.2 system-ui, -apple-system, "Segoe UI", sans-serif;
       color: var(--text);
       background: transparent;
       border: none;
       padding: 4px 8px;
       cursor: pointer;
-      max-width: 220px;
+      max-width: 360px;
     }
     #overlay-select:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-radius: 4px; }
     #map-overlay button {
@@ -336,7 +336,7 @@
         gap: 6px;
         padding: 6px 10px;
       }
-      #overlay-select { font-size: 15px; max-width: 140px; }
+      #overlay-select { font-size: 30px; max-width: 220px; }
       #map-overlay button { padding: 5px 10px; font-size: 12px; }
       #map-overlay button span:not(.icon) { display: none; }
     }
@@ -349,6 +349,9 @@
       <select id="overlay-select" aria-label="Pick a country">
         <option value="" disabled selected>Pick a country…</option>
       </select>
+      <button id="overlay-random" type="button" title="Pick a random country">
+        <span class="icon" aria-hidden="true">⚄</span><span>Random</span>
+      </button>
       <button id="overlay-shuffle" type="button" title="Show a new match for every region" disabled>
         <span class="icon" aria-hidden="true">↺</span><span>Shuffle all</span>
       </button>
