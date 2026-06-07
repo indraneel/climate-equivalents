@@ -40,6 +40,113 @@ const METHODOLOGY_HTML = `
 `;
 $methodologyPopover.innerHTML = METHODOLOGY_HTML;
 
+// --- Welcome modal ---------------------------------------------------------
+// Short, plain-language labels for each Köppen class, used as the colored
+// chips in the welcome modal's color legend.
+const WELCOME_LABELS = {
+  1: 'Tropical rainforest', 2: 'Tropical monsoon', 3: 'Tropical savanna',
+  4: 'Hot desert', 5: 'Cold desert', 6: 'Hot steppe', 7: 'Cold steppe',
+  8: 'Hot Mediterranean', 9: 'Warm Mediterranean', 10: 'Cool Mediterranean',
+  11: 'Dry-winter subtropical', 12: 'Subtropical highland', 13: 'Cold highland',
+  14: 'Humid subtropical', 15: 'Oceanic', 16: 'Subpolar oceanic',
+  17: 'Hot dry-summer continental', 18: 'Warm dry-summer continental',
+  19: 'Cold dry-summer continental', 20: 'Frigid dry-summer continental',
+  21: 'Hot dry-winter continental', 22: 'Warm dry-winter continental',
+  23: 'Subarctic, dry winter', 24: 'Frigid subarctic',
+  25: 'Hot humid continental', 26: 'Warm humid continental',
+  27: 'Subarctic (boreal)', 28: 'Frigid boreal',
+  29: 'Polar tundra', 30: 'Polar ice cap',
+};
+
+const $welcomeModal = document.getElementById('welcome-modal');
+const $welcomeStart = document.getElementById('welcome-start');
+const $welcomeLegend = document.getElementById('welcome-legend');
+
+const WELCOME_KEY = 'ce_welcome_v1';
+const WELCOME_WEEK_MS = 7 * 24 * 60 * 60 * 1000;
+
+function readWelcomeState() {
+  try { return JSON.parse(localStorage.getItem(WELCOME_KEY)) || {}; }
+  catch { return {}; }
+}
+function writeWelcomeState(state) {
+  try { localStorage.setItem(WELCOME_KEY, JSON.stringify(state)); } catch { /* private mode */ }
+}
+
+// WCAG relative luminance of an "rgb(r, g, b)" string.
+function relLuminance(rgbStr) {
+  const [r, g, b] = (rgbStr.match(/\d+/g) || [0, 0, 0]).map(Number).map((c) => {
+    const s = c / 255;
+    return s <= 0.03928 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
+  });
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+}
+// Pick black or white text — whichever has the higher contrast ratio on bg.
+function maxContrastText(rgbStr) {
+  const L = relLuminance(rgbStr);
+  const contrastWhite = 1.05 / (L + 0.05);
+  const contrastBlack = (L + 0.05) / 0.05;
+  return contrastBlack >= contrastWhite ? '#000' : '#fff';
+}
+
+function buildWelcomeLegend() {
+  if (!$welcomeLegend || $welcomeLegend.childElementCount) return;
+  const frag = document.createDocumentFragment();
+  for (const id of Object.keys(KOPPEN_CLASSES)) {
+    const klass = KOPPEN_CLASSES[id];
+    const chip = document.createElement('span');
+    chip.className = 'welcome-chip';
+    chip.style.background = klass.color;
+    chip.style.color = maxContrastText(klass.color);
+    chip.textContent = WELCOME_LABELS[id] || klass.name;
+    chip.title = `${klass.symbol} — ${klass.name}`;
+    frag.appendChild(chip);
+  }
+  $welcomeLegend.appendChild(frag);
+}
+
+function showWelcome() {
+  buildWelcomeLegend();
+  $welcomeModal.hidden = false;
+}
+function hideWelcome() {
+  $welcomeModal.hidden = true;
+}
+
+// Show on initial load unless suppressed. "Suppressed" = the modal has been
+// seen twice OR "Start" was clicked once; either sets a one-week timestamp.
+function maybeShowWelcome() {
+  if (!$welcomeModal) return;
+  const now = Date.now();
+  const state = readWelcomeState();
+  if (state.suppressedUntil && now < state.suppressedUntil) return;
+  showWelcome();
+  state.seen = (state.seen || 0) + 1;
+  if (state.seen >= 2) state.suppressedUntil = now + WELCOME_WEEK_MS;
+  writeWelcomeState(state);
+}
+
+if ($welcomeStart) {
+  $welcomeStart.addEventListener('click', () => {
+    hideWelcome();
+    const state = readWelcomeState();
+    state.suppressedUntil = Date.now() + WELCOME_WEEK_MS;
+    writeWelcomeState(state);
+  });
+}
+// Backdrop click and Escape dismiss without changing the suppression rule
+// (the view already counted toward the "seen twice" threshold).
+if ($welcomeModal) {
+  $welcomeModal.addEventListener('click', (e) => {
+    if (e.target === $welcomeModal) hideWelcome();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !$welcomeModal.hidden) hideWelcome();
+  });
+}
+
+maybeShowWelcome();
+
 // Coarse pointer = touch device. Used to gate hover-vs-tap behavior.
 const coarsePointer = window.matchMedia('(pointer: coarse)').matches;
 const mqMobile = window.matchMedia('(max-width: 719px)');
