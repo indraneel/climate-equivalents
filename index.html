@@ -352,16 +352,24 @@
       width: 100%;
       min-width: 0; /* flex child: allow shrink below long nowrap chips' min-content */
       max-width: 620px;
-      max-height: calc(100vh - 32px);
-      overflow-y: auto;
+      max-height: 45vh;
+      display: flex;
+      flex-direction: column;
       border-radius: 14px;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
       padding: 20px 28px 16px;
     }
     .welcome-title {
+      flex: 0 0 auto;
       font: 700 42px/1.02 "Cormorant", Georgia, "Times New Roman", serif;
       margin: 0 0 8px;
       color: #1a1a1a;
+    }
+    /* Only the explainer text scrolls; title + Start button stay pinned. */
+    .welcome-body {
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow-y: auto;
     }
     .welcome-body p {
       font-size: 15px; line-height: 1.36; margin: 0 0 7px; color: #1a1a1a;
@@ -382,6 +390,7 @@
       /* text color is set per-chip in JS for max contrast against its bg */
     }
     .welcome-start {
+      flex: 0 0 auto;
       display: block;
       margin: 14px auto 2px;
       padding: 9px 44px;
@@ -397,7 +406,7 @@
 
     @media (max-width: 719px) {
       .welcome-modal { padding: 12px; }
-      .welcome-card { padding: 16px 16px 13px; max-height: calc(100vh - 24px); }
+      .welcome-card { padding: 16px 16px 13px; max-height: 45vh; }
       .welcome-title { font-size: 33px; margin-bottom: 6px; }
       .welcome-body p { font-size: 13.5px; line-height: 1.32; margin-bottom: 6px; }
       .welcome-body h2 { font-size: 15px; margin: 10px 0 3px; }
