@@ -36,7 +36,7 @@ scripts/
   prep_city_exemplars.py Offline prep: geonames cities → nearest-zone → group
 data/
   country-zones.geojson 1054 (subunit, class) MultiPolygons, ~11.5 MB
-  class-exemplars.json  Per-class top-25 subunits by area (EXEMPLAR_DEPTH)
+  class-exemplars.json  Per-class top-8 subunits by area
   cities-by-country.json { iso3 → { class → [{label,lng,lat,pop}] } } city dots
 koppen_geiger_tif/      Beck et al. 2023, downloaded once. .tif source files
 cities_geonames/        GeoNames cities15000 (prep-time only, auto-downloaded)
@@ -87,17 +87,6 @@ Hard-reload Chrome (Cmd+Shift+R) when iterating on `app.js` / `index.html`.
   comparisons) and `✕` (clear) buttons; each climate region is labeled
   with the country it climate-matches. Click a label to cycle that one
   region's match.
-  - **Frame of reference.** The pill also carries a `vs [anywhere ▾]` selector
-    (`#overlay-reference`) — pick a region you know (United States / Europe /
-    Australia / Taiwan) and matches are *soft-prioritized* to it: every zone
-    prefers a match from that region and silently falls back to the global best
-    when the region shares no place in that climate. Implemented as a stable
-    reorder of each class's exemplar list (`applyReferenceOrdering`,
-    `referenceIso3Set`, `REFERENCE_PRESETS`) — the greedy dedupe in
-    `refreshLabels` then naturally picks the reference first. The choice persists
-    in `localStorage`. Note this only works if reference members are actually in
-    the exemplar lists, which is why `class-exemplars.json` keeps top-25 per
-    class (`EXEMPLAR_DEPTH`), not top-8 — small references like Taiwan sit deep.
   - **City dots.** Additive on top of the country labels; appear as soon as a
     country is selected (no zoom gate). Each zone gets real cities **of its
     matched country** sharing that climate — the China-matched SE-US zone shows

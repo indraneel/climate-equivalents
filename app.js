@@ -8,7 +8,6 @@ import polylabel from 'https://esm.sh/polylabel@1.1.0';
 
 const $overlay = document.getElementById('map-overlay');
 const $overlaySelect = document.getElementById('overlay-select');
-const $overlayReference = document.getElementById('overlay-reference');
 const $overlayRandom = document.getElementById('overlay-random');
 const $overlayShuffle = document.getElementById('overlay-shuffle');
 const $overlayClose = document.getElementById('overlay-close');
@@ -346,71 +345,6 @@ let basemapSymbolLayers = [];
 // labels that collide with our overlay pill + region labels. City/town labels
 // are deliberately left out so they stay visible as geographic source anchors.
 let basemapCountryLabelLayers = [];
-
-// --- Frame of reference ----------------------------------------------------
-// Regions the user can express matches relative to ("France vs Europe"). Values
-// are sets of GU_A3 codes present in the data. Selecting one soft-prioritizes
-// its members in every class's exemplar list (see applyReferenceOrdering); a
-// class the reference doesn't share transparently falls back to the global best.
-const REFERENCE_PRESETS = {
-  USA: ['USA'],
-  AUS: ['AUS'],
-  TWN: ['TWN'],
-  // Curated geographic Europe (GU_A3 codes; UK is split ENG/SCT/WLS/NIR, and a
-  // few use Natural Earth's non-ISO map-unit codes: FXX, NOW, PRX, SRS, BHF).
-  EUR: [
-    'ALB', 'AND', 'AUT', 'BEL', 'BLR', 'BHF', 'BGR', 'HRV', 'CYP', 'CZE',
-    'DNK', 'ENG', 'EST', 'FIN', 'FXX', 'DEU', 'GRC', 'HUN', 'ISL', 'IRL',
-    'ITA', 'KOS', 'LVA', 'LTU', 'LUX', 'MLT', 'MDA', 'MNE', 'NLX', 'MKD',
-    'NIR', 'NOW', 'POL', 'PRX', 'ROU', 'SCT', 'SRS', 'SVK', 'SVN', 'ESP',
-    'SWE', 'CHE', 'UKR', 'WLS',
-  ],
-};
-const REFERENCE_STORAGE_KEY = 'climate-equivalents:reference';
-// The active reference as a Set of iso3 (empty = "anywhere", global behavior).
-let referenceIso3Set = new Set();
-
-// Stable reorder: reference members first (keeping their existing area-rank order
-// among themselves), then everyone else. The greedy-dedupe in refreshLabels walks
-// each list from `index`, so front-loading the reference makes it picked first and
-// falls through to global entries automatically — that's the soft-prioritize +
-// global-fallback behavior, no special-casing.
-function applyReferenceOrdering(list) {
-  if (referenceIso3Set.size === 0) return list;
-  const inRef = [];
-  const rest = [];
-  for (const e of list) (referenceIso3Set.has(e.iso3) ? inRef : rest).push(e);
-  return inRef.length ? [...inRef, ...rest] : list;
-}
-
-// Switch the active frame of reference. Rebuilds each class's exemplar list from
-// the canonical global ranking (so repeated switches stay deterministic), then
-// re-applies the new ordering and refreshes — no camera move, the selection stays.
-async function setReference(key) {
-  referenceIso3Set = new Set(REFERENCE_PRESETS[key] ?? []);
-  try { localStorage.setItem(REFERENCE_STORAGE_KEY, key || ''); } catch { /* ignore */ }
-  track('set-reference', { reference: key || 'anywhere' });
-  if (!selected) return;
-  const { exemplars } = await dataReady;
-  for (const [k, entry] of selected.classes) {
-    entry.exemplars = applyReferenceOrdering(
-      (exemplars[k] ?? []).filter((e) => e.iso3 !== selected.iso),
-    );
-    entry.index = 0;
-  }
-  refreshLabels();
-  if (detailKlass != null) showDetail(detailKlass);
-}
-
-// Restore a persisted reference at load, before any selection is made.
-(() => {
-  let key = '';
-  try { key = localStorage.getItem(REFERENCE_STORAGE_KEY) || ''; } catch { /* ignore */ }
-  if (key && REFERENCE_PRESETS[key]) {
-    referenceIso3Set = new Set(REFERENCE_PRESETS[key]);
-    if ($overlayReference) $overlayReference.value = key;
-  }
-})();
 let regionMarkers = [];
 let markersByClass = new Map();
 let cityMarkers = [];
@@ -442,9 +376,6 @@ $overlayClose.addEventListener('click', () => {
 $overlaySelect.addEventListener('change', (e) => {
   const iso = e.target.value;
   if (iso) selectCountry(iso, 'dropdown');
-});
-$overlayReference.addEventListener('change', (e) => {
-  setReference(e.target.value);
 });
 $overlayRandom.addEventListener('click', async () => {
   const { byIso } = await dataReady;
@@ -640,9 +571,7 @@ async function selectCountry(iso, source = 'map') {
   for (const f of country.features) {
     const k = f.properties.koppen_class;
     if (classes.has(k)) continue;
-    const list = applyReferenceOrdering(
-      (exemplars[k] ?? []).filter((e) => e.iso3 !== iso),
-    );
+    const list = (exemplars[k] ?? []).filter((e) => e.iso3 !== iso);
     classes.set(k, { exemplars: list, index: 0 });
   }
   selected = {
