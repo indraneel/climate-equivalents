@@ -421,8 +421,10 @@ let hoveredKlass = null;
 let hoveredIso = null;
 let detailKlass = null; // when set, widget shows detail view for this class
 let hasEverSelected = false;
-let hoverTimer = null;
-const HOVER_DELAY_MS = 200;
+// Key (`iso:klass`) the hover tooltip is currently built for, so we recompute
+// content + map highlight only when the cursor crosses into a new zone; plain
+// motion within a zone just glides the popup.
+let hoverKey = null;
 
 let basemapSymbolLayers = [];
 // Subset of basemapSymbolLayers we hide on selection: country/continent/state
@@ -566,7 +568,18 @@ map.on('mousemove', 'zones-fill', (e) => {
 
   if (!hasEverSelected) return;
   const klass = Number(feat.properties.koppen_class);
-  scheduleHover({ iso, klass, lngLat: e.lngLat });
+
+  // Glide the tooltip with the cursor every frame — a DOM transform, no map
+  // repaint, so it tracks smoothly. (Skipped while a label has it pinned.)
+  if (!labelTooltipOpen) positionHoverPopup(e.lngLat);
+
+  // Recompute content + highlight only when the hovered region actually changes;
+  // moving within one zone stays cheap (no setPaintProperty thrash).
+  const key = `${iso}:${klass}`;
+  if (key !== hoverKey) {
+    hoverKey = key;
+    applyHover({ iso, klass, lngLat: e.lngLat });
+  }
 });
 map.on('mouseleave', 'zones-fill', () => {
   if (coarsePointer) return;
@@ -577,20 +590,11 @@ map.on('mouseleave', 'zones-fill', () => {
   setHoveredIso(null);
 });
 
-function scheduleHover(args) {
-  if (hoverTimer) clearTimeout(hoverTimer);
-  hoverTimer = setTimeout(() => {
-    hoverTimer = null;
-    applyHover(args);
-  }, HOVER_DELAY_MS);
-}
-
 function cancelHover() {
-  if (hoverTimer) { clearTimeout(hoverTimer); hoverTimer = null; }
+  hoverKey = null;
 }
 
 function applyHover({ iso, klass, lngLat }) {
-  // Re-check state — selection may have changed during the debounce wait.
   if (!hasEverSelected) return;
   const onSelected = selected && selected.iso === iso;
   setHoveredIso(onSelected ? null : iso);
@@ -619,6 +623,11 @@ function showHoverPopup(lngLat, html) {
     });
   }
   regionPopup.setLngLat(lngLat).setHTML(html).addTo(map);
+}
+
+// Cheap per-frame reposition so the open tooltip follows the cursor.
+function positionHoverPopup(lngLat) {
+  if (regionPopup && regionPopup.isOpen()) regionPopup.setLngLat(lngLat);
 }
 
 function countryTipHtml(iso, brk) {

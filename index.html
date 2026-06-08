@@ -285,6 +285,9 @@
     .country-tip__row .name { color: var(--muted); flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .country-tip__row .pct { color: var(--muted); font-variant-numeric: tabular-nums; flex: 0 0 auto; }
     .country-tip__cta { color: #2563eb; font-size: 11px; font-weight: 600; }
+    /* Keep the hover tooltip above the on-map region labels (z 2) and city
+       dots (z 1) so it never gets buried by them. */
+    .maplibregl-popup.region-popup { z-index: 8; }
     .maplibregl-popup.region-popup .maplibregl-popup-content {
       padding: 8px 10px; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);
     }
