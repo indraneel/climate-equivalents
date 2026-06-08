@@ -164,7 +164,10 @@ function track(event, data) {
 
 const map = new maplibregl.Map({
   container: 'map',
-  style: 'https://demotiles.maplibre.org/style.json',
+  // OpenFreeMap Positron — free, no API key, OpenMapTiles vector schema. Unlike
+  // demotiles it ships real city/town labels (our "source cities") and a
+  // multi-font glyph endpoint, so the single-font-stack gotcha no longer applies.
+  style: 'https://tiles.openfreemap.org/styles/positron',
   center: [10, 25],
   zoom: 1.4,
   attributionControl: { compact: true },
@@ -234,22 +237,34 @@ map.on('load', async () => {
 
   map.addSource('zones', { type: 'geojson', data: zones });
 
+  // Snapshot the basemap's symbol (label) layers, then partition them. We insert
+  // our colored zones *below* the first label layer (`firstLabel`) so OpenFreeMap's
+  // real place labels render on top of the fill and stay legible. We hide only the
+  // country/continent/state labels on selection (they collide with our overlay pill
+  // and region labels); city/town labels stay on as geographic "source" anchors.
+  const symbolLayers = map.getStyle().layers.filter((l) => l.type === 'symbol');
+  const firstLabel = symbolLayers[0]?.id;
+  basemapSymbolLayers = symbolLayers.map((l) => l.id);
+  // OpenFreeMap Positron place labels: label_country_{1,2,3} | label_state |
+  // label_city | label_city_capital | label_town | label_village | label_other.
+  // We hide only the country labels (big, and they fight the overlay pill + our
+  // region labels); state/city/town stay on as source anchors.
+  basemapCountryLabelLayers = symbolLayers
+    .filter((l) => /^label_country/i.test(l.id))
+    .map((l) => l.id);
+
   map.addLayer({
     id: 'zones-fill',
     type: 'fill',
     source: 'zones',
     paint: { 'fill-color': buildFillColorExpression(), 'fill-opacity': 0.78 },
-  });
+  }, firstLabel);
   map.addLayer({
     id: 'zones-outline',
     type: 'line',
     source: 'zones',
     paint: { 'line-color': '#222', 'line-width': 0.25, 'line-opacity': 0.35 },
-  });
-
-  basemapSymbolLayers = map.getStyle().layers
-    .filter((l) => l.type === 'symbol')
-    .map((l) => l.id);
+  }, firstLabel);
 
   map.addSource('country-outline', { type: 'geojson', data: emptyFC() });
   map.addLayer({
@@ -300,7 +315,8 @@ map.on('load', async () => {
   });
 
   // City dots are HTML markers (see buildCityDots) so they can use the app's
-  // serif font — MapLibre symbol glyphs from demotiles are Open Sans only.
+  // serif font and an accent pin — this keeps the matched-country "comparison"
+  // cities visually distinct from the basemap's plain grey "source" city labels.
 
   populateCountrySelect();
 
@@ -325,6 +341,10 @@ let hoverTimer = null;
 const HOVER_DELAY_MS = 200;
 
 let basemapSymbolLayers = [];
+// Subset of basemapSymbolLayers we hide on selection: country/continent/state
+// labels that collide with our overlay pill + region labels. City/town labels
+// are deliberately left out so they stay visible as geographic source anchors.
+let basemapCountryLabelLayers = [];
 let regionMarkers = [];
 let markersByClass = new Map();
 let cityMarkers = [];
@@ -690,7 +710,9 @@ function applySelectionStyling(iso) {
     1.0,
   ]);
   map.setPaintProperty('zones-outline', 'line-opacity', 0);
-  for (const id of basemapSymbolLayers) {
+  // Hide only the country/state labels (they fight our region labels); leave the
+  // basemap's city/town labels on so the user sees where the zones really are.
+  for (const id of basemapCountryLabelLayers) {
     if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', 'none');
   }
 }
@@ -699,7 +721,7 @@ function clearSelectionStyling() {
   map.setPaintProperty('zones-fill', 'fill-color', buildFillColorExpression());
   map.setPaintProperty('zones-fill', 'fill-opacity', 0.78);
   map.setPaintProperty('zones-outline', 'line-opacity', 0.35);
-  for (const id of basemapSymbolLayers) {
+  for (const id of basemapCountryLabelLayers) {
     if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', 'visible');
   }
 }

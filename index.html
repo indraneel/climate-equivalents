@@ -200,7 +200,11 @@
     }
     .region-label__name { pointer-events: none; color: #111; }
 
-    /* On-map city dots (HTML markers) — same serif font as the rest of the app */
+    /* On-map city dots (HTML markers): these are *comparison* cities — real
+       cities of the matched country, scattered across the zone. They use the
+       app's serif font + an accent-ringed pin + a faint chip so they read as an
+       overlay and never blur with the basemap's plain grey *source* city labels
+       (the real cities of the country you actually clicked). */
     .city-dot {
       display: inline-flex;
       align-items: center;
@@ -209,17 +213,21 @@
       z-index: 1;
     }
     .city-dot__pin {
-      width: 7px;
-      height: 7px;
+      width: 8px;
+      height: 8px;
       flex: 0 0 auto;
       border-radius: 50%;
       background: #fff;
-      border: 1.2px solid #1a1a1a;
+      border: 2px solid #c46a2c;
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9);
     }
     .city-dot__name {
       font: 600 15px/1 "Cormorant", Georgia, "Times New Roman", serif;
-      color: #1a1a1a;
+      color: #6b3410;
       white-space: nowrap;
+      padding: 0 3px;
+      border-radius: 3px;
+      background: rgba(255, 250, 244, 0.72);
       text-shadow: 0 0 2px #fff, 0 0 2px #fff, 0 0 3px #fff;
     }
     .region-label__refresh {

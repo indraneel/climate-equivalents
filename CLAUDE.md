@@ -15,8 +15,10 @@ works.
 
 ## Stack
 
-- **MapLibre GL JS** (4.7) — basemap (`demotiles`) + GeoJSON fill / line /
-  symbol layers, loaded via CDN.
+- **MapLibre GL JS** (4.7) — basemap (**OpenFreeMap Positron**,
+  `https://tiles.openfreemap.org/styles/positron`; free, no API key,
+  OpenMapTiles schema, real city labels) + GeoJSON fill / line / symbol
+  layers, loaded via CDN.
 - **Turf.js** (7) — `pointOnFeature`, `flatten`, `bbox`, `intersect`,
   `simplify`, `area`. Loaded via CDN.
 - **Vanilla ES modules** in `app.js` — no bundler.
@@ -90,7 +92,8 @@ Hard-reload Chrome (Cmd+Shift+R) when iterating on `app.js` / `index.html`.
     matched country** sharing that climate — the China-matched SE-US zone shows
     Shanghai/Wuhan/Guangzhou. They're **HTML markers** (`.city-dot`,
     `createCityMarker`), not a MapLibre symbol layer, so they can use the app's
-    Cormorant serif — demotiles glyphs are Open Sans only. `buildCityDots()` (end
+    Cormorant serif + an accent pin/chip that keeps these *comparison* cities
+    distinct from the basemap's grey *source* city labels. `buildCityDots()` (end
     of `refreshLabels`, so it tracks selection + shuffle) per zone looks up
     `citiesByCountry[ctx.exemplar.iso3][class]`, then:
     - **count** scales with the zone's area (`cityCountForArea`, capped at
@@ -122,15 +125,20 @@ Hard-reload Chrome (Cmd+Shift+R) when iterating on `app.js` / `index.html`.
 
 ## Gotchas (we hit these — don't re-discover)
 
-- **demotiles glyph endpoint serves only single-font stacks.** Setting
-  `'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold']` makes
-  MapLibre fetch `font/Open Sans Semibold,Arial Unicode MS Bold/*.pbf` which
-  404s — the symbol layer then silently renders nothing. Use exactly
-  `['Open Sans Semibold']`.
-- **Basemap text labels collide with ours.** With `text-allow-overlap: false`,
-  the demotiles `countries-label` / `geolines-label` layers win and suppress
-  our region labels. `app.js` snapshots all basemap symbol layers on load
-  (`basemapSymbolLayers`) and hides them during a country selection.
+- **Zones must sit *below* basemap labels.** Our `zones-fill` is added with a
+  `beforeId` of the first basemap symbol layer (`firstLabel`), so OpenFreeMap's
+  real city labels paint on top of the 0.78-opacity fill and stay legible. Drop
+  the `beforeId` and the fill buries every label.
+- **Basemap text labels collide with ours — but only some.** OpenFreeMap ships
+  real place labels; we *want* the city/town labels (they're the "source"
+  cities, anchoring where a zone really is). Only the country/continent/state
+  labels collide with our overlay pill + region labels. `app.js` snapshots all
+  basemap symbol layers (`basemapSymbolLayers`) and separately the colliding
+  subset (`basemapCountryLabelLayers` = Positron's `label_country_{1,2,3}`,
+  matched by `/^label_country/i`); selection hides only that subset, so
+  `label_state` / `label_city` / `label_town` stay on. Comparison city dots
+  (`.city-dot`) use a serif font + accent pin + chip so they never blur with the
+  grey sans source-city labels.
 - **`fitToFeatures` frames the bbox of every polygon part — no outlier
   rejection.** An earlier version dropped Alaska / Hawaii / Chukchi via a
   weighted-median centroid + gap-cut heuristic so the camera framed the
