@@ -201,19 +201,20 @@ function chanStr(c) {
 // Same physical color as the sRGB original, but expressed in P3 coordinates so
 // it lands faithfully in the P3 buffer (no naive over-saturation).
 function faithfulP3(srgb) { return chanStr(toP3(parse(srgb))); }
-// More vivid: push chroma (and a touch of lightness) and gamut-map into P3.
+// More vivid: push chroma and gamut-map into P3. We deliberately do NOT raise
+// lightness — for already-bright, near-edge colors (Csa yellow, Cfa green) a
+// lightness bump just washes them toward white. Boosting chroma alone deepens
+// muted colors and leaves maxed-out ones intact.
 function boostedP3(srgb) {
   const lch = toOklch(parse(srgb));
-  lch.c = (lch.c ?? 0) * 1.35;
-  lch.l = Math.min(1, (lch.l ?? 0) * 1.03 + 0.01);
+  lch.c = (lch.c ?? 0) * 1.4;
   return chanStr(toP3(clampChroma(lch, 'oklch', 'p3')));
 }
-// sRGB fallback boost (no wide gamut available): a subtler chroma lift so the
-// focused climate still reads as "lit up" on non-P3 screens.
+// sRGB fallback boost (no wide gamut available): a subtler chroma lift, again
+// without touching lightness so bright climates don't blow out.
 function boostedSrgb(srgb) {
   const lch = toOklch(parse(srgb));
-  lch.c = (lch.c ?? 0) * 1.2;
-  lch.l = Math.min(1, (lch.l ?? 0) * 1.02 + 0.005);
+  lch.c = (lch.c ?? 0) * 1.25;
   return chanStr(toRgb(clampChroma(lch, 'oklch', 'rgb')));
 }
 
