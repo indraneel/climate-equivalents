@@ -3,6 +3,9 @@ import { KOPPEN_CLASSES } from './koppen-data.js';
 // because the inlined `require('tinyqueue')` doesn't resolve. esm.sh
 // bundles deps, so importing it as an ES module just works.
 import polylabel from 'https://esm.sh/polylabel@1.1.0';
+// Culori: tiny, dependency-free color lib. We use it to color-manage the Köppen
+// palette for wide-gamut (Display-P3) displays — see the P3 block below.
+import { converter, parse, clampChroma } from 'https://esm.sh/culori@4';
 
 // --- DOM refs --------------------------------------------------------------
 
@@ -175,10 +178,80 @@ const map = new maplibregl.Map({
 map.addControl(new maplibregl.NavigationControl(), 'bottom-right');
 window.__map = map;
 
-function buildFillColorExpression() {
-  const expr = ['match', ['get', 'koppen_class']];
+// --- Wide-gamut (Display-P3) color -----------------------------------------
+//
+// Most modern phones/laptops have P3 displays. When one is detected we flip the
+// map's WebGL drawing buffer to display-p3, then color-manage every Köppen color
+// so the base palette looks *identical* to its sRGB original (faithful P3
+// coordinates), while the hovered/focused climate is rendered in a chroma-boosted
+// color that reaches beyond sRGB — a true wide-gamut "HDR" pop. Everything
+// degrades cleanly to plain sRGB on displays (or browsers) without P3 support.
+
+const supportsP3 = window.matchMedia?.('(color-gamut: p3)')?.matches ?? false;
+let p3Enabled = false; // becomes true once the P3 buffer is actually in use
+
+const toP3 = converter('p3');
+const toOklch = converter('oklch');
+const toRgb = converter('rgb');
+
+function chanStr(c) {
+  const ch = (v) => Math.round(Math.max(0, Math.min(1, v)) * 255);
+  return `rgb(${ch(c.r)}, ${ch(c.g)}, ${ch(c.b)})`;
+}
+// Same physical color as the sRGB original, but expressed in P3 coordinates so
+// it lands faithfully in the P3 buffer (no naive over-saturation).
+function faithfulP3(srgb) { return chanStr(toP3(parse(srgb))); }
+// More vivid: push chroma (and a touch of lightness) and gamut-map into P3.
+function boostedP3(srgb) {
+  const lch = toOklch(parse(srgb));
+  lch.c = (lch.c ?? 0) * 1.35;
+  lch.l = Math.min(1, (lch.l ?? 0) * 1.03 + 0.01);
+  return chanStr(toP3(clampChroma(lch, 'oklch', 'p3')));
+}
+// sRGB fallback boost (no wide gamut available): a subtler chroma lift so the
+// focused climate still reads as "lit up" on non-P3 screens.
+function boostedSrgb(srgb) {
+  const lch = toOklch(parse(srgb));
+  lch.c = (lch.c ?? 0) * 1.2;
+  lch.l = Math.min(1, (lch.l ?? 0) * 1.02 + 0.005);
+  return chanStr(toRgb(clampChroma(lch, 'oklch', 'rgb')));
+}
+
+// Precompute base + highlight color per class once (after p3Enabled is known).
+let baseColorById = null;
+let hiliteColorById = null;
+function ensureColorCaches() {
+  baseColorById = {};
+  hiliteColorById = {};
   for (const [id, cls] of Object.entries(KOPPEN_CLASSES)) {
-    expr.push(Number(id), cls.color);
+    baseColorById[id] = p3Enabled ? faithfulP3(cls.color) : cls.color;
+    hiliteColorById[id] = p3Enabled ? boostedP3(cls.color) : boostedSrgb(cls.color);
+  }
+}
+
+// Try to put the map's WebGL buffer into display-p3. Safe no-op on unsupported
+// displays/browsers; leaves the map in plain sRGB.
+function enableP3Buffer() {
+  if (!supportsP3) return;
+  try {
+    const canvas = map.getCanvas();
+    const gl = canvas.getContext('webgl2') || canvas.getContext('webgl');
+    if (gl && 'drawingBufferColorSpace' in gl) {
+      gl.drawingBufferColorSpace = 'display-p3';
+      p3Enabled = true;
+      map.triggerRepaint();
+    }
+  } catch { /* stay sRGB */ }
+}
+
+// Data-driven fill color. `highlightKlass` (the hovered/focused climate) gets the
+// boosted color; every other class gets its faithful base color.
+function buildFillColorExpression(highlightKlass = null) {
+  if (!baseColorById) ensureColorCaches();
+  const expr = ['match', ['get', 'koppen_class']];
+  for (const id of Object.keys(KOPPEN_CLASSES)) {
+    const k = Number(id);
+    expr.push(k, k === highlightKlass ? hiliteColorById[id] : baseColorById[id]);
   }
   expr.push('#cccccc');
   return expr;
@@ -235,6 +308,11 @@ const dataReady = (async () => {
 map.on('load', async () => {
   const { zones } = await dataReady;
   allZoneFeatures = zones.features;
+
+  // Go wide-gamut before building the fill layer so colors are managed from the
+  // first paint. Both calls are safe no-ops on sRGB-only setups.
+  enableP3Buffer();
+  ensureColorCaches();
 
   map.addSource('zones', { type: 'geojson', data: zones });
 
@@ -591,7 +669,7 @@ async function selectCountry(iso, source = 'map') {
   setHoveredKlass(null); // clear any worldwide climate highlight from world mode
 
   setCountryOutline(iso);
-  applySelectionStyling(iso);
+  applySelectionStyling();
   $overlaySelect.value = iso;
   $overlayShuffle.disabled = false;
   $overlayClose.disabled = false;
@@ -703,19 +781,48 @@ function spreadCap(cs, k) {
   return picked;
 }
 
-function applySelectionStyling(iso) {
-  map.setPaintProperty('zones-fill', 'fill-color', [
-    'case',
-    ['==', ['get', 'iso3'], iso],
-    buildFillColorExpression(),
-    '#f1ede5',
-  ]);
-  map.setPaintProperty('zones-fill', 'fill-opacity', [
-    'case',
-    ['==', ['get', 'iso3'], iso],
-    0.85,
-    1.0,
-  ]);
+// Fill opacities. On hover, non-highlighted zones dim so the focused climate
+// stands out; the highlighted ones brighten slightly.
+const WORLD_FILL_OPACITY = 0.78;    // no selection, no hover
+const SELECTED_FILL_OPACITY = 0.85; // selected country's zones, no hover
+const HILITE_FILL_OPACITY = 0.95;   // the hovered/focused climate
+const FADE_FILL_OPACITY = 0.3;      // everything else while hovering
+
+// Base color: in world mode every zone keeps its Köppen color; with a country
+// selected, only that country is colored and the rest greys out.
+function fillColorExpr() {
+  const colors = buildFillColorExpression(hoveredKlass);
+  if (!selected) return colors;
+  return ['case', ['==', ['get', 'iso3'], selected.iso], colors, '#f1ede5'];
+}
+
+// Opacity, hover-aware in both modes. The "highlight" is hoveredKlass — a
+// hovered/sticky climate — which stays vivid while siblings fade back.
+function fillOpacityExpr() {
+  const k = hoveredKlass;
+  if (selected) {
+    const inSel = ['==', ['get', 'iso3'], selected.iso];
+    if (k == null) return ['case', inSel, SELECTED_FILL_OPACITY, 1.0];
+    return ['case',
+      ['all', inSel, ['==', ['get', 'koppen_class'], k]], HILITE_FILL_OPACITY,
+      inSel, FADE_FILL_OPACITY, // other zones of the selected country dim
+      1.0];                     // grey backdrop of other countries unchanged
+  }
+  if (k == null) return WORLD_FILL_OPACITY;
+  return ['case', ['==', ['get', 'koppen_class'], k], HILITE_FILL_OPACITY, FADE_FILL_OPACITY];
+}
+
+// Single source of truth for the zones-fill paint, recomputed whenever the
+// selection or the hovered climate changes. fill-opacity transitions by default,
+// so the fade animates smoothly.
+function refreshFillPaint() {
+  if (!map.getLayer('zones-fill')) return;
+  map.setPaintProperty('zones-fill', 'fill-color', fillColorExpr());
+  map.setPaintProperty('zones-fill', 'fill-opacity', fillOpacityExpr());
+}
+
+function applySelectionStyling() {
+  refreshFillPaint();
   map.setPaintProperty('zones-outline', 'line-opacity', 0);
   // Hide only the country/state labels (they fight our region labels); leave the
   // basemap's city/town labels on so the user sees where the zones really are.
@@ -725,8 +832,7 @@ function applySelectionStyling(iso) {
 }
 
 function clearSelectionStyling() {
-  map.setPaintProperty('zones-fill', 'fill-color', buildFillColorExpression());
-  map.setPaintProperty('zones-fill', 'fill-opacity', 0.78);
+  refreshFillPaint(); // selected is null by now → world paint
   map.setPaintProperty('zones-outline', 'line-opacity', 0.35);
   for (const id of basemapCountryLabelLayers) {
     if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', 'visible');
@@ -784,6 +890,7 @@ function setHoveredKlass(k) {
   }
   if (map.getLayer('zones-hover-outline')) map.setFilter('zones-hover-outline', f);
   if (map.getLayer('zones-hover-glow')) map.setFilter('zones-hover-glow', f);
+  refreshFillPaint();
   syncGridHover();
 }
 
@@ -1446,6 +1553,7 @@ function showDetail(klass, source) {
       </div>
     </div>
     <div class="detail-share">${formatPct(ctx.fraction)}% of ${escapeHtml(selected.name)} · ${Math.round(area).toLocaleString()} km²</div>
+    <button class="detail-zoom" type="button">⤢ Zoom to fit this climate</button>
     <div class="detail-match">
       <button type="button" title="Show a new match" aria-label="Show a new match">↺</button>
       <span>Climate of <b>${escapeHtml(ctx.exemplar.name)}</b></span>
@@ -1456,6 +1564,12 @@ function showDetail(klass, source) {
     detailKlass = null;
     setHoveredKlass(null);
     showGrid();
+  });
+  $widgetBody.querySelector('.detail-zoom').addEventListener('click', () => {
+    const feats = selected.features.filter((f) => f.properties.koppen_class === klass);
+    if (!feats.length) return;
+    track('zoom-region', { iso: selected.iso, koppen: KOPPEN_CLASSES[klass]?.symbol });
+    fitToFeatures(feats);
   });
   $widgetBody.querySelector('.detail-match button').addEventListener('click', () => {
     shuffleOne(klass);
