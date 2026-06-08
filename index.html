@@ -61,6 +61,24 @@
       max-width: 360px;
     }
     #overlay-select:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-radius: 4px; }
+    /* Frame-of-reference selector — subordinate to the country name; reads as
+       "France vs Europe". Matches are then soft-prioritized to this region. */
+    .overlay-vs {
+      font: italic 400 18px/1 "Cormorant", Georgia, "Times New Roman", serif;
+      color: var(--muted, #8a8478);
+      padding: 0 2px;
+      user-select: none;
+    }
+    #overlay-reference {
+      font: 600 20px/1.2 "Cormorant", Georgia, "Times New Roman", serif;
+      color: var(--muted, #8a8478);
+      background: transparent;
+      border: none;
+      padding: 4px 6px;
+      cursor: pointer;
+      max-width: 200px;
+    }
+    #overlay-reference:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-radius: 4px; }
     #map-overlay button {
       display: inline-flex;
       align-items: center;
@@ -449,6 +467,7 @@
         padding: 6px 10px;
       }
       #overlay-select { font-size: 30px; max-width: 220px; }
+      #overlay-reference { font-size: 18px; max-width: 140px; }
       #map-overlay button { padding: 5px 10px; font-size: 12px; }
       #map-overlay button span:not(.icon) { display: none; }
     }
@@ -460,6 +479,14 @@
     <div id="map-overlay" aria-live="polite">
       <select id="overlay-select" aria-label="Pick a country">
         <option value="" disabled selected>Pick…</option>
+      </select>
+      <span class="overlay-vs" aria-hidden="true">vs</span>
+      <select id="overlay-reference" aria-label="Frame of reference — show matches relative to a region you know" title="Express matches relative to a region you know">
+        <option value="" selected>anywhere</option>
+        <option value="USA">the United States</option>
+        <option value="EUR">Europe</option>
+        <option value="AUS">Australia</option>
+        <option value="TWN">Taiwan</option>
       </select>
       <button id="overlay-random" type="button" title="Pick a random country">
         <span class="icon" aria-hidden="true">⚄</span><span>Random</span>

@@ -39,18 +39,18 @@ them together); using ADM0_A3 would re-collapse French Guiana into France
 intent for this kind of "geographic but politically grouped" rollup.
 
 Run:
-  uv run scripts/prep_country_zones.py
+  uv run scripts/prep_country_zones.py                  # full rebuild (needs raster)
+  python3 scripts/prep_country_zones.py --exemplars-only # re-rank exemplars only
 """
 
 import json
+import sys
 from collections import defaultdict
 from pathlib import Path
 
-import geopandas as gpd
-import numpy as np
-import rasterio
-from rasterio.features import shapes
-from shapely.geometry import shape
+# Heavy geo deps (geopandas/rasterio/shapely) are imported lazily inside main()
+# so the `--exemplars-only` path below — which only re-ranks the already-built
+# country-zones.geojson — runs with a plain `python3`, no raster toolchain.
 
 ROOT = Path(__file__).resolve().parent.parent
 TIF = ROOT / "koppen_geiger_tif" / "1991_2020" / "koppen_geiger_0p1.tif"
@@ -60,9 +60,46 @@ OUT_EXEMPLARS = ROOT / "data" / "class-exemplars.json"
 
 SIMPLIFY_TOL_DEG = 0.02
 MIN_AREA_KM2 = 200  # drop slivers
+# Exemplars kept per class. Deep enough that a small "frame of reference" the app
+# offers (e.g. Taiwan) still appears in the list for the classes it shares — the
+# app soft-prioritizes reference members, so they must actually be present.
+EXEMPLAR_DEPTH = 25
+
+
+def regenerate_exemplars_from_zones():
+    """Re-rank class exemplars from the existing country-zones.geojson.
+
+    Exemplars are a pure function of each feature's `area_km2`, so this needs no
+    raster — handy for bumping EXEMPLAR_DEPTH without re-running the full overlay.
+    """
+    print(f"Reading {OUT_ZONES.name} (exemplars-only)...")
+    with open(OUT_ZONES) as f:
+        fc = json.load(f)
+
+    by_class: dict[int, list[dict]] = defaultdict(list)
+    for feat in fc["features"]:
+        p = feat["properties"]
+        by_class[int(p["koppen_class"])].append(
+            {"iso3": p["iso3"], "name": p["name"], "area_km2": float(p["area_km2"])}
+        )
+
+    exemplars = {}
+    for klass, rows in by_class.items():
+        rows.sort(key=lambda r: r["area_km2"], reverse=True)
+        exemplars[str(klass)] = rows[:EXEMPLAR_DEPTH]
+
+    with open(OUT_EXEMPLARS, "w") as f:
+        json.dump({k: exemplars[k] for k in sorted(exemplars, key=int)}, f, indent=2)
+    print(f"Wrote {OUT_EXEMPLARS} (top-{EXEMPLAR_DEPTH} per class)")
 
 
 def main():
+    import geopandas as gpd
+    import numpy as np
+    import rasterio
+    from rasterio.features import shapes
+    from shapely.geometry import shape
+
     print(f"Reading {TIF.name}...")
     with rasterio.open(TIF) as src:
         arr = src.read(1)
@@ -130,7 +167,7 @@ def main():
     print("Ranking class exemplars...")
     exemplars: dict[int, list[dict]] = defaultdict(list)
     for klass, group in joined.groupby("koppen_class"):
-        top = group.sort_values("area_km2", ascending=False).head(8)
+        top = group.sort_values("area_km2", ascending=False).head(EXEMPLAR_DEPTH)
         for _, row in top.iterrows():
             exemplars[int(klass)].append(
                 {
@@ -153,4 +190,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    if "--exemplars-only" in sys.argv:
+        regenerate_exemplars_from_zones()
+    else:
+        main()
