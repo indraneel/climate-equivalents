@@ -234,6 +234,7 @@ const dataReady = (async () => {
 
 map.on('load', async () => {
   const { zones } = await dataReady;
+  allZoneFeatures = zones.features;
 
   map.addSource('zones', { type: 'geojson', data: zones });
 
@@ -319,9 +320,13 @@ map.on('load', async () => {
   // cities visually distinct from the basemap's plain grey "source" city labels.
 
   populateCountrySelect();
+  // No selection yet → open the widget on the whole world (zones in view).
+  showWorldGrid();
 
   map.on('moveend', () => {
-    if (!selected) return;
+    // No selection: the grid reflects the climates currently in view, so it
+    // must recompute as the user pans/zooms.
+    if (!selected) { requestAnimationFrame(renderGrid); return; }
     const z = map.getZoom();
     if (lastEmitZoom === null || Math.abs(z - lastEmitZoom) > 0.1) refreshLabels();
     else runCollisionPass();
@@ -359,6 +364,8 @@ let lastEmitZoom = null;
 let byIsoBreakdownSync = null;
 let lastDataByIso = null;
 let citiesByCountry = null;
+// Flat array of every (subunit, class) feature, for the no-selection world grid.
+let allZoneFeatures = null;
 dataReady.then(({ byIsoBreakdown, byIso, cities }) => {
   byIsoBreakdownSync = byIsoBreakdown;
   lastDataByIso = byIso;
@@ -581,7 +588,7 @@ async function selectCountry(iso, source = 'map') {
   buildPartCandidates();
   lastEmitZoom = null;
   detailKlass = null;
-  hoveredKlass = null;
+  setHoveredKlass(null); // clear any worldwide climate highlight from world mode
 
   setCountryOutline(iso);
   applySelectionStyling(iso);
@@ -762,18 +769,21 @@ function getOrBuildCountryOutline(iso) {
 
 function setHoveredKlass(k) {
   hoveredKlass = k;
-  const noMatch = ['==', ['get', 'iso3'], '__none__'];
-  if (!selected || k == null) {
-    if (map.getLayer('zones-hover-outline')) map.setFilter('zones-hover-outline', noMatch);
-    if (map.getLayer('zones-hover-glow')) map.setFilter('zones-hover-glow', noMatch);
-  } else {
-    const f = ['all',
+  let f;
+  if (k == null) {
+    f = ['==', ['get', 'iso3'], '__none__'];
+  } else if (selected) {
+    // Within the selected country, highlight just that one region.
+    f = ['all',
       ['==', ['get', 'iso3'], selected.iso],
       ['==', ['get', 'koppen_class'], k],
     ];
-    if (map.getLayer('zones-hover-outline')) map.setFilter('zones-hover-outline', f);
-    if (map.getLayer('zones-hover-glow')) map.setFilter('zones-hover-glow', f);
+  } else {
+    // No selection: highlight every region of this climate worldwide.
+    f = ['==', ['get', 'koppen_class'], k];
   }
+  if (map.getLayer('zones-hover-outline')) map.setFilter('zones-hover-outline', f);
+  if (map.getLayer('zones-hover-glow')) map.setFilter('zones-hover-glow', f);
   syncGridHover();
 }
 
@@ -795,7 +805,7 @@ function clearSelection() {
   $overlaySelect.value = '';
   $overlayShuffle.disabled = true;
   $overlayClose.disabled = true;
-  hideWidget();
+  showWorldGrid(); // fall back to the whole-world (in-view) breakdown
   closeSheet();
 }
 
@@ -1200,14 +1210,6 @@ function showWidget() {
   $widget.classList.remove('collapsed');
   $widgetHeader.setAttribute('aria-expanded', 'true');
 }
-function hideWidget() {
-  $widget.classList.remove('open');
-  $widgetCountry.textContent = '';
-  $grid.innerHTML = '';
-  $widgetBody.innerHTML = '<div id="climate-grid"></div>';
-  // re-bind reference after innerHTML wipe
-  bindGridRef();
-}
 
 let gridRef = $grid;
 function bindGridRef() { gridRef = document.getElementById('climate-grid'); }
@@ -1224,23 +1226,35 @@ function showGrid() {
   renderGrid();
 }
 
+// World mode (no country selected): the same treemap, but the climates and
+// their shares are those of the map's current viewport. Recomputed on moveend.
+function showWorldGrid() {
+  detailKlass = null;
+  $widgetCountry.textContent = ' · in view';
+  $widgetBody.innerHTML = '<div id="climate-grid"></div>';
+  bindGridRef();
+  showWidget();
+  renderGrid();
+}
+
+// Sticky worldwide highlight for a climate, so the outline survives the mouse
+// leaving the grid (and works on touch, where there's no hover). Clicking the
+// same cell again clears it.
+function toggleWorldKlass(klass) {
+  detailKlass = detailKlass === klass ? null : klass;
+  setHoveredKlass(detailKlass);
+}
+
 function renderGrid() {
-  if (!selected || !gridRef || !gridRef.isConnected) return;
+  if (!gridRef || !gridRef.isConnected) return;
   const rectCheck = gridRef.getBoundingClientRect();
   if (rectCheck.width < 8 || rectCheck.height < 8) return;
-  // Compute per-class shares.
-  const total = selected.features.reduce((s, f) => s + f.properties.area_km2, 0);
-  const byClass = new Map();
-  for (const f of selected.features) {
-    const k = f.properties.koppen_class;
-    byClass.set(k, (byClass.get(k) ?? 0) + f.properties.area_km2);
-  }
-  const entries = [...byClass.entries()]
-    .map(([klass, area]) => ({ klass, area, fraction: area / total }))
-    .sort((a, b) => b.fraction - a.fraction);
+  const entries = selected ? selectedClassEntries() : viewportClassEntries();
 
   if (!entries.length) {
-    gridRef.innerHTML = '<div class="widget-empty">No climate data.</div>';
+    gridRef.innerHTML = `<div class="widget-empty">${
+      selected ? 'No climate data.' : 'No climate zones in view.'
+    }</div>`;
     return;
   }
 
@@ -1312,8 +1326,14 @@ function renderGrid() {
       setHoveredKlass(detailKlass);
     });
     cell.addEventListener('click', () => {
-      setHoveredKlass(node.klass);
-      showDetail(node.klass, 'grid');
+      if (selected) {
+        setHoveredKlass(node.klass);
+        showDetail(node.klass, 'grid');
+      } else {
+        // World mode: toggle a worldwide highlight of this climate.
+        track('highlight-climate', { koppen: KOPPEN_CLASSES[node.klass]?.symbol });
+        toggleWorldKlass(node.klass);
+      }
     });
     gridRef.appendChild(cell);
   }
@@ -1325,6 +1345,83 @@ function syncGridHover() {
   for (const el of gridRef.querySelectorAll('.grid-cell')) {
     el.classList.toggle('is-hovered', Number(el.dataset.klass) === hoveredKlass);
   }
+}
+
+// Per-class shares of the selected country — full feature areas, no clipping.
+function selectedClassEntries() {
+  const total = selected.features.reduce((s, f) => s + f.properties.area_km2, 0);
+  const byClass = new Map();
+  for (const f of selected.features) {
+    const k = f.properties.koppen_class;
+    byClass.set(k, (byClass.get(k) ?? 0) + f.properties.area_km2);
+  }
+  if (!total) return [];
+  return [...byClass.entries()]
+    .map(([klass, area]) => ({ klass, area, fraction: area / total }))
+    .sort((a, b) => b.fraction - a.fraction);
+}
+
+// Per-class shares of the *current viewport* — each zone's area clipped to the
+// visible bounds, so the breakdown reflects what's actually on screen.
+function viewportClassEntries() {
+  if (!allZoneFeatures) return [];
+  const [west, south, east, north] = viewportBbox();
+  const viewPoly = turf.bboxPolygon([west, south, east, north]);
+  const byClass = new Map();
+  for (const f of allZoneFeatures) {
+    const bb = f.__bbox || (f.__bbox = turf.bbox(f));
+    if (bb[2] < west || bb[0] > east || bb[3] < south || bb[1] > north) continue; // fully out
+    const fullyIn = bb[0] >= west && bb[2] <= east && bb[1] >= south && bb[3] <= north;
+    // Fast path: a feature whose bbox sits inside the (convex) viewport rect is
+    // wholly visible, so its pre-baked area is exact and we skip the intersect.
+    const area = fullyIn
+      ? f.properties.area_km2
+      : clippedAreaKm2(f, viewPoly, west, south, east, north);
+    if (area > 0) {
+      const k = f.properties.koppen_class;
+      byClass.set(k, (byClass.get(k) ?? 0) + area);
+    }
+  }
+  const total = [...byClass.values()].reduce((s, a) => s + a, 0);
+  if (!total) return [];
+  return [...byClass.entries()]
+    .map(([klass, area]) => ({ klass, area, fraction: area / total }))
+    .sort((a, b) => b.fraction - a.fraction);
+}
+
+// The map's visible bounds as [W, S, E, N], clamped to the world. A wrapped or
+// dateline-crossing view collapses to the whole world (rare; keeps clipping sane).
+function viewportBbox() {
+  const b = map.getBounds();
+  let west = b.getWest(), east = b.getEast();
+  const south = Math.max(b.getSouth(), -89.9);
+  const north = Math.min(b.getNorth(), 89.9);
+  if (east - west >= 360 || east < west) {
+    west = -180; east = 180;
+  } else {
+    west = Math.max(west, -180); east = Math.min(east, 180);
+  }
+  return [west, south, east, north];
+}
+
+// Area (km²) of a feature lying inside the viewport rect. Flattens to polygon
+// parts so each can take the fully-in fast path, only intersecting straddlers.
+function clippedAreaKm2(f, viewPoly, west, south, east, north) {
+  let area = 0;
+  for (const sub of turf.flatten(f).features) {
+    if (sub.geometry.type !== 'Polygon') continue;
+    const bb = turf.bbox(sub);
+    if (bb[2] < west || bb[0] > east || bb[3] < south || bb[1] > north) continue;
+    if (bb[0] >= west && bb[2] <= east && bb[1] >= south && bb[3] <= north) {
+      area += turf.area(sub) / 1e6;
+    } else {
+      try {
+        const clip = turf.intersect(turf.featureCollection([sub, viewPoly]));
+        if (clip) area += turf.area(clip) / 1e6;
+      } catch { /* degenerate geometry — skip this part */ }
+    }
+  }
+  return area;
 }
 
 function showDetail(klass, source) {
